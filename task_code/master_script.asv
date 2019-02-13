@@ -1,0 +1,46 @@
+% Reaching Task Master Script
+% Setup Images
+tarBank = {
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\fixation_cross_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\0_0_0_0_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\0_1_0_0_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\1_0_0_0_targets.bmp';...
+    };
+% Setup Display
+config_display(0, 6, [0 0 0], [1 1 1], 'Helvetica', 50, 4, 24);
+config_log( 'reachingTask.log' ); % Configure log file
+start_cogent;
+
+% Fixation cross
+clearpict( 1 );
+loadpict( tarBank{1}, 1 );
+
+txt_welcomeStr = 'Get ready to reach!!!';
+preparestring( txt_welcomeStr, 2 ); % Put word in buffer 1
+% Draw Welcome Text
+t0 = drawpict( 2 );
+wait( t0 + 2000 );
+
+for i = 2:3
+    % Fixation Cross
+    t(1) = drawpict( 1 ); % Display fixation cross
+    waituntil( t(1) + 1200 ); % Display fixation point for 1000ms
+    
+    % Target Choice
+    clearpict( 3 );
+    loadpict( tarBank{1}, 3 );
+    t(2) = drawpict( 3 ); % Display word and get the time
+    
+    % Target Choice
+    r = randnbetween(1000,500);
+    wait( t(2)+ r);
+    clearpict( 4 );
+    loadpict( tarBank{i}, 4 );
+    t(3) = drawpict( 4 ); % Display word and get the time
+    wait(t(3)+ 1000 );
+    
+end
+
+
+
+stop_cogent;
