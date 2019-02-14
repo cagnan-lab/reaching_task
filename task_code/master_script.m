@@ -1,15 +1,14 @@
 % Reaching Task Master Script
-gpath = 'C:\Users\creis\Documents\GitHub';
 % Setup Images
 baseTar = {
-    [gpath '\reaching_task\task_images\targets\fixation_cross_targets.bmp'];...
-    [gpath '\reaching_task\task_images\targets\0_0_0_0_targets.bmp'];...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\fixation_cross_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\0_0_0_0_targets.bmp';...
     };
 selTar = {
-    [gpath '\reaching_task\task_images\targets\1_0_0_0_targets.bmp'];...
-    [gpath '\reaching_task\task_images\targets\0_1_0_0_targets.bmp'];...
-    [gpath '\reaching_task\task_images\targets\0_0_1_0_targets.bmp'];...
-    [gpath '\reaching_task\task_images\targets\0_0_0_1_targets.bmp'];...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\1_0_0_0_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\0_1_0_0_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\0_0_1_0_targets.bmp';...
+    'C:\Users\Tim\Documents\Work\GIT\reaching_task\task_images\targets\0_0_0_1_targets.bmp';...
     };
 
 % Setup Display
@@ -37,7 +36,7 @@ rng(14231)
 % Setup number of trials
 ntrials = 10;
 % Setup random vector of targets
-tarlist = randi(4,1,ntrials);
+tarlist = randi(4,ntrials);
 
 for i = 1:ntrials
     % Fixation Cross
@@ -48,7 +47,7 @@ for i = 1:ntrials
     t(2) = drawpict( 3 ); % Display target range
     
     % Target Choice
-    r = randn(2500,1000,1);
+    r = randnbetween(2500,1000);
     waituntil( t(2)+ r);
     clearpict( 4 );
     loadpict( selTar{tarlist(i)}, 4 );
