@@ -80,3 +80,84 @@ Display:1600x1200x32 60.02Hz
 Cogent 2000 Version 1.29
 cogstd.mexw64 v1.33 Compiled:Aug 12 2015
 CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 14 16:56:30 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+5	[5]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 14 16:57:35 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+39187	[39187]	:	COGENT STOP
+Cog2000 log file Thu Feb 14 16:59:16 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+0	[0]	:	COGENT START
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+1717	[1717]	:	COGENT STOP
