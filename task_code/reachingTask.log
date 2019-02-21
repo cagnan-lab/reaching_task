@@ -161,3 +161,436 @@ ERR gprim:gFlip  (DDERR_SURFACELOST)
 ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
 ERR gprim:gFlip  (DDERR_SURFACELOST)
 1717	[1717]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 11:37:11 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+3	[3]	:	COGENT START
+39426	[39423]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 11:47:48 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+39055	[39055]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 12:08:00 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 12:08:35 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 12:16:44 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+38500	[38500]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 12:27:46 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+5	[5]	:	COGENT START
+38486	[38481]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 12:29:57 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+0	[0]	:	COGENT START
+18203	[18203]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 12:30:42 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 12:32:20 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+24738	[24738]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 12:33:13 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+14761	[14761]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 13:20:29 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+25859	[25859]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 13:34:36 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 13:40:32 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+25792	[25792]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 13:44:20 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+25824	[25824]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 13:46:15 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+0	[0]	:	COGENT START
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+1647	[1647]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 13:49:54 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+0	[0]	:	COGENT START
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+1627	[1627]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 13:50:33 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 13:51:18 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+1	[1]	:	COGENT START
+25843	[25842]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 14:07:40 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+47998	[47998]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 14:11:02 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+0	[0]	:	COGENT START
+47498	[47498]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 14:14:54 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 14:15:06 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+17766	[17766]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 14:15:40 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+0	[0]	:	COGENT START
+28846	[28846]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 14:55:33 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 14:55:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Feb 21 14:57:42 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+16303	[16303]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:08:26 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+Cog2000 log file Thu Feb 21 15:09:13 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+3	[3]	:	COGENT START
+Cog2000 log file Thu Feb 21 15:09:42 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+3	[3]	:	COGENT START
+29099	[29096]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:12:12 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+2	[2]	:	COGENT START
+21889	[21887]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:12:57 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+2	[2]	:	COGENT START
+19874	[19872]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:13:48 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+2	[2]	:	COGENT START
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cog2000 log file Thu Feb 21 15:16:43 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+2	[2]	:	COGENT START
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cog2000 log file Thu Feb 21 15:18:03 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+3	[3]	:	COGENT START
+11247	[11244]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:18:52 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+2	[2]	:	COGENT START
+11279	[11277]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:19:43 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+16265	[16262]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:20:41 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+3	[3]	:	COGENT START
+12479	[12476]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:21:10 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+22924	[22921]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:21:50 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+2	[2]	:	COGENT START
+22840	[22838]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 15:25:37 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+25892	[25889]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 16:48:00 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+3	[3]	:	COGENT START
+Cog2000 log file Thu Feb 21 16:48:41 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+4	[4]	:	COGENT START
+25922	[25918]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 16:50:39 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+0	[0]	:	COGENT START
+Cog2000 log file Thu Feb 21 16:53:41 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+25914	[25911]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 16:55:54 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+3	[3]	:	COGENT START
+Cog2000 log file Thu Feb 21 16:57:25 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+3	[3]	:	COGENT START
+40465	[40462]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 16:58:34 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+4	[4]	:	COGENT START
+38521	[38517]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 16:59:28 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+3	[3]	:	COGENT START
+38483	[38480]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 17:07:16 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+5	[5]	:	COGENT START
+38529	[38524]	:	COGENT STOP
+Cog2000 log file Thu Feb 21 17:08:23 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+3	[3]	:	COGENT START
+64364	[64361]	:	COGENT STOP
