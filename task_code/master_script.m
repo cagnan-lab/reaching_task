@@ -4,10 +4,12 @@
 % point centre #1: 20 sec
 % point targets: alternate 4 targets (5sec*4) + 4 centres (5sec*4) =40sec
 % point centre #2: 5 sec
-%%% note: point centre #1 and #2 to alternate 
+%%% note: point centre #1 and #2 to alternate
 
 % Reaching Task Master Script
-gpath = 'C:\Users\creis\Documents\GitHub';
+% gpath = 'C:\Users\creis\Documents\GitHub';
+gpath = 'C:\Users\Tim\Documents\Work\GIT';
+
 % Setup Images
 baseTar = {
     [gpath '\reaching_task\task_images\targets\fixation_cross_targets.bmp'];...
@@ -62,7 +64,7 @@ for i = 1:ntrials
     loadpict( selTar{tarlist(i)}, 4 );
     t(3) = drawpict( 4 ); % Display word and get the time
     waituntil(t(3)+ 5000 );
-
+    
     
 end
 stop_cogent;

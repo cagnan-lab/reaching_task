@@ -1,6 +1,6 @@
 clear all
 % Reaching Task Master Script
-gpath = 'C:\Users\creis\Documents\GitHub';
+gpath = 'C:\Users\Tim\Documents\Work\GIT';
 % Setup Images
 baseTar = {
     [gpath '\reaching_task\task_images\targets\fixation_cross_targets.bmp'];...
