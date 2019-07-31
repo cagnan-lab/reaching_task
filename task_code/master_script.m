@@ -1,3 +1,11 @@
+%%% what do we want:
+% get ready:2s
+% rest: 20sec
+% point centre #1: 20 sec
+% point targets: alternate 4 targets (5sec*4) + 4 centres (5sec*4) =40sec
+% point centre #2: 5 sec
+%%% note: point centre #1 and #2 to alternate 
+
 % Reaching Task Master Script
 gpath = 'C:\Users\creis\Documents\GitHub';
 % Setup Images
@@ -42,7 +50,7 @@ tarlist = randi(4,1,ntrials);
 for i = 1:ntrials
     % Fixation Cross
     t(1) = drawpict( 1 ); % Display fixation cross
-    waituntil( t(1) + 1500 ); % Display fixation point for 1000ms
+    waituntil( t(1) + 20000 ); % Display fixation point for 1000ms
     
     % Target Range
     t(2) = drawpict( 3 ); % Display target range
@@ -53,7 +61,8 @@ for i = 1:ntrials
     clearpict( 4 );
     loadpict( selTar{tarlist(i)}, 4 );
     t(3) = drawpict( 4 ); % Display word and get the time
-    waituntil(t(3)+ 2000 );
+    waituntil(t(3)+ 5000 );
+
     
 end
 stop_cogent;
