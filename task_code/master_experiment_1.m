@@ -8,8 +8,8 @@
 
 % Reaching Task Master Script
 % gpath = 'C:\Users\creis\Documents\GitHub';
-gpath = 'C:\Users\Tim\Documents\Work\GIT';
-
+% gpath = 'C:\Users\Tim\Documents\Work\GIT';
+gpath = 'C:\Users\pb-lab\Desktop';
 % Setup Images
 baseTar = {
     [gpath '\reaching_task\task_images\targets\fixation_cross_targets.bmp'];...
@@ -20,6 +20,7 @@ selTar = {
     [gpath '\reaching_task\task_images\targets\0_1_0_0_targets.bmp'];...
     [gpath '\reaching_task\task_images\targets\0_0_1_0_targets.bmp'];...
     [gpath '\reaching_task\task_images\targets\0_0_0_1_targets.bmp'];...
+    [gpath '\reaching_task\task_images\targets\0_0_0_0_targets.bmp'];...
     };
 indTar = {
     [gpath '\reaching_task\task_images\indicators\1_0_0_0_indicator.bmp'];...
@@ -57,7 +58,11 @@ tarlist = randi(4,1,ntrials);
 for i = 1:ntrials
     % Fixation Cross
     t(1) = drawpict( 1 ); % Display fixation cross
-    waituntil( t(1) + 5000 ); % Display fixation point for 1000ms
+    waituntil( t(1) + 10000 ); % Display fixation point for 1000ms
+    
+    loadpict( selTar{5}, 4 );
+    t(2) = drawpict( 4 ); % Display word and get the time
+    waituntil( t(2) + 10000 ); % Display fixation point for 1000ms
     
     % Target Range
     r = 7500 + (1000.*randn(1));
@@ -69,8 +74,8 @@ for i = 1:ntrials
     clearpict( 4 );
     loadpict( selTar{tarlist(i)}, 4 );
     t(3) = drawpict( 4 ); % Display word and get the time
-    waituntil(t(3)+ 5000 );
+    waituntil(t(3)+ 2000 );
     
-    
+    disp(['Trial number ' num2str(i)])
 end
 stop_cogent;

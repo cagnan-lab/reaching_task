@@ -28,13 +28,6 @@ indTar = {
     [gpath '\reaching_task\task_images\indicators\0_0_1_0_indicator.bmp'];...
     [gpath '\reaching_task\task_images\indicators\0_0_0_1_indicator.bmp'];...
     };
-
-bindTar = {
-    [gpath '\reaching_task\task_images\bindicators\2_0_1_0_bindicator.bmp'];...
-    [gpath '\reaching_task\task_images\bindicators\0_2_0_1_bindicator.bmp'];...
-    [gpath '\reaching_task\task_images\bindicators\1_0_2_0_bindicator.bmp'];...
-    [gpath '\reaching_task\task_images\bindicators\0_1_0_2_bindicator.bmp'];...
-    };
 % Setup Display
 % config_display(1, 6, [0 0 0], [1 1 1], 'Helvetica', 50, 4, 24);
 config_display(0,6, [1 1 1],[0 0 0])
@@ -61,7 +54,6 @@ rng(14231)
 ntrials = 10;
 % Setup random vector of targets
 tarlist = randi(4,1,ntrials);
-oplist = [3 4 1 2];
 
 for i = 1:ntrials
     % Fixation Cross
@@ -72,26 +64,69 @@ for i = 1:ntrials
     t(2) = drawpict( 4 ); % Display word and get the time
     waituntil( t(2) + 10000 ); % Display fixation point for 1000ms
     
-    for tp = 1:5
-        % Target Range
-        r = 1000; % + (1000.*randn(1));
-        pt = randi(4,1,1);
-        loadpict( bindTar{pt}, 4 );
-        t(2) = drawpict( 4 ); % Display word and get the time
-        waituntil( t(2)+ r);
-        
-        % Target Choice
-        if rand>0.6
-            dirchc = oplist(pt);
-        else
-            dirchc = pt;
-        end
-        
-        clearpict( 4 );
-        loadpict( selTar{dirchc}, 4 );
-        t(3) = drawpict( 4 ); % Display word and get the time
-        waituntil(t(3)+ 1000 );
-    end
-    disp(['Trial ' num2str(i)])
+
+    % Target Choice
+    clearpict( 4 );
+    loadpict( selTar{tarlist(i)}, 4 );
+    t(3) = drawpict( 4 ); % Display word and get the time
+    waituntil(t(3)+ 1000 );
+    
+    % Centre
+    loadpict( selTar{5}, 4 );
+    t(2) = drawpict( 4 ); % Display word and get the time
+    waituntil( t(2) + 1000 ); % Display fixation point for 1000ms  
+    
+    % Target Choice
+    clearpict( 4 );
+    p =  randi(4,1,1);
+    loadpict( selTar{p}, 4 );
+    t(4) = drawpict( 4 ); % Display word and get the time
+    waituntil(t(4)+ 1000 );
+   
+    % Centre
+    loadpict( selTar{5}, 4 );
+    t(2) = drawpict( 4 ); % Display word and get the time
+    waituntil( t(2) + 1000 ); % Display fixation point for 1000ms  
+    
+    clearpict( 4 );
+    p = randi(4,1,1);
+    loadpict( selTar{p}, 4 );
+    t(5) = drawpict( 4 ); % Display word and get the time
+    waituntil(t(5)+ 1000 );
+    
+    % Centre
+    loadpict( selTar{5}, 4 );
+    t(2) = drawpict( 4 ); % Display word and get the time
+    waituntil( t(2) + 1000 ); % Display fixation point for 1000ms     
+    
+    clearpict( 4 );
+    p = randi(4,1,1);
+    loadpict( selTar{p}, 4 );
+    t(6) = drawpict( 4 ); % Display word and get the time
+    waituntil(t(6)+ 1000 );    
+    
+    % Centre
+    loadpict( selTar{5}, 4 );
+    t(2) = drawpict( 4 ); % Display word and get the time
+    waituntil( t(2) + 1000 ); % Display fixation point for 1000ms  
+    
+    clearpict( 4 );
+    p = randi(4,1,1);
+    loadpict( selTar{p}, 4 );
+    t(7) = drawpict( 4 ); % Display word and get the time
+    waituntil(t(7)+ 1000 );  
+    
+    % Centre
+    loadpict( selTar{5}, 4 );
+    t(2) = drawpict( 4 ); % Display word and get the time
+    waituntil( t(2) + 1000 ); % Display fixation point for 1000ms  
+    
+    clearpict( 4 );
+    p = randi(4,1,1);
+    loadpict( selTar{p}, 4 );
+    t(8) = drawpict( 4 ); % Display word and get the time
+    waituntil(t(8)+ 1000 ); 
+    
+    disp(['Trial number ' num2str(i)])
 end
 stop_cogent;
