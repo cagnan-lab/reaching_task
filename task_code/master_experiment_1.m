@@ -7,9 +7,8 @@
 %%% note: point centre #1 and #2 to alternate
 
 % Reaching Task Master Script
-% gpath = 'C:\Users\creis\Documents\GitHub';
-% gpath = 'C:\Users\Tim\Documents\Work\GIT';
-gpath = 'C:\Users\pb-lab\Desktop';
+gpath = add_ReachingTask_paths();
+
 % Setup Images
 baseTar = {
     [gpath '\reaching_task\task_images\targets\fixation_cross_targets.bmp'];...
@@ -31,6 +30,7 @@ indTar = {
 % Setup Display
 % config_display(1, 6, [0 0 0], [1 1 1], 'Helvetica', 50, 4, 24);
 config_display(0,6, [1 1 1],[0 0 0])
+config_keyboard( 100, 5, 'nonexclusive')
 config_log( 'reachingTask.log' ); % Configure log file
 start_cogent;
 
@@ -42,12 +42,25 @@ loadpict( baseTar{1}, 1 );
 clearpict( 3 );
 loadpict( baseTar{2}, 3 );
 
-txt_welcomeStr = 'Get ready to reach!!!';
+txt_welcomeStr = 'Start of first session!!!';
 preparestring( txt_welcomeStr, 2 ); % Put word in buffer 1
 % Draw Welcome Text
 t0 = drawpict( 2 );
 waituntil( t0 + 2000 );
 
+% Give quick recap of instructions and wait for input
+txt_instructions = {'In this session you are asked to rest,reach and point.';
+    'When you see the cross in the centre please REST.';
+    'When you see a cross surrounded by red targets please REACH.';
+    'When you see a green target please POINT as accurately as you can!';
+    'Good luck!'};
+for i=1:5
+    preparestring( txt_instructions{i}, 4 ); % Put word in buffer 1
+    % Draw Welcome Text
+    t0 = drawpict( 4 );
+    waitkeydown(t0+20000,71)
+    clearpict( 4 );
+end
 % Setup rng seed (so to make reproducible sequence)
 rng(14231)
 % Setup number of trials
@@ -69,7 +82,7 @@ for i = 1:ntrials
     loadpict( indTar{tarlist(i)}, 4 );
     t(2) = drawpict( 4 ); % Display word and get the time
     waituntil( t(2)+ r);
-
+    
     % Target Choice
     clearpict( 4 );
     loadpict( selTar{tarlist(i)}, 4 );

@@ -84,11 +84,11 @@ for i = 1:ntrials
     
     % Fixation Cross
     t(1) = drawpict( 1 ); % Display fixation cross
-    waituntil( t(1) + restst(1)*1e3 ); % Display fixation point for 1000ms
+    waituntil( t(1) + restst(1) ); % Display fixation point for 1000ms
     
     loadpict( selTar{5}, 4 );
     t(2) = drawpict( 4 ); % Display word and get the time
-    waituntil( t(2) + 20000 ); % Display  target for 1000ms
+    waituntil( t(2) + 10000 ); % Display fixation point for 1000ms
     
 
     % Target Choice
@@ -153,12 +153,11 @@ for i = 1:ntrials
     t(8) = drawpict( 4 ); % Display word and get the time
     waituntil(t(8)+ 1000 ); 
     
-    t(1) = drawpict( 1 ); % Display fixation cross
-    waituntil( t(1) + restst(2)*1e3 ); % Display fixation point for 1000ms
     
     
     txt_welcomeStr = 'End of trial, take a break...';
     preparestring( txt_welcomeStr, 2 ); % Put word in buffer 1
+    % Draw Welcome Text
     t0 = drawpict( 2 );
     waituntil( t0 + 5000 );
     
