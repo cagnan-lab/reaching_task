@@ -9,10 +9,12 @@
 %% Setup LabJack for triggers
 % [ljasm,ljudObj,ljhandle] = setup_LabJack();
 
-v = [0.5 1 2 2.25 2.5 2.75 3]; % (1) At rest; (2) Reach; (3) Centre; (4) 1 0 0 0; (5) 0 1 0 0; (6) 0 0 1 0; (7) 0 0 0 1;
+%v = [0.5 1 2 2.25 2.5 2.75 3]; % (1) At rest; (2) Reach; (3) Centre; (4) 1 0 0 0; (5) 0 1 0 0; (6) 0 0 1 0; (7) 0 0 0 1; 
+v=[0.2:0.2:3]; % 4x3 targets + 3 commands =15;% 
+%(8) 2 0 0 0; (9) 0 2 0 0; (10) 0 0 2 0; (11) 0 0 0 2; (12) 3 0 0 0; (13) 0 3 0 0; (14) 0 0 3 0; (15) 0 0 0 3; 
 
 % Reaching Task Master Script
-gpath = 'C:\Users\creis\Documents\GitHub';
+ gpath = 'C:\Users\creis\Documents\GitHub';
 % gpath = 'C:\Users\Tim\Documents\Work\GIT';
 % gpath = add_ReachingTask_paths();
 % Setup Images
@@ -20,7 +22,26 @@ baseTar = {
     [gpath '\reaching_task\task_images\targets1\fixation_cross_targets.bmp'];...
     [gpath '\reaching_task\task_images\targets1\0_0_0_0_targets.bmp'];...
     };
-
+selTar = {
+    [gpath '\reaching_task\task_images\targets1\1_0_0_0_targets.bmp'];...
+    [gpath '\reaching_task\task_images\targets1\0_1_0_0_targets.bmp'];...
+    [gpath '\reaching_task\task_images\targets1\0_0_1_0_targets.bmp'];...
+    [gpath '\reaching_task\task_images\targets1\0_0_0_1_targets.bmp'];...
+    [gpath '\reaching_task\task_images\targets1\0_0_0_0_targets.bmp'];...
+    
+    [gpath '\reaching_task\task_images\targets2\2_0_0_0_targets.png'];...
+    [gpath '\reaching_task\task_images\targets2\0_2_0_0_targets.png'];...
+    [gpath '\reaching_task\task_images\targets2\0_0_2_0_targets.png'];...
+    [gpath '\reaching_task\task_images\targets2\0_0_0_2_targets.png'];...
+    [gpath '\reaching_task\task_images\targets2\0_0_0_0_targets.png'];...
+    
+    [gpath '\reaching_task\task_images\targets3\3_0_0_0_targets.png'];...
+    [gpath '\reaching_task\task_images\targets3\0_3_0_0_targets.png'];...
+    [gpath '\reaching_task\task_images\targets3\0_0_3_0_targets.png'];...
+    [gpath '\reaching_task\task_images\targets3\0_0_0_3_targets.png'];...
+    [gpath '\reaching_task\task_images\targets3\0_0_0_0_targets.png'];...
+    
+    };
 indTar = {
     [gpath '\reaching_task\task_images\indicators\1_0_0_0_indicator.bmp'];...
     [gpath '\reaching_task\task_images\indicators\0_1_0_0_indicator.bmp'];...
@@ -50,7 +71,7 @@ preparestring( txt_welcomeStr, 2 ); % Put word in buffer 2
 % Draw Welcome Text
 t0 = drawpict( 2 );
 waituntil( t0 + 2000 );
-clearpict( 2 );
+    clearpict( 2 );
 
 % Give quick recap of instructions and wait for input
 txt_instructions = {'In this session you are asked to rest,reach and point.';
@@ -59,53 +80,23 @@ txt_instructions = {'In this session you are asked to rest,reach and point.';
     'When you see a green target please POINT as accurately as you can!';
     'Good luck!'};
 for i=1:5
-    preparestring( txt_instructions{i}, 4 );
+    preparestring( txt_instructions{i}, 4 ); 
     % Draw Welcome Text
     t0 = drawpict( 4 );
     waitkeydown(t0+20000,71)
     clearpict( 4 );
 end
 txt_reach = 'Get ready to reach!!!';
-preparestring( txt_instructions{i}, 5 );
+preparestring( txt_instructions{i}, 5 ); 
 
 % Setup rng seed (so to make reproducible sequence)
 rng(14231)
 % Setup number of trials
 ntrials = 10;
 % Setup random vector of targets
-tarlist = randi(4,1,ntrials);
+tarlist = randi(12,1,ntrials);
 
 for i = 1:ntrials
-
-    for tt= randi(2:3,1,1)
-    disp(['Target size ' num2str(tt)])
-        
-        if tt==1
-            selTar = {
-                [gpath '\reaching_task\task_images\targets1\1_0_0_0_targets.bmp'];...
-                [gpath '\reaching_task\task_images\targets1\0_1_0_0_targets.bmp'];...
-                [gpath '\reaching_task\task_images\targets1\0_0_1_0_targets.bmp'];...
-                [gpath '\reaching_task\task_images\targets1\0_0_0_1_targets.bmp'];...
-                [gpath '\reaching_task\task_images\targets1\0_0_0_0_targets.bmp'];...
-                };
-        elseif tt==2
-            selTar = {
-                [gpath '\reaching_task\task_images\targets2\2_0_0_0_targets.png'];...
-                [gpath '\reaching_task\task_images\targets2\0_2_0_0_targets.png'];...
-                [gpath '\reaching_task\task_images\targets2\0_0_2_0_targets.png'];...
-                [gpath '\reaching_task\task_images\targets2\0_0_0_2_targets.png'];...
-                [gpath '\reaching_task\task_images\targets2\0_0_0_0_targets.png'];...
-                };
-        elseif tt==3
-            selTar = {
-                [gpath '\reaching_task\task_images\targets3\3_0_0_0_targets.png'];...
-                [gpath '\reaching_task\task_images\targets3\0_3_0_0_targets.png'];...
-                [gpath '\reaching_task\task_images\targets3\0_0_3_0_targets.png'];...
-                [gpath '\reaching_task\task_images\targets3\0_0_0_3_targets.png'];...
-                [gpath '\reaching_task\task_images\targets3\0_0_0_0_targets.png'];...
-                };
-        end
-    end
     
     if 1 %rand>=0.5
         restst = [20 5];
@@ -115,41 +106,41 @@ for i = 1:ntrials
     
     % Fixation Cross (for Rest)
     t(1) = drawpict( 1 ); % Display fixation cross
-    %sendLJTrigger(ljudObj,ljhandle,v(1));
+%    sendLJTrigger(ljudObj,ljhandle,v(1));
     waituntil( t(1) + restst(1)*1e3 ); % Display fixation point for 1000ms
     
     % Load Point Target
     loadpict( selTar{5}, 4 );
     t(2) = drawpict( 4 ); % Display target
-    %sendLJTrigger(ljudObj,ljhandle,v(2));
+%     sendLJTrigger(ljudObj,ljhandle,v(2));
     waituntil( t(2) + 20000 ); % Display  target for 1000ms
-    %sendLJTrigger(ljudObj,ljhandle,0);
-    
+%     sendLJTrigger(ljudObj,ljhandle,0);
+
     % Prepare to reach
     t(5) = drawpict( 4 );
-    waituntil(t(5)+ 1000 );
+    waituntil(t(5)+ 1000 );    
     
     for trn = 1:5
         % Centre Target
         loadpict( selTar{5}, 4 );
         t(2) = drawpict( 4 );
-        %sendLJTrigger(ljudObj,ljhandle,v(3));
-        waituntil( t(2) + 1000 );
+%         sendLJTrigger(ljudObj,ljhandle,v(3));
+        waituntil( t(2) + 1000 ); 
         
         % Target Choice
         clearpict( 4 );
         p =  randi(4,1,1);
         loadpict( selTar{p}, 4 );
-        t(4) = drawpict( 4 );
-        %sendLJTrigger(ljudObj,ljhandle,v(3+p));
+        t(4) = drawpict( 4 ); 
+%         sendLJTrigger(ljudObj,ljhandle,v(3+p));
         waituntil(t(4)+ 1000 );
     end
     
-    %sendLJTrigger(ljudObj,ljhandle,0);
+%     sendLJTrigger(ljudObj,ljhandle,0);
     txt_trialEnd = 'End of trial, take a break...';
-    preparestring( txt_trialEnd, 2 );
+    preparestring( txt_trialEnd, 2 ); 
     t0 = drawpict( 2 );
-    waituntil( t0 + 1000 );
+    waituntil( t0 + 1000 ); 
     disp(['Trial number ' num2str(i)])
 end
 stop_cogent;

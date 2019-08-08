@@ -78,7 +78,7 @@ tarlist = randi(4,1,ntrials);
 for i = 1:ntrials
 
     for tt= randi(2:3,1,1)
-    disp(['Target size ' num2str(tt)])
+    disp(['T ' num2str(tt)])
         
         if tt==1
             selTar = {
