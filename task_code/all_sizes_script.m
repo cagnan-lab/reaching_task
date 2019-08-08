@@ -10,13 +10,13 @@
 % [ljasm,ljudObj,ljhandle] = setup_LabJack();
 
 %v = [0.5 1 2 2.25 2.5 2.75 3]; % (1) At rest; (2) Reach; (3) Centre; (4) 1 0 0 0; (5) 0 1 0 0; (6) 0 0 1 0; (7) 0 0 0 1; 
-v=[0.2:0.2:3]; % 4x3 targets + 3 commands =15;% 
+v=reshape([0.2:0.2:3],5,3); % 4x3 targets + 3 commands =15;% 
 %(8) 2 0 0 0; (9) 0 2 0 0; (10) 0 0 2 0; (11) 0 0 0 2; (12) 3 0 0 0; (13) 0 3 0 0; (14) 0 0 3 0; (15) 0 0 0 3; 
 
 % Reaching Task Master Script
- gpath = 'C:\Users\creis\Documents\GitHub';
+%  gpath = 'C:\Users\creis\Documents\GitHub';
 % gpath = 'C:\Users\Tim\Documents\Work\GIT';
-% gpath = add_ReachingTask_paths();
+ gpath = add_ReachingTask_paths();
 % Setup Images
 baseTar = {
     [gpath '\reaching_task\task_images\targets1\fixation_cross_targets.bmp'];...

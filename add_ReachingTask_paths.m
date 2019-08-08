@@ -9,6 +9,9 @@ elseif strcmp(getenv('COMPUTERNAME'),'FREE')
 elseif strcmp(getenv('COMPUTERNAME'),'DESKTOP-94CEG1L')
     gitpath = 'C:\Users\timot\Documents\GitHub';
     mapath = 'C:\Users\timot\Documents\Work\MATLAB ADDONS';
+elseif strcmp(getenv('COMPUTERNAME'),'DESKTOP-A00VK7N')
+    gitpath = 'C:\Users\creis\Documents\GitHub';
+    mapath = 'C:\Users\creis\Documents\MATLAB';
 end
 
 addpath(genpath([gitpath '\reaching_task']))
