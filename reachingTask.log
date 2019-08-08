@@ -468,3 +468,111 @@ CogInput v1.05 Compiled: May 20 2010
 6401	[240]	:	Key	71	DOWN	at	6401    
 6498	[97]	:	Key	71	UP	at	6496    
 6764	[266]	:	Key	71	DOWN	at	6764    
+Cog2000 log file Thu Aug 08 11:32:07 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+Attaching C:\Users\timot\Documents\Work\MATLAB ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+5	[5]	:	COGENT START
+3647	[3642]	:	Key	1	DOWN	at	3644    
+3986	[339]	:	Key	1	UP	at	3986    
+27947	[23961]	:	Key	60	DOWN	at	27946   
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 08 11:32:46 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Thu Aug 08 11:32:56 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+5513	[5512]	:	Key	71	DOWN	at	5506    
+5661	[148]	:	Key	71	UP	at	5660    
+6391	[730]	:	Key	71	DOWN	at	6389    
+6540	[149]	:	Key	71	UP	at	6540    
+6775	[235]	:	Key	71	DOWN	at	6774    
+6916	[141]	:	Key	71	UP	at	6915    
+7154	[238]	:	Key	71	DOWN	at	7154    
+7316	[162]	:	Key	71	UP	at	7315    
+7799	[483]	:	Key	71	DOWN	at	7799    
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 08 11:33:46 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Thu Aug 08 11:33:53 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+3371	[3371]	:	Key	71	DOWN	at	3369    
+3458	[87]	:	Key	71	UP	at	3456    
+3726	[268]	:	Key	71	DOWN	at	3725    
+3809	[83]	:	Key	71	UP	at	3808    
+4005	[196]	:	Key	71	DOWN	at	4003    
+4097	[92]	:	Key	71	UP	at	4097    
+5166	[1069]	:	Key	71	DOWN	at	5165    
+5260	[94]	:	Key	71	UP	at	5259    
+5727	[467]	:	Key	71	DOWN	at	5727    
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 08 11:45:16 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+2653	[2652]	:	Key	71	DOWN	at	2494    
+2654	[1]	:	Key	71	UP	at	2588    
+4690	[2036]	:	Key	71	DOWN	at	4688    
+4810	[120]	:	Key	71	UP	at	4808    
+6491	[1681]	:	Key	71	DOWN	at	6490    
+6612	[121]	:	Key	71	UP	at	6612    
+6965	[353]	:	Key	71	DOWN	at	6965    
+7067	[102]	:	Key	71	UP	at	7065    
+7337	[270]	:	Key	71	DOWN	at	7336    
+7450	[113]	:	Key	71	UP	at	7448    
+7757	[307]	:	Key	71	DOWN	at	7756    
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 08 11:45:51 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Thu Aug 08 11:46:01 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+7507	[7506]	:	Key	71	DOWN	at	7506    
+7608	[101]	:	Key	71	UP	at	7606    
+8154	[546]	:	Key	71	DOWN	at	8153    
+8243	[89]	:	Key	71	UP	at	8242    
+9134	[891]	:	Key	71	DOWN	at	9131    
+9254	[120]	:	Key	71	UP	at	9254    
+10196	[942]	:	Key	71	DOWN	at	10194   
+10313	[117]	:	Key	71	UP	at	10312   
+10850	[537]	:	Key	71	DOWN	at	10849   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
