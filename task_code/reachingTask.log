@@ -734,3 +734,21 @@ ERR GScnd:cgsetsprite Sprite 5 not found
 Cogent 2000 Version 1.29
 cogstd.mexw64 v1.33 Compiled:Aug 12 2015
 CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Tue Aug 20 17:11:46 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.92Hz
+Attaching C:\Users\creis\Documents\MATLAB\Cogent\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+4	[4]	:	COGENT START
+2374	[2370]	:	Key	71	DOWN	at	1580    
+2376	[2]	:	Key	71	UP	at	1693    
+3119	[743]	:	Key	71	DOWN	at	3116    
+3221	[102]	:	Key	71	UP	at	3220    
+4907	[1686]	:	Key	71	DOWN	at	4902    
+5008	[101]	:	Key	71	UP	at	5008    
+5909	[901]	:	Key	71	DOWN	at	5909    
+6025	[116]	:	Key	71	UP	at	6024    
+6693	[668]	:	Key	71	DOWN	at	6693    
+6810	[117]	:	Key	71	UP	at	6809    
+7543	[733]	:	Key	71	DOWN	at	7543    
+ERR GScnd:cgsetsprite Sprite 5 not found
