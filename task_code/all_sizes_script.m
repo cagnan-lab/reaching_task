@@ -10,7 +10,7 @@
 % [ljasm,ljudObj,ljhandle] = setup_LabJack();
 
 %v = [0.5 1 2 2.25 2.5 2.75 3]; % (1) At rest; (2) Reach; (3) Centre; (4) 1 0 0 0; (5) 0 1 0 0; (6) 0 0 1 0; (7) 0 0 0 1;
-v=reshape([0.2:0.2:3],5,3); % 4x3 targets + 3 commands =15;%
+v=reshape(linspace(0.5,3,24),3,8); % 3x8 targets (2 sizes + 1 command x 8 positions) = 24;%
 %(8) 2 0 0 0; (9) 0 2 0 0; (10) 0 0 2 0; (11) 0 0 0 2; (12) 3 0 0 0; (13) 0 3 0 0; (14) 0 0 3 0; (15) 0 0 0 3;
 
 % Reaching Task Master Script
@@ -63,7 +63,7 @@ loadpict( baseTar{1}, 1 );
 % Target Selection
 clearpict( 3 );
 loadpict( baseTar{2}, 3 );
-
+tic
 %% Welcome String
 txt_welcomeStr = 'Start of first session!!!';
 preparestring( txt_welcomeStr, 2 ); % Put word in buffer 2
@@ -95,41 +95,39 @@ ntrials = 10;
 % Setup random vector of targets
 tarlist = randi(12,1,ntrials);
 
-for i = 1:ntrials
+for i = 1 %:ntrials
     
-    if 1 %rand>=0.5
-        restst = [20 5];
-    else
-        restst = [5 20];
-    end
+    restst = [20 5];
     
     % Fixation Cross (for Rest)
     t(1) = drawpict( 1 ); % Display fixation cross
-    %    sendLJTrigger(ljudObj,ljhandle,v(1));
+%     sendLJTrigger(ljudObj,ljhandle,v(3,1));
     waituntil( t(1) + restst(1)*1e3 ); % Display fixation point for 1000ms
     
     
-    for trn = 1:5
+    for trn = 1:15
         % Target Choice
         clearpict( 4 );
         sz =  randi(2,1,1);
         p =  randi(8,1,1);
         loadpict( selTar{sz}{p}, 4 );
         t(4) = drawpict( 4 );
-        %         sendLJTrigger(ljudObj,ljhandle,v(3+p));
+        
+%         sendLJTrigger(ljudObj,ljhandle,v(sz,p));
         waituntil(t(4)+ 3000 );
         
         % Centre Target
         t(2) = drawpict( 1 );
-        %         sendLJTrigger(ljudObj,ljhandle,v(3));
-        waituntil( t(2) + 6000 );
+%         sendLJTrigger(ljudObj,ljhandle,v(3,2));
+        waituntil( t(2) + 6000 + 1000.*(2.*randn));
     end
     
-    %     sendLJTrigger(ljudObj,ljhandle,0);
+%     sendLJTrigger(ljudObj,ljhandle,v(3,3));
     txt_trialEnd = 'End of trial, take a break...';
     preparestring( txt_trialEnd, 2 );
     t0 = drawpict( 2 );
-    waituntil( t0 + 1000 );
+    waituntil( t0 + 1000);
     disp(['Trial number ' num2str(i)])
 end
 stop_cogent;
+toc
