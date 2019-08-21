@@ -576,3 +576,278 @@ ERR GScnd:cgsetsprite Sprite 5 not found
 Cogent 2000 Version 1.29
 cogstd.mexw64 v1.33 Compiled:Aug 12 2015
 CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Sun Aug 18 12:43:35 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+5	[5]	:	COGENT START
+4855	[4850]	:	Key	60	DOWN	at	4852    
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Sun Aug 18 12:48:41 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 60.05Hz
+CogInput v1.05 Compiled: May 20 2010
+2	[2]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Sun Aug 18 12:49:22 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 60.28Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Sun Aug 18 12:49:43 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.31Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+27260	[27259]	:	Key	41	DOWN	at	24755   
+27260	[0]	:	Key	41	UP	at	24896   
+36596	[9336]	:	Key	71	DOWN	at	36595   
+36676	[80]	:	Key	71	UP	at	36675   
+37941	[1265]	:	Key	71	DOWN	at	37939   
+38034	[93]	:	Key	71	UP	at	38034   
+64786	[26752]	:	Key	71	DOWN	at	64785   
+64897	[111]	:	Key	71	UP	at	64897   
+65730	[833]	:	Key	71	DOWN	at	65730   
+65856	[126]	:	Key	71	UP	at	65855   
+66338	[482]	:	Key	71	DOWN	at	66338   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Sun Aug 18 13:00:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.31Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+4887	[4886]	:	Key	41	DOWN	at	2381    
+4888	[1]	:	Key	41	UP	at	2476    
+4889	[1]	:	Key	71	DOWN	at	4330    
+4889	[0]	:	Key	71	UP	at	4475    
+5403	[514]	:	Key	71	DOWN	at	5403    
+5534	[131]	:	Key	71	UP	at	5533    
+5724	[190]	:	Key	71	DOWN	at	5724    
+5804	[80]	:	Key	71	UP	at	5803    
+5948	[144]	:	Key	71	DOWN	at	5946    
+6029	[81]	:	Key	71	UP	at	6029    
+6140	[111]	:	Key	71	DOWN	at	6139    
+6236	[96]	:	Key	71	UP	at	6234    
+6601	[365]	:	Key	71	DOWN	at	6601    
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Sun Aug 18 13:01:57 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.31Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+10493	[10493]	:	Key	41	DOWN	at	8006    
+10494	[1]	:	Key	41	UP	at	8175    
+30010	[19516]	:	Key	71	DOWN	at	30008   
+30115	[105]	:	Key	71	UP	at	30115   
+39828	[9713]	:	Key	71	DOWN	at	39827   
+39940	[112]	:	Key	71	UP	at	39938   
+40772	[832]	:	Key	71	DOWN	at	40771   
+40979	[207]	:	Key	71	UP	at	40979   
+43127	[2148]	:	Key	71	DOWN	at	43126   
+43318	[191]	:	Key	71	UP	at	43317   
+43816	[498]	:	Key	71	DOWN	at	43815   
+ERR GScnd:cgsetsprite Sprite 5 not found
+516568	[472752]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 11:33:19 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 12.01Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+18	[18]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Wed Aug 21 11:36:48 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 15.03Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Wed Aug 21 11:39:05 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 15.56Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Wed Aug 21 11:39:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 15.68Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Wed Aug 21 11:41:17 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 14.84Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cog2000 log file Wed Aug 21 12:26:48 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+6	[6]	:	COGENT START
+39386	[39380]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 12:27:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 13.50Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+19832	[19831]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 12:28:20 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.02Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+18214	[18213]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 12:28:57 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+11791	[11790]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 12:29:24 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 11.95Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+13649	[13648]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 12:30:21 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+8226	[8225]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 13:27:07 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Wed Aug 21 13:55:48 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+5	[5]	:	COGENT START
+8909	[8904]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 13:56:10 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+8248	[8247]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 14:00:04 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.02Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cog2000 log file Wed Aug 21 14:05:03 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+5	[5]	:	COGENT START
+8421	[8416]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 14:05:42 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.02Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+6302	[6301]	:	Key	41	DOWN	at	3914    
+6304	[2]	:	Key	41	UP	at	4073    
+6307	[3]	:	Key	70	DOWN	at	4456    
+6307	[0]	:	Key	70	UP	at	4868    
+6309	[2]	:	Key	70	DOWN	at	5372    
+6309	[0]	:	Key	70	UP	at	6293    
+6313	[4]	:	Key	70	DOWN	at	6304    
+6400	[87]	:	Key	70	UP	at	6396    
+7481	[1081]	:	Key	1	DOWN	at	7480    
+8087	[606]	:	Key	1	UP	at	8087    
+9450	[1363]	:	Key	70	DOWN	at	9449    
+10356	[906]	:	Key	70	UP	at	10355   
+23157	[12801]	:	Key	71	DOWN	at	23156   
+23310	[153]	:	Key	71	UP	at	23309   
+25230	[1920]	:	Key	71	DOWN	at	25228   
+25384	[154]	:	Key	71	UP	at	25382   
+31403	[6019]	:	Key	71	DOWN	at	31403   
+31625	[222]	:	Key	71	UP	at	31624   
+35514	[3889]	:	Key	71	DOWN	at	35513   
+35634	[120]	:	Key	71	UP	at	35634   
+37167	[1533]	:	Key	71	DOWN	at	37167   
+ERR GScnd:cgsetsprite Sprite 5 not found
+45365	[8198]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 14:08:55 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+3624	[3623]	:	Key	71	DOWN	at	3623    
+3756	[132]	:	Key	71	UP	at	3756    
+6127	[2371]	:	Key	71	DOWN	at	6126    
+6228	[101]	:	Key	71	UP	at	6228    
+7009	[781]	:	Key	71	DOWN	at	7008    
+7094	[85]	:	Key	71	UP	at	7094    
+7959	[865]	:	Key	71	DOWN	at	7958    
+8060	[101]	:	Key	71	UP	at	8058    
+8651	[591]	:	Key	71	DOWN	at	8650    
+ERR GScnd:cgsetsprite Sprite 5 not found
+19366	[10715]	:	COGENT STOP
+Cog2000 log file Wed Aug 21 14:48:04 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+4	[4]	:	COGENT START
+3377	[3373]	:	Key	71	DOWN	at	3375    
+3466	[89]	:	Key	71	UP	at	3465    
+3908	[442]	:	Key	71	DOWN	at	3907    
+3991	[83]	:	Key	71	UP	at	3991    
+4213	[222]	:	Key	71	DOWN	at	4212    
+4287	[74]	:	Key	71	UP	at	4287    
+4402	[115]	:	Key	71	DOWN	at	4402    
+4492	[90]	:	Key	71	UP	at	4491    
+4628	[136]	:	Key	71	DOWN	at	4628    
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Wed Aug 21 14:48:28 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+2049	[2048]	:	Key	71	DOWN	at	526     
+2050	[1]	:	Key	71	UP	at	731     
+2803	[753]	:	Key	71	DOWN	at	2802    
+3007	[204]	:	Key	71	UP	at	3006    
+4002	[995]	:	Key	71	DOWN	at	4001    
+4184	[182]	:	Key	71	UP	at	4183    
+4855	[671]	:	Key	71	DOWN	at	4855    
+5066	[211]	:	Key	71	UP	at	5066    
+6927	[1861]	:	Key	71	DOWN	at	6926    
+7113	[186]	:	Key	71	UP	at	7113    
+7495	[382]	:	Key	71	DOWN	at	7494    
+ERR GScnd:cgsetsprite Sprite 5 not found
+18103	[10608]	:	COGENT STOP
