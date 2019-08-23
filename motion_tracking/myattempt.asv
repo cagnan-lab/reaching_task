@@ -1,20 +1,10 @@
 clear; close all
-
-vadd = 'D:\Data\OPM_Tremor_project\Pilot\pilot_220819\Video\MAH07814.mp4';
-% Target locations for MAH07814:
-frameTars = [245.5 124.2 210.4 47.8 95.5 220 84 58];
-markTars = [27.18 247.1]; % first is fixation cross 2) is pointer frame
-
-
-% % vadd = 'D:\Data\OPM_Tremor_project\Pilot\pilot_220819\Video\MAH07815.mp4';
-% % % Target locations for MAH07815:
-% % frameTars = [260 139 225.2 62.7 110.4 234.3 99 88];
-% % markTars = [42.1 235.5]; % first is fixation cross 2) is pointer frame
-
-% % vadd = 'D:\Data\OPM_Tremor_project\Pilot\pilot_220819\Video\MAH07816.mp4';
-% % % Target locations for MAH07816:
-% % frameTars = [245.5 124.2 210.4 47.8 95.5 220 84 58];
-% % markTars = [27.18 247.1]; % first is fixation cross 2) is pointer frame
+% v = VideoReader('C:\Users\Tim\Documents\Work\Cagnan_Project\reaching_task_piloting\videos\trial_converted_6ofps.mp4');
+% vadd = 'D:\Data\OPM_Tremor_project\Pilot\pilot_220819\Video\MAH07814.mp4';
+vadd = 'D:\Data\OPM_Tremor_project\Pilot\pilot_220819\Video\MAH07815.mp4';
+% Target locations for MAH07815:
+frameTars = [260 139 225.2 62.7 110.4 234.3 99 88];
+markTars = [42.1 235.5]; % first is fixation cross 2) is pointer frame
 
 
 v = VideoReader(vadd);
@@ -85,8 +75,7 @@ while hasFrame(v)
 end
 
 % save('MAH07814','tline','vidTime','tarTrig','tarBW','tarCentre')
-% save('MAH07815','tline','vidTime','tarTrig','tarBW','tarCentre','tarRef')
-% save('MAH07816','tline','vidTime','tarTrig','tarBW','tarCentre','tarRef')
+save('MAH07815','tline','vidTime','tarTrig','tarBW','tarCentre')
 
 fsamp = 1./mean(diff(vidTime));
 % Decode the triggers
@@ -123,7 +112,7 @@ for tar = 1:8
     Q = dists(:,tar);
     Q = (Q - min(Q))./(max(Q)-min(Q));
     
-    scatter(tline(2,:),tline(1,:),1./Q,'filled')
+    scatter(tline(1,:),tline(2,:),1./Q,'filled')
     hold on
 end
 

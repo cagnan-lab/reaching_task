@@ -18,6 +18,6 @@ maskedRGBImage(repmat(~BW,[1 1 3])) = 0;
 imshow(maskedRGBImage)
 
 ref = round(ginput(1));
-tarRef = rgb2hsv(RGB(ref(2),ref(1),:));
+tarRef = (RGB(ref(2),ref(1),:));
 
 

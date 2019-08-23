@@ -12,7 +12,7 @@
 gpath = add_ReachingTask_paths();
 
 %% Setup LabJack for triggers
-% [ljasm,ljudObj,ljhandle] = setup_LabJack();
+[ljasm,ljudObj,ljhandle] = setup_LabJack();
 
 v = [0.5 0.7 0.9 1 1.2 1.5 1.7 2 2.2 2.5 2.7 3]; % (1) At rest; (2) sd01; (3) sd02; (4) sd03; (5) sd04; (6) sd05; (7) sd06; (8) sd07 (9) sd08; (10) sd09; (11) sd10; (12) sd11;
 
@@ -74,8 +74,6 @@ t = drawpict( 1 ); % Display fixation cross
 sendLJTrigger(ljudObj,ljhandle,v(1));
 
 waituntil( t + 3000 );
-
-
 
 % Loads Picture and Shows
 N = 2; % This is the number of images you want to load

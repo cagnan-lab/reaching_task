@@ -9,9 +9,7 @@
 %% Setup LabJack for triggers
 % [ljasm,ljudObj,ljhandle] = setup_LabJack();
 
-%v = [0.5 1 2 2.25 2.5 2.75 3]; % (1) At rest; (2) Reach; (3) Centre; (4) 1 0 0 0; (5) 0 1 0 0; (6) 0 0 1 0; (7) 0 0 0 1;
 v=reshape(linspace(0.5,3,24),3,8); % 3x8 targets (2 sizes + 1 command x 8 positions) = 24;%
-%(8) 2 0 0 0; (9) 0 2 0 0; (10) 0 0 2 0; (11) 0 0 0 2; (12) 3 0 0 0; (13) 0 3 0 0; (14) 0 0 3 0; (15) 0 0 0 3;
 
 % Reaching Task Master Script
 %  gpath = 'C:\Users\creis\Documents\GitHub';
@@ -48,7 +46,6 @@ indTar = {
     [gpath '\reaching_task\task_images\indicators\0_0_0_1_indicator.bmp'];...
     };
 
-
 % Setup Display
 % config_display(1, 6, [0 0 0], [1 1 1], 'Helvetica', 50, 4, 24);
 config_display(0,6, [1 1 1],[0 0 0])
@@ -78,6 +75,7 @@ txt_instructions = {'In this session you are asked to rest,reach and point.';
     'When you see a cross surrounded by red targets please REACH.';
     'When you see a green target please POINT as accurately as you can!';
     'Good luck!'};
+
 for i=1:5
     preparestring( txt_instructions{i}, 4 );
     % Draw Welcome Text
