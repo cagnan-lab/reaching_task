@@ -1,0 +1,20 @@
+clear
+gitpath = 'C:\Users\timot\Documents\GitHub\';
+datapath = 'D:\Data\OPM_Tremor_project\Pilot\';
+addpath(genpath([gitpath 'Spike-smr-reader']));
+
+
+expname = 'pilot_220819';
+
+trname = {'Rest_block_1_220819.smr'};
+trN = 1;
+
+sp2data = ImportSMR([datapath expname '\EPhys\' trname{trN}]);
+
+% Now Convert to Fieldtrip format
+fsample = 
+for ch = 1:numel(sp2data)
+    labels{ch} = sp2data(ch).hdr.title;
+    Xdata(:,ch) = sp2data(ch).imp.adc;
+end
+
