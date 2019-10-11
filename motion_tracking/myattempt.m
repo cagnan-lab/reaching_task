@@ -88,6 +88,12 @@ end
 % save('MAH07815','tline','vidTime','tarTrig','tarBW','tarCentre','tarRef')
 % save('MAH07816','tline','vidTime','tarTrig','tarBW','tarCentre','tarRef')
 
+load('MAH07814','tline','vidTime','tarTrig','tarBW','tarCentre')
+% load('MAH07815','tline','vidTime','tarTrig','tarBW','tarCentre','tarRef')
+% load('MAH07816','tline','vidTime','tarTrig','tarBW','tarCentre','tarRef')
+% 
+
+
 fsamp = 1./mean(diff(vidTime));
 % Decode the triggers
 tcode = decodeTrig(tarTrig);

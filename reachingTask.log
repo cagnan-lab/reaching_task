@@ -937,3 +937,185 @@ CogInput v1.05 Compiled: May 20 2010
 *******
 *ABORT* CogInput : Create : cannot get active window
 *******
+Cog2000 log file Thu Oct 10 17:50:01 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+Attaching C:\Users\timot\Documents\Work\MATLAB ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+4	[4]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Oct 10 18:07:10 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+Attaching C:\Users\timot\Documents\Work\MATLAB ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+4	[4]	:	COGENT START
+99500	[99496]	:	Key	64	DOWN	at	99498   
+99778	[278]	:	Key	64	UP	at	99777   
+101626	[1848]	:	Key	64	DOWN	at	101625  
+101747	[121]	:	Key	4	DOWN	at	101745  
+101842	[95]	:	Key	4	UP	at	101840  
+101990	[148]	:	Key	2	DOWN	at	101989  
+102126	[136]	:	Key	2	UP	at	102126  
+102251	[125]	:	Key	19	DOWN	at	102251  
+102360	[109]	:	Key	19	UP	at	102358  
+102400	[40]	:	Key	64	UP	at	102400  
+103642	[1242]	:	Key	71	DOWN	at	103641  
+103801	[159]	:	Key	71	UP	at	103801  
+104985	[1184]	:	Key	16	DOWN	at	104985  
+105063	[78]	:	Key	16	UP	at	105061  
+105064	[1]	:	Key	1	DOWN	at	105061  
+105131	[67]	:	Key	18	DOWN	at	105131  
+105150	[19]	:	Key	1	UP	at	105149  
+105201	[51]	:	Key	18	UP	at	105201  
+105231	[30]	:	Key	11	DOWN	at	105231  
+105296	[65]	:	Key	11	UP	at	105296  
+105374	[78]	:	Key	9	DOWN	at	105372  
+105437	[63]	:	Key	9	UP	at	105437  
+105508	[71]	:	Key	14	DOWN	at	105508  
+105587	[79]	:	Key	14	UP	at	105586  
+105605	[18]	:	Key	19	DOWN	at	105604  
+105713	[108]	:	Key	19	UP	at	105712  
+105713	[0]	:	Key	15	DOWN	at	105712  
+105764	[51]	:	Key	15	UP	at	105764  
+105849	[85]	:	Key	14	DOWN	at	105848  
+105917	[68]	:	Key	14	UP	at	105917  
+105941	[24]	:	Key	19	DOWN	at	105941  
+105993	[52]	:	Key	19	UP	at	105993  
+106041	[48]	:	Key	59	DOWN	at	106041  
+106119	[78]	:	Key	59	UP	at	106119  
+140485	[34366]	:	Key	25	DOWN	at	140485  
+140557	[72]	:	Key	25	UP	at	140557  
+140581	[24]	:	Key	15	DOWN	at	140581  
+140652	[71]	:	Key	15	UP	at	140651  
+140756	[104]	:	Key	21	DOWN	at	140755  
+140832	[76]	:	Key	21	UP	at	140831  
+140832	[0]	:	Key	20	DOWN	at	140831  
+140945	[113]	:	Key	20	UP	at	140944  
+141214	[269]	:	Key	59	DOWN	at	141212  
+141362	[148]	:	Key	59	UP	at	141361  
+145366	[4004]	:	Key	64	DOWN	at	145365  
+145514	[148]	:	Key	4	DOWN	at	145513  
+145644	[130]	:	Key	4	UP	at	145644  
+145738	[94]	:	Key	2	DOWN	at	145737  
+145812	[74]	:	Key	2	UP	at	145812  
+145891	[79]	:	Key	19	DOWN	at	145890  
+146033	[142]	:	Key	19	UP	at	146033  
+146069	[36]	:	Key	64	UP	at	146069  
+147136	[1067]	:	Key	71	DOWN	at	147136  
+147283	[147]	:	Key	71	UP	at	147283  
+147722	[439]	:	Key	16	DOWN	at	147721  
+147860	[138]	:	Key	16	UP	at	147858  
+147890	[30]	:	Key	1	DOWN	at	147888  
+147954	[64]	:	Key	1	UP	at	147954  
+148008	[54]	:	Key	20	DOWN	at	148007  
+148072	[64]	:	Key	20	UP	at	148071  
+148094	[22]	:	Key	9	DOWN	at	148094  
+148160	[66]	:	Key	9	UP	at	148160  
+148184	[24]	:	Key	5	DOWN	at	148184  
+148287	[103]	:	Key	5	UP	at	148286  
+148305	[18]	:	Key	14	DOWN	at	148304  
+148371	[66]	:	Key	14	UP	at	148370  
+148408	[37]	:	Key	20	DOWN	at	148406  
+148491	[83]	:	Key	20	UP	at	148489  
+148527	[36]	:	Key	59	DOWN	at	148525  
+148621	[94]	:	Key	59	UP	at	148621  
+152532	[3911]	:	Key	4	DOWN	at	152531  
+152603	[71]	:	Key	4	UP	at	152602  
+152681	[78]	:	Key	5	DOWN	at	152680  
+152741	[60]	:	Key	5	UP	at	152740  
+152829	[88]	:	Key	5	DOWN	at	152829  
+152900	[71]	:	Key	5	UP	at	152900  
+152952	[52]	:	Key	16	DOWN	at	152952  
+153029	[77]	:	Key	16	UP	at	153028  
+153110	[81]	:	Key	71	DOWN	at	153109  
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Oct 10 18:12:52 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.95Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+42050	[42050]	:	Key	23	DOWN	at	42049   
+42157	[107]	:	Key	1	DOWN	at	42156   
+42197	[40]	:	Key	23	UP	at	42197   
+42299	[102]	:	Key	1	UP	at	42298   
+42432	[133]	:	Key	9	DOWN	at	42432   
+42504	[72]	:	Key	9	UP	at	42504   
+42552	[48]	:	Key	20	DOWN	at	42552   
+42611	[59]	:	Key	20	UP	at	42610   
+42825	[214]	:	Key	55	DOWN	at	42824   
+42897	[72]	:	Key	55	UP	at	42896   
+42961	[64]	:	Key	19	DOWN	at	42960   
+43036	[75]	:	Key	19	UP	at	43035   
+43072	[36]	:	Key	20	DOWN	at	43071   
+43130	[58]	:	Key	20	UP	at	43129   
+43172	[42]	:	Key	71	DOWN	at	43171   
+43242	[70]	:	Key	71	UP	at	43242   
+43390	[148]	:	Key	13	DOWN	at	43388   
+43453	[63]	:	Key	13	UP	at	43452   
+43558	[105]	:	Key	21	DOWN	at	43558   
+43618	[60]	:	Key	21	UP	at	43617   
+43618	[0]	:	Key	19	DOWN	at	43617   
+43706	[88]	:	Key	19	UP	at	43706   
+43736	[30]	:	Key	3	DOWN	at	43735   
+43805	[69]	:	Key	3	UP	at	43805   
+43805	[0]	:	Key	12	DOWN	at	43805   
+43847	[42]	:	Key	12	UP	at	43846   
+43946	[99]	:	Key	5	DOWN	at	43946   
+44005	[59]	:	Key	5	UP	at	44003   
+44033	[28]	:	Key	59	DOWN	at	44033   
+44116	[83]	:	Key	59	UP	at	44116   
+77363	[33247]	:	Key	5	DOWN	at	77363   
+77459	[96]	:	Key	5	UP	at	77458   
+77555	[96]	:	Key	24	DOWN	at	77554   
+77631	[76]	:	Key	24	UP	at	77631   
+77791	[160]	:	Key	20	DOWN	at	77789   
+77843	[52]	:	Key	20	UP	at	77843   
+77973	[130]	:	Key	5	DOWN	at	77973   
+78086	[113]	:	Key	5	UP	at	78086   
+78318	[232]	:	Key	14	DOWN	at	78316   
+78399	[81]	:	Key	14	UP	at	78398   
+78654	[255]	:	Key	55	DOWN	at	78653   
+78748	[94]	:	Key	55	UP	at	78747   
+78995	[247]	:	Key	18	DOWN	at	78995   
+79067	[72]	:	Key	18	UP	at	79066   
+79095	[28]	:	Key	14	DOWN	at	79095   
+79165	[70]	:	Key	14	UP	at	79164   
+79183	[18]	:	Key	1	DOWN	at	79182   
+79287	[104]	:	Key	1	UP	at	79287   
+79323	[36]	:	Key	12	DOWN	at	79322   
+79429	[106]	:	Key	12	UP	at	79428   
+79429	[0]	:	Key	71	DOWN	at	79428   
+79523	[94]	:	Key	71	UP	at	79522   
+79605	[82]	:	Key	15	DOWN	at	79604   
+79675	[70]	:	Key	15	UP	at	79675   
+79764	[89]	:	Key	2	DOWN	at	79764   
+79838	[74]	:	Key	2	UP	at	79836   
+79854	[16]	:	Key	12	DOWN	at	79854   
+79919	[65]	:	Key	12	UP	at	79919   
+80021	[102]	:	Key	9	DOWN	at	80020   
+80093	[72]	:	Key	9	UP	at	80092   
+80234	[141]	:	Key	17	DOWN	at	80233   
+80347	[113]	:	Key	17	UP	at	80346   
+80376	[29]	:	Key	21	DOWN	at	80375   
+80430	[54]	:	Key	21	UP	at	80429   
+80489	[59]	:	Key	5	DOWN	at	80488   
+80589	[100]	:	Key	5	UP	at	80589   
+80677	[88]	:	Key	71	DOWN	at	80677   
+80774	[97]	:	Key	71	UP	at	80773   
+81221	[447]	:	Key	16	DOWN	at	81220   
+81341	[120]	:	Key	16	UP	at	81339   
+81480	[139]	:	Key	1	DOWN	at	81480   
+81571	[91]	:	Key	1	UP	at	81569   
+81601	[30]	:	Key	9	DOWN	at	81599   
+81655	[54]	:	Key	9	UP	at	81653   
+81789	[134]	:	Key	14	DOWN	at	81789   
+81856	[67]	:	Key	14	UP	at	81855   
+82007	[151]	:	Key	59	DOWN	at	82007   
+82090	[83]	:	Key	59	UP	at	82090   
+ERR GScnd:cgsetsprite Sprite 5 not found

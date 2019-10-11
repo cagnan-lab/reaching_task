@@ -1,0 +1,14 @@
+    [version]=matleap_version;
+    fprintf('matleap version %d.%d\n',version(1),version(2));
+    
+    
+    tic
+    tc = toc;
+    i = 1;
+    while toc<10
+        tvec(i) = toc;
+        % get a frame
+        f=matleap_frame;
+        
+        handpos = vertcat(f.pointables.position);
+        pause(0.01)
