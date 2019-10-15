@@ -14,7 +14,7 @@ v=reshape(linspace(0.5,3,24),3,8); % 3x8 targets (2 sizes + 1 command x 8 positi
 % Reaching Task Master Script
 %  gpath = 'C:\Users\creis\Documents\GitHub';
 % gpath = 'C:\Users\Tim\Documents\Work\GIT';
-gpath = add_ReachingTask_paths();
+[dpath,gpath] = add_ReachingTask_paths();
 % Setup Images
 baseTar = {
     [gpath '\reaching_task\task_images\targets1\fixation_cross_targets.bmp'];...
