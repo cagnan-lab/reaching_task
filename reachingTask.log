@@ -937,3 +937,439 @@ CogInput v1.05 Compiled: May 20 2010
 *******
 *ABORT* CogInput : Create : cannot get active window
 *******
+Cog2000 log file Thu Aug 22 10:58:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 11.35Hz
+Attaching C:\Users\Tim\Documents\MATLAB_ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+18	[18]	:	COGENT START
+11490	[11472]	:	Key	71	DOWN	at	11488   
+11608	[118]	:	Key	71	UP	at	11608   
+12730	[1122]	:	Key	60	DOWN	at	12729   
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 10:59:19 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 4.54Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+2435	[2434]	:	Key	52	DOWN	at	2021    
+2435	[0]	:	Key	52	UP	at	2138    
+2919	[484]	:	Key	70	DOWN	at	2918    
+3299	[380]	:	Key	70	UP	at	3298    
+3878	[579]	:	Key	70	DOWN	at	3877    
+4659	[781]	:	Key	70	UP	at	4659    
+5372	[713]	:	Key	1	DOWN	at	5371    
+5749	[377]	:	Key	1	UP	at	5749    
+6108	[359]	:	Key	52	DOWN	at	6107    
+6113	[5]	:	Key	63	DOWN	at	6112    
+6180	[67]	:	Key	63	UP	at	6179    
+6235	[55]	:	Key	52	UP	at	6233    
+6301	[66]	:	Key	52	DOWN	at	6300    
+6421	[120]	:	Key	52	UP	at	6421    
+6478	[57]	:	Key	52	DOWN	at	6478    
+6587	[109]	:	Key	52	UP	at	6586    
+6649	[62]	:	Key	52	DOWN	at	6649    
+6773	[124]	:	Key	52	UP	at	6773    
+6983	[210]	:	Key	70	DOWN	at	6983    
+7748	[765]	:	Key	70	UP	at	7747    
+8574	[826]	:	Key	19	DOWN	at	8574    
+8718	[144]	:	Key	19	UP	at	8718    
+8957	[239]	:	Key	60	DOWN	at	8956    
+9110	[153]	:	Key	3	DOWN	at	9109    
+9240	[130]	:	Key	3	UP	at	9239    
+9296	[56]	:	Key	3	DOWN	at	9296    
+9418	[122]	:	Key	3	UP	at	9417    
+9447	[29]	:	Key	60	UP	at	9446    
+10282	[835]	:	Key	1	DOWN	at	10282   
+10747	[465]	:	Key	1	UP	at	10747   
+11413	[666]	:	Key	1	DOWN	at	11412   
+11755	[342]	:	Key	1	UP	at	11755   
+12013	[258]	:	Key	70	DOWN	at	12013   
+12200	[187]	:	Key	59	DOWN	at	12199   
+12291	[91]	:	Key	59	UP	at	12291   
+12513	[222]	:	Key	59	DOWN	at	12513   
+12608	[95]	:	Key	59	UP	at	12608   
+12689	[81]	:	Key	70	UP	at	12689   
+18012	[5323]	:	Key	52	DOWN	at	18012   
+18129	[117]	:	Key	52	UP	at	18129   
+18210	[81]	:	Key	52	DOWN	at	18209   
+18313	[103]	:	Key	52	UP	at	18312   
+18381	[68]	:	Key	52	DOWN	at	18380   
+18505	[124]	:	Key	52	UP	at	18505   
+18781	[276]	:	Key	70	DOWN	at	18781   
+19572	[791]	:	Key	70	UP	at	19572   
+19919	[347]	:	Key	1	DOWN	at	19918   
+20349	[430]	:	Key	1	UP	at	20348   
+20610	[261]	:	Key	70	DOWN	at	20610   
+21944	[1334]	:	Key	70	UP	at	21943   
+23086	[1142]	:	Key	60	DOWN	at	23085   
+23562	[476]	:	Key	1	DOWN	at	23562   
+23764	[202]	:	Key	1	UP	at	23763   
+23809	[45]	:	Key	60	UP	at	23808   
+24347	[538]	:	Key	70	DOWN	at	24347   
+24359	[12]	:	Key	60	DOWN	at	24358   
+24695	[336]	:	Key	103	DOWN	at	24694   
+24834	[139]	:	Key	103	UP	at	24834   
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+28308	[3474]	:	Key	70	UP	at	25163   
+28309	[1]	:	Key	60	UP	at	25174   
+37357	[9048]	:	Key	60	DOWN	at	37356   
+37493	[136]	:	Key	60	UP	at	37492   
+37632	[139]	:	Key	60	DOWN	at	37632   
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:00:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 59.82Hz
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Thu Aug 22 11:00:55 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 11.90Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:01:39 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 14.73Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:02:07 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:640x480x32 49.26Hz
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:02:17 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 10.27Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:04:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.07Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+2417	[2416]	:	Key	70	DOWN	at	57      
+2418	[1]	:	Key	59	DOWN	at	334     
+2418	[0]	:	Key	59	UP	at	424     
+2418	[0]	:	Key	70	UP	at	661     
+122049	[119631]	:	Key	60	DOWN	at	122044  
+122171	[122]	:	Key	3	DOWN	at	122170  
+122289	[118]	:	Key	3	UP	at	122288  
+122358	[69]	:	Key	3	DOWN	at	122357  
+122487	[129]	:	Key	3	UP	at	122487  
+122551	[64]	:	Key	3	DOWN	at	122549  
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:07:42 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+5582	[5582]	:	Key	70	DOWN	at	5582    
+6948	[1366]	:	Key	70	UP	at	6948    
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gText GetDC() failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+42721	[35773]	:	Key	70	DOWN	at	42719   
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gText GetDC() failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+43713	[992]	:	Key	70	UP	at	43712   
+44238	[525]	:	Key	3	DOWN	at	44238   
+44397	[159]	:	Key	3	UP	at	44397   
+46558	[2161]	:	Key	60	DOWN	at	46558   
+46685	[127]	:	Key	71	DOWN	at	46685   
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gText GetDC() failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+46802	[117]	:	Key	71	UP	at	46801   
+46973	[171]	:	Key	60	UP	at	46972   
+47116	[143]	:	Key	60	DOWN	at	47115   
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:08:45 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:09:28 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.02Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+20117	[20117]	:	Key	45	DOWN	at	12824   
+20117	[0]	:	Key	45	UP	at	12985   
+20118	[1]	:	Key	41	DOWN	at	18022   
+20118	[0]	:	Key	41	UP	at	18206   
+36275	[16157]	:	Key	71	DOWN	at	36274   
+36423	[148]	:	Key	71	UP	at	36423   
+37066	[643]	:	Key	71	DOWN	at	37066   
+37202	[136]	:	Key	71	UP	at	37202   
+37377	[175]	:	Key	71	DOWN	at	37377   
+37489	[112]	:	Key	71	UP	at	37488   
+38582	[1093]	:	Key	71	DOWN	at	38582   
+38688	[106]	:	Key	71	UP	at	38687   
+39089	[401]	:	Key	71	DOWN	at	39088   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:11:27 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.62Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+12598	[12598]	:	Key	41	DOWN	at	10375   
+12599	[1]	:	Key	41	UP	at	10566   
+15627	[3028]	:	Key	70	DOWN	at	15626   
+16295	[668]	:	Key	70	UP	at	16294   
+20892	[4597]	:	Key	70	DOWN	at	20891   
+21954	[1062]	:	Key	70	UP	at	21954   
+29970	[8016]	:	Key	70	DOWN	at	29969   
+31419	[1449]	:	Key	70	UP	at	31418   
+33042	[1623]	:	Key	60	DOWN	at	33041   
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:12:10 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.02Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+12068	[12067]	:	Key	70	DOWN	at	1209    
+12068	[0]	:	Key	70	UP	at	1850    
+12068	[0]	:	Key	41	DOWN	at	9813    
+12068	[0]	:	Key	41	UP	at	9985    
+16681	[4613]	:	Key	71	DOWN	at	16681   
+16803	[122]	:	Key	71	UP	at	16803   
+17053	[250]	:	Key	71	DOWN	at	17052   
+17152	[99]	:	Key	71	UP	at	17152   
+17249	[97]	:	Key	71	DOWN	at	17248   
+17340	[91]	:	Key	71	UP	at	17339   
+17421	[81]	:	Key	71	DOWN	at	17420   
+17522	[101]	:	Key	71	UP	at	17522   
+17608	[86]	:	Key	71	DOWN	at	17608   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:16:47 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+75169	[75169]	:	Key	41	DOWN	at	72942   
+75170	[1]	:	Key	41	UP	at	73153   
+78868	[3698]	:	Key	70	DOWN	at	78868   
+79410	[542]	:	Key	70	UP	at	79410   
+80157	[747]	:	Key	71	DOWN	at	80156   
+80274	[117]	:	Key	71	UP	at	80273   
+80587	[313]	:	Key	71	DOWN	at	80586   
+80688	[101]	:	Key	71	UP	at	80688   
+80789	[101]	:	Key	71	DOWN	at	80789   
+80885	[96]	:	Key	71	UP	at	80884   
+80952	[67]	:	Key	71	DOWN	at	80951   
+81055	[103]	:	Key	71	UP	at	81055   
+81135	[80]	:	Key	71	DOWN	at	81134   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 11:23:59 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+5282	[5281]	:	Key	41	DOWN	at	3047    
+5282	[0]	:	Key	41	UP	at	3234    
+73077	[67795]	:	Key	71	DOWN	at	73076   
+73207	[130]	:	Key	71	UP	at	73206   
+73809	[602]	:	Key	71	DOWN	at	73809   
+73941	[132]	:	Key	71	UP	at	73941   
+74056	[115]	:	Key	71	DOWN	at	74055   
+74161	[105]	:	Key	71	UP	at	74160   
+74236	[75]	:	Key	71	DOWN	at	74235   
+ERR GScnd:cgsetsprite Sprite 5 not found
+ERR gprim:gText GetDC() failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gFillRect Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+ERR gprim:gText GetDC() failed (DDERR_SURFACELOST)
+ERR gprim:gBltRAS Blt() Failed (DDERR_SURFACELOST)
+ERR gprim:gFlip  (DDERR_SURFACELOST)
+676960	[602724]	:	COGENT STOP
+Cog2000 log file Thu Aug 22 12:08:44 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 60.01Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+4043	[4042]	:	Key	41	DOWN	at	1809    
+4043	[0]	:	Key	41	UP	at	2016    
+4793	[750]	:	Key	71	DOWN	at	4792    
+4912	[119]	:	Key	71	UP	at	4911    
+5317	[405]	:	Key	71	DOWN	at	5316    
+5385	[68]	:	Key	71	UP	at	5384    
+5489	[104]	:	Key	71	DOWN	at	5489    
+5578	[89]	:	Key	71	UP	at	5578    
+5658	[80]	:	Key	71	DOWN	at	5657    
+5749	[91]	:	Key	71	UP	at	5748    
+5824	[75]	:	Key	71	DOWN	at	5824    
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 12:20:10 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.98Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+29834	[29833]	:	Key	70	DOWN	at	7706    
+29835	[1]	:	Key	70	UP	at	8402    
+29835	[0]	:	Key	41	DOWN	at	24826   
+29835	[0]	:	Key	41	UP	at	25006   
+29835	[0]	:	Key	41	DOWN	at	27582   
+29835	[0]	:	Key	41	UP	at	27785   
+35680	[5845]	:	Key	71	DOWN	at	35679   
+35806	[126]	:	Key	71	UP	at	35805   
+36747	[941]	:	Key	71	DOWN	at	36746   
+36888	[141]	:	Key	71	UP	at	36888   
+37223	[335]	:	Key	71	DOWN	at	37222   
+37356	[133]	:	Key	71	UP	at	37356   
+37694	[338]	:	Key	71	DOWN	at	37694   
+37827	[133]	:	Key	71	UP	at	37827   
+38441	[614]	:	Key	71	DOWN	at	38441   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 12:24:29 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+0	[0]	:	COGENT START
+49868	[49868]	:	Key	70	DOWN	at	1190    
+49868	[0]	:	Key	70	UP	at	1965    
+50245	[377]	:	Key	71	DOWN	at	50244   
+50349	[104]	:	Key	71	UP	at	50349   
+51361	[1012]	:	Key	71	DOWN	at	51360   
+51453	[92]	:	Key	71	UP	at	51452   
+52825	[1372]	:	Key	71	DOWN	at	52825   
+52929	[104]	:	Key	71	UP	at	52928   
+54257	[1328]	:	Key	71	DOWN	at	54256   
+54342	[85]	:	Key	71	UP	at	54342   
+55730	[1388]	:	Key	71	DOWN	at	55730   
+ERR GScnd:cgsetsprite Sprite 5 not found
+Cogent 2000 Version 1.29
+cogstd.mexw64 v1.33 Compiled:Aug 12 2015
+CogProcess v1.05 Compiled: May 20 2010
+Cog2000 log file Thu Aug 22 12:27:17 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+66874	[66873]	:	Key	71	DOWN	at	66871   
+66949	[75]	:	Key	71	UP	at	66949   
+68461	[1512]	:	Key	71	DOWN	at	68460   
+68581	[120]	:	Key	71	UP	at	68581   
+69931	[1350]	:	Key	71	DOWN	at	69931   
+70039	[108]	:	Key	71	UP	at	70038   
+71095	[1056]	:	Key	71	DOWN	at	71095   
+71242	[147]	:	Key	71	UP	at	71241   
+71999	[757]	:	Key	71	DOWN	at	71998   
+ERR GScnd:cgsetsprite Sprite 5 not found
+300624	[228625]	:	COGENT STOP
+Cog2000 log file Thu Aug 22 12:40:48 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+65596	[65595]	:	Key	70	DOWN	at	1157    
+65597	[1]	:	Key	70	UP	at	1577    
+65598	[1]	:	Key	70	DOWN	at	2033    
+65598	[0]	:	Key	70	UP	at	4222    
+65598	[0]	:	Key	41	DOWN	at	63162   
+65598	[0]	:	Key	41	UP	at	63271   
+65598	[0]	:	Key	71	DOWN	at	65272   
+65599	[1]	:	Key	71	UP	at	65366   
+66670	[1071]	:	Key	71	DOWN	at	66669   
+66771	[101]	:	Key	71	UP	at	66771   
+68726	[1955]	:	Key	71	DOWN	at	68726   
+68818	[92]	:	Key	71	UP	at	68817   
+69440	[622]	:	Key	71	DOWN	at	69440   
+69557	[117]	:	Key	71	UP	at	69556   
+70813	[1256]	:	Key	71	DOWN	at	70812   
+70886	[73]	:	Key	71	UP	at	70885   
+71586	[700]	:	Key	71	DOWN	at	71586   
+ERR GScnd:cgsetsprite Sprite 5 not found
+300207	[228621]	:	COGENT STOP
+Cog2000 log file Thu Aug 22 12:47:20 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1600x1200x32 59.99Hz
+CogInput v1.05 Compiled: May 20 2010
+1	[1]	:	COGENT START
+42941	[42940]	:	Key	71	DOWN	at	42940   
+43026	[85]	:	Key	71	UP	at	43025   
+44131	[1105]	:	Key	71	DOWN	at	44130   
+44252	[121]	:	Key	71	UP	at	44251   
+45462	[1210]	:	Key	71	DOWN	at	45462   
+45547	[85]	:	Key	71	UP	at	45547   
+46597	[1050]	:	Key	71	DOWN	at	46596   
+46699	[102]	:	Key	71	UP	at	46698   
+47577	[878]	:	Key	71	DOWN	at	47576   
+ERR GScnd:cgsetsprite Sprite 5 not found
+276141	[228564]	:	COGENT STOP
