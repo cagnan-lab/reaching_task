@@ -7,7 +7,7 @@
 %%% note: point centre #1 and #2 to alternate
 
 %% Setup LabJack for triggers
-% [ljasm,ljudObj,ljhandle] = setup_LabJack();
+[ljasm,ljudObj,ljhandle] = setup_LabJack();
 
 v=reshape(linspace(0.5,3,24),3,8); % 3x8 targets (2 sizes + 1 command x 8 positions) = 24;%
 
@@ -48,7 +48,7 @@ indTar = {
 
 % Setup Display
 % config_display(1, 6, [0 0 0], [1 1 1], 'Helvetica', 50, 4, 24);
-config_display(0,6, [1 1 1],[0 0 0])
+config_display(0,5, [1 1 1],[0 0 0])
 config_keyboard( 100, 5, 'nonexclusive')
 config_log( 'reachingTask.log' ); % Configure log file
 start_cogent;
@@ -99,7 +99,7 @@ for i = 1 %:ntrials
     
     % Fixation Cross (for Rest)
     t(1) = drawpict( 1 ); % Display fixation cross
-%     sendLJTrigger(ljudObj,ljhandle,v(3,1));
+    sendLJTrigger(ljudObj,ljhandle,v(3,1));
     waituntil( t(1) + restst(1)*1e3 ); % Display fixation point for 1000ms
     
     
@@ -111,16 +111,16 @@ for i = 1 %:ntrials
         loadpict( selTar{sz}{p}, 4 );
         t(4) = drawpict( 4 );
         
-%         sendLJTrigger(ljudObj,ljhandle,v(sz,p));
+        sendLJTrigger(ljudObj,ljhandle,v(sz,p));
         waituntil(t(4)+ 3000 );
         
         % Centre Target
         t(2) = drawpict( 1 );
-%         sendLJTrigger(ljudObj,ljhandle,v(3,2));
+        sendLJTrigger(ljudObj,ljhandle,v(3,2));
         waituntil( t(2) + 6000 + 1000.*(2.*randn));
     end
     
-%     sendLJTrigger(ljudObj,ljhandle,v(3,3));
+    sendLJTrigger(ljudObj,ljhandle,v(3,3));
     txt_trialEnd = 'End of trial, take a break...';
     preparestring( txt_trialEnd, 2 );
     t0 = drawpict( 2 );

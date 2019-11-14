@@ -1119,3 +1119,25 @@ CogInput v1.05 Compiled: May 20 2010
 82007	[151]	:	Key	59	DOWN	at	82007   
 82090	[83]	:	Key	59	UP	at	82090   
 ERR GScnd:cgsetsprite Sprite 5 not found
+Cog2000 log file Mon Nov 11 16:11:39 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 59.92Hz
+Attaching C:\Users\timot\Documents\Work\MATLAB ADDONS\Cogent2000v1.33\Toolbox\CogInput.mexw64
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Mon Nov 11 16:11:54 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 59.95Hz
+CogInput v1.05 Compiled: May 20 2010
+
+*******
+*ABORT* CogInput : Create : cannot get active window
+*******
+Cog2000 log file Mon Nov 11 16:13:33 2019
+gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
+Display:1280x1024x32 59.94Hz
+CogInput v1.05 Compiled: May 20 2010
+4	[4]	:	COGENT START
