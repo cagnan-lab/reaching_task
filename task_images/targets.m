@@ -1,30 +1,39 @@
-close all; clear; clc;
+
 
 %% Plotting circles
+
+close all; clear; clc;
 
 % Rest posture
 figure(1)
 xlim([-1 1]); ylim([-1 1])
 scatter(0,0,500,'x'); hold on
+pause(2)
 
 x = zeros(1,8);
 y = zeros(1,8);
 a = zeros(8,2);
 theta = [0.25 0.5 0.75 1 1.25 1.5 1.75 0];      % Arrow angle
-rho = 8;                                        % Arrow lengths
+% variance = [1 0.5 0.25 0.125];                % Possible variances
+% indexesToUse = randperm(numel(variance),1);   % 1 random index
+% variance1 = variance(indexesToUse);           % Extract 1 value from variance
+% rho = [1 2 3 4 5 6 7 8];
+rho = abs(0.5 + 5.*randn(8,1));                 % Arrow lengths - variance is 5 now!
 
 for i = 1:8
-    x(i) = pol2cart(pi*theta(i), rho);
-    y(i) = pol2cart(pi*theta(i),rho);
-    
-    a(i,i) = x(i);
-    a(i,i+1) = y(i);
+    [x(i), y(i)] = pol2cart(pi*theta(i), rho(i));
+    x = [0 x(i)]; 
+    y = [0 y(i)]; 
+    xlim([-1 1]); ylim([-1 1])
+    plot(x, y); hold on
     
 end
 
-plot(a);
+hold off;
 
-% % Completely random Arrow Cues
+
+%% PREVIOUS stuff: Completely random Arrow Cues
+
 % drawArrow = @(x,y) quiver( x(1),y(1),x(2)-x(1),y(2)-y(1),0 )    
 % a=[0.1 0.2 0.3];
 % indexesToUse = randperm(numel(a),2); % 2 random indexes
