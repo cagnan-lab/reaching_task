@@ -13,8 +13,8 @@ txy = [250 850];
 
 % This sets up the colormap
 n = 128;
-cmap(:,1) = linspace(1,0,n);  %// Red from 1 to 0
-cmap(:,2) = linspace(0,1,n);  %// Green from 0 to 1
+cmap(:,1) = linspace(0,1,n);  %// Red from 1 to 0
+cmap(:,2) = linspace(1,0,n);  %// Green from 0 to 1
 cmap(:,3) = zeros(n,1);   %// Blue all zero
 % This is the lookup table for the distances
 % we use this to set each colour (n=128) to a distance.
