@@ -1,15 +1,22 @@
 clear; clc; close all;
 
+ntrials = 3;
+ntargets = 15;
+ntotaltargets = ntrials * ntargets;
+
 %% Generate Arrows
 
-% Set list of cardinal dir
+% Set list of cardinal directions
 cardNames = {'E','NE','N','NW','W','SW','S','SE'};
 % Setup the list of desired arrow directions:
 vecAng = deg2rad([0 45 90 135 180 225 270 315]);
 % Setup a vector of mean lengths for each direction
 % This will be shifted around such that the target direction always has a
 % mean of 1. 
-dirC = randi(8);
+dirC = zeros(ntotaltargets,1);
+for j = 1:ntotaltargets
+    dirC(j) = randi(8);
+end
 disp(['The chosen direction is ' cardNames{dirC}])
 
 % vecScl = [0.1 0.5 0.75 1 0.75 0.5 0.1 0];
@@ -38,22 +45,24 @@ SW = [-1.1 -0.7];
 S = [0 -0.8];
 SE = [1.1 -0.7];
 
-if dirC == 1
-    dirC = E;
-elseif dirC == 2
-    dirC = NE;
-elseif dirC == 3
-    dirC = N;
-elseif dirC == 4
-    dirC = NW;
-elseif dirC == 5
-    dirC = W;
-elseif dirC == 6
-    dirC = SW;
-elseif dirC == 7
-    dirC = S;
-elseif dirC == 8
-    dirC = SE;
+for i = 1:ntotaltrials
+if dirC(i) == 1
+    dirC(i) = E;
+elseif dirC(i) == 2
+    dirC(i) = NE;
+elseif dirC(i) == 3
+    dirC(i) = N;
+elseif dirC(i) == 4
+    dirC(i) = NW;
+elseif dirC(i) == 5
+    dirC(i) = W;
+elseif dirC(i) == 6
+    dirC(i) = SW;
+elseif dirC(i) == 7
+    dirC(i) = S;
+elseif dirC(i) == 8
+    dirC(i) = SE;
+end
 end
 
 % Target size
