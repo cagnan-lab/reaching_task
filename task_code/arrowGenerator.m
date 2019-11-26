@@ -13,48 +13,31 @@ dirC = randi(8);
 disp(['The chosen direction is ' cardNames{dirC}])
 
 % vecScl = [0.1 0.5 0.75 1 0.75 0.5 0.1 0];
-vecScl = circ_vmpdf(vecAng, vecAng(dirC), 0.25)';
+sigma = 0.5;
+vecScl = circ_vmpdf(vecAng, vecAng(dirC), sigma)';
 
 % This is the std of the length of each 
-sigma = 0.5;
-sigma = vecScl.*sigma;
+std = 0.1;
+% sigma = vecScl.*sigma;
 % If this could be variable then we can fix the randomness to be equivalent
 % to the coefficient of variation i.e. smaller arrows have smaller variance
 
 % Setup the distribution of lengths
 % Choose direction
-dirL = abs(vecScl + sigma.*randn(1,8));
+dirL = abs(vecScl + std.*randn(1,8));
 % dirL = circshift(dirL,dirC-4);
 
 %% Generate targets
 
 % Target location:
-E = [1.6 0];
-NE = [1.1 0.7];
+E = [0.8 0];
+NE = [0.6 0.6];
 N = [0 0.8];
-NW = [-1.1 0.7];
-W = [-1.6 0];
-SW = [-1.1 -0.7];
+NW = [-0.6 0.6];
+W = [-0.8 0];
+SW = [-0.6 -0.6];
 S = [0 -0.8];
-SE = [1.1 -0.7];
-
-if dirC == 1
-    dirC = E;
-elseif dirC == 2
-    dirC = NE;
-elseif dirC == 3
-    dirC = N;
-elseif dirC == 4
-    dirC = NW;
-elseif dirC == 5
-    dirC = W;
-elseif dirC == 6
-    dirC = SW;
-elseif dirC == 7
-    dirC = S;
-elseif dirC == 8
-    dirC = SE;
-end
+SE = [0.6 -0.6];
 
 % Target size
 size = randi(2);
@@ -63,15 +46,15 @@ if size == 1
 else
     radius = 0.25;
 end
-
+radius = 0.15;          % Delete this to include variation in target size
 
 %% Main experiment
 
 % ----- Experiment explanation. Show strings until pressing any key. 
 
-% Give quick recap of instructions and wait for input
+%Give quick recap of instructions and wait for input
 txt_instructions = {'Start of first session!!!';
-    'In this session you are asked to rest, reach and point.';
+    'In this session you are asked to rest, hold a posture, reach and point.';
     'When you see the cross in the centre please REST.';
     'When you see a cross surrounded by red targets please REACH.';
     'When you see a green target please POINT as accurately as you can!';
@@ -98,26 +81,62 @@ clf;
 
 % ----- From here trials start
 
-% Rest posture
-scatter(0,0,900,'x');
+% 1. REST
+% Requires plot with text saying "please rest your arm". 
+
+% 2. POSTURE HOLD
+% Requires plot (maybe image) of how to hold the posture (fingers pointing
+% towards each other). 
+
+% 3. REACHING POSTURE
+scatter(0,0,1200,'x');
     set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);    
 pause
 clf;
 
-% Plotting compass and following target:
-U = dirL.*cos(vecAng);
-V = dirL.*sin(vecAng);
+% 4. Plot compass and circles in one plot for MOTOR PREPARATION
+    % Plotting compass and following target:
+    U = dirL.*cos(vecAng);
+    V = dirL.*sin(vecAng);
+
+    % Set up figure and screen:
     axis equal
-compass(U,V); 
-    delete(findall(gcf,'type','text'));
-pause(2); 
-clf;
     xlim([-2 2]); ylim([-1 1])
     set(gca,'Units','normalized')
     set(gca,'Position',[0 0 1 1])
-circle(dirC(1), dirC(2), radius);
-    set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[])             
+    set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]) 
 
+cmp = compass(U,V); hold on
+    delete(findall(gcf,'type','text'));
+    delete(findall(gcf,'type','a.GridAlpha'));
+    xlim([-2 2]); ylim([-1 1])
+    set(gca,'Units','normalized')
+    set(gca,'Position',[0 0 1 1])
+cir = zeros(8);
+cir(1) = circle(E(1), E(2), radius); hold on; 
+cir(2) = circle(NE(1), NE(2), radius); hold on; 
+cir(3) = circle(N(1), N(2), radius); hold on; 
+cir(4) = circle(NW(1), NW(2), radius); hold on; 
+cir(5) = circle(W(1), W(2), radius); hold on; 
+cir(6) = circle(SW(1), SW(2), radius); hold on; 
+cir(7) = circle(S(1), S(2), radius); hold on; 
+cir(8) = circle(SE(1), SE(2), radius); hold on; 
+    % Set colours and line width of plot:
+    for i=1:length(cmp)
+    set(cmp(i),'Color',[0 0 0],'linewidth',2)
+    set(cir(i), 'Color', [0 0 0], 'linewidth', 2)
+    end 
+    
+pause(3)
+
+% 5. MOTOR EXECUTION
+    set(cmp(dirC),'Color',[0 1 0],'linewidth',2)
+    set(cir(dirC), 'Color', [0 1 0], 'linewidth', 2)
+
+    
+% ----- Functions used 
+
+% Plotting circles:
 function h = circle(x,y,r)
 hold on
 th = 0:pi/50:2*pi;
@@ -127,3 +146,4 @@ h = plot(xunit, yunit);
 hold off
 end
 % shg
+
