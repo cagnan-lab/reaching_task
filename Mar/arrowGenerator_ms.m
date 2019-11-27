@@ -102,7 +102,7 @@ clf;
 
     % Set up figure and screen:
     axis equal
-    xlim([-2 2]); ylim([-1 1])
+    xlim([-1 1]); ylim([-1 1])
     set(gca,'Units','normalized')
     set(gca,'Position',[0 0 1 1])
     set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]) 
@@ -110,7 +110,7 @@ clf;
 cmp = compass(U,V); hold on
     delete(findall(gcf,'type','text'));
     delete(findall(gcf,'type','a.GridAlpha'));
-    xlim([-2 2]); ylim([-1 1])
+    xlim([-1 1]); ylim([-1 1])
     set(gca,'Units','normalized')
     set(gca,'Position',[0 0 1 1])
 cir = zeros(8);
@@ -130,7 +130,7 @@ cir(8) = circle(SE(1), SE(2), radius); hold on;
     
 pause(3)
 
-% 5. MOTOR EXECUTION
+% 5. MOTOR EXECUTION - changing the color of one arrow with according circle to green.
     set(cmp(dirC),'Color',[0 1 0],'linewidth',2)
     set(cir(dirC), 'Color', [0 1 0], 'linewidth', 2)
 

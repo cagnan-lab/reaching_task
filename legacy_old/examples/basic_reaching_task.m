@@ -42,7 +42,7 @@ axes('Visible', 'off', 'Units', 'normalized', 'Position', [0, 0, 1, 1]);
 %       'BackgroundColor',     [0.4, 0.9, 0.0], ...
 %       'Margin',   12);
 % xlim([-1 1]); ylim([-1 1])
-   WindowAPI(FigH, 'Position', 'full');  % To fill monitor
+% %    WindowAPI(FigH, 'Position', 'full');  % To fill monitor
 %    WindowAPI(FigH, 'maximize'); % To maximize
 
 
@@ -77,8 +77,7 @@ while toc<55
             p = p+1;
         end
         
-        
-         xlim([-1 1]); ylim([-1 1]); drawnow;
+        xlim([-1 1]); ylim([-1 1]); drawnow;
         
     end
     

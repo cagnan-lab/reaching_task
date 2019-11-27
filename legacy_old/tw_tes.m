@@ -8,7 +8,7 @@ pause(2)
 tic
 tc = toc;
 i = 1;
-while toc<30
+while toc<5
     tvec(i) = toc;
     % get a frame
     f=matleap_frame;
