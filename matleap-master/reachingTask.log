@@ -1,8 +1,0 @@
-Cog2000 log file Thu Oct 10 17:52:00 2019
-gprim v1.33 Compiled:Aug 12 2015 (GLib DirectDraw v7 DX12.0 Compiled:Aug 12 2015)
-Display:1600x1200x32 59.92Hz
-CogInput v1.05 Compiled: May 20 2010
-
-*******
-*ABORT* CogInput : Create : cannot get active window
-*******

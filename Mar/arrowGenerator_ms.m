@@ -5,11 +5,11 @@ clear; clc; close all;
 % Set list of cardinal dir
 cardNames = {'E','NE','N','NW','W','SW','S','SE'};
 % Setup the list of desired arrow directions:
-vecAng = wrapToPi( deg2rad([0 45 90 135 180 225 270 315]));
+vecAng = deg2rad([0 45 90 135 180 225 270 315]);
 % Setup a vector of mean lengths for each direction
 % This will be shifted around such that the target direction always has a
 % mean of 1. 
-dirC = 1; %randi(8);
+dirC = randi(8);
 disp(['The chosen direction is ' cardNames{dirC}])
 
 % vecScl = [0.1 0.5 0.75 1 0.75 0.5 0.1 0];
@@ -24,7 +24,7 @@ std = 0.1;
 
 % Setup the distribution of lengths
 % Choose direction
-% dirL = abs(vecScl + sigma.*randn(1,8));
+dirL = abs(vecScl + std.*randn(1,8));
 % dirL = circshift(dirL,dirC-4);
 
 %% Generate targets
@@ -102,7 +102,7 @@ clf;
 
     % Set up figure and screen:
     axis equal
-    xlim([-2 2]); ylim([-1 1])
+    xlim([-1 1]); ylim([-1 1])
     set(gca,'Units','normalized')
     set(gca,'Position',[0 0 1 1])
     set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]) 
@@ -110,7 +110,7 @@ clf;
 cmp = compass(U,V); hold on
     delete(findall(gcf,'type','text'));
     delete(findall(gcf,'type','a.GridAlpha'));
-    xlim([-2 2]); ylim([-1 1])
+    xlim([-1 1]); ylim([-1 1])
     set(gca,'Units','normalized')
     set(gca,'Position',[0 0 1 1])
 cir = zeros(8);
@@ -130,7 +130,7 @@ cir(8) = circle(SE(1), SE(2), radius); hold on;
     
 pause(3)
 
-% 5. MOTOR EXECUTION
+% 5. MOTOR EXECUTION - changing the color of one arrow with according circle to green.
     set(cmp(dirC),'Color',[0 1 0],'linewidth',2)
     set(cir(dirC), 'Color', [0 1 0], 'linewidth', 2)
 

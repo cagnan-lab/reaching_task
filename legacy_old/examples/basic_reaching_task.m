@@ -60,26 +60,25 @@ tc = toc;
 i = 1;
 gca; shg
         p = 2;
-v = 0;
+
 while toc<55
     tvec(i) = toc;
     % get a frame
     handpos(:,:,i) = getHandPos();
-    coder(i) = v;
+    
     % This is where things are going to be drawn
     if (rem(round(toc,2),0.1)) && i>25
 
         if toc<tarTim(1,2)
             scatter(tarLoc(1,1),tarLoc(1,2),1000,'Marker','x','LineWidth',2)
-            v = 1;
         elseif toc>=tarTim(p,1) && toc<tarTim(p,2)
             scatter(tarLoc(p,1),tarLoc(p,2),1000,'filled');
-            v = p;
         elseif toc>=tarTim(p+1,1)
             p = p+1;
-            v = p;
         end
-         xlim([-1 1]); ylim([-1 1]); drawnow;
+        
+        xlim([-1 1]); ylim([-1 1]); drawnow;
+        
     end
     
     i = i+1;
@@ -99,26 +98,4 @@ for i = 1:5
     hold on
 end
 
-% W = [-16 268]
-% E = [86 265]
-% W -> E
-AppXRange = 0.75 - -0.75;
-LeapXRange = 86 - -16;
-
-xL = -16;
-xS = (xL- -16)*(AppXRange/LeapXRange) + -0.75
-
-% As expression
-x = (AppXRange/LeapXRange)*(1- -16);
-xS = xL*x + -0.75
-
-
-% N = [35 302]
-% S = [37 233]
-% S -> N
-AppYRange = 0.75 - -0.75;
-LeaYRange = 302 - 233;
-
-yL = 233;
-yS = (yL - 233)*(AppYRange/LeaYRange) + -0.75
 
