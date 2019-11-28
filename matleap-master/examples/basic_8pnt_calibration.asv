@@ -105,12 +105,12 @@ end
 AppXRange = 0.75 - -0.75;
 LeapXRange = 86 - -16;
 
-xL = -16;
-xS = (xL- -16)*(AppXRange/LeapXRange) + -0.75
+xL = 32;
+xS = (xL- -16)*(AppXRange/LeapXRange) + -0.75;
 
 % As expression
-x = (AppXRange/LeapXRange)*(1- -16);
-xS = xL*x + -0.75
+x = (AppXRange/LeapXRange).*-16;
+xS = x + -0.75
 
 
 % N = [35 302]
