@@ -1,4 +1,5 @@
-clear; close all
+%clear; 
+close all
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 
@@ -10,9 +11,9 @@ tarTim = ...
     15 20;% W
     20 25;% SW
     25 30;% S
-    35 40;% SE
-    45 50;% E
-    50 55;% NE
+    30 35;% SE
+    35 40;% E
+    40 45;% NE
     ];
 C = 0;
 N = 0.75; S = -0.75;
@@ -31,14 +32,10 @@ tarLoc = [...
     ];
 
 % Setup the frame
-figure(1);
-xlim([-1 1]); ylim([-1 1])
-set(gcf,'color','w');
-set(gcf, 'MenuBar', 'none');
-set(gcf, 'ToolBar', 'none');
-set(gcf, 'Units', 'normalized');
-set(gcf, 'outerposition', [0 0 1 1]);
-set(gca, 'visible', 'off');
+FigH   = figure('Color', ones(1, 3), 'Renderer', 'Painters');
+FigPos = get(FigH, 'Position');
+axes('Visible', 'off', 'Units', 'normalized', 'Position', [0, 0, 1, 1]);
+WindowAPI(FigH, 'Position', 'full');  % To fill monitor
 
 disp('Make sure sensor can see all targets... hit any button to start calibration')
 pause
@@ -51,24 +48,29 @@ tc = toc;
 i = 1;
 gca; shg
 p = 2;
+v = 0;
 
-while toc<55
+while toc<45
     tvec(i) = toc;
     
     % get a frame
     handpos(:,:,i) = getHandPos_ms();
+    coder(i) = v;
     
     % This is where things are going to be drawn
     if (rem(round(toc,2),0.1)) && i>25
         
         if toc<tarTim(1,2)
             scatter(tarLoc(1,1),tarLoc(1,2),1000,'Marker','x','LineWidth',2)
-            set(gca,'xcolor','none'); set(gca,'ycolor','none');
+            set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
+            v = 1;
         elseif toc>=tarTim(p,1) && toc<tarTim(p,2)
             scatter(tarLoc(p,1),tarLoc(p,2),1000,'filled');
-            set(gca,'xcolor','none'); set(gca,'ycolor','none');
+            set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
+            v = p;
         elseif toc>=tarTim(p+1,1)
             p = p+1;
+            v = p;
         end
         
         xlim([-1 1]); ylim([-1 1]); drawnow;
@@ -93,46 +95,122 @@ end
 
 %%
 
-fix_index   = find(tvec < tarTim(1,2));
-N_index     = find(tvec < tarTim(2,2) & tvec > tarTim(2,1));
-NW_index    = find(tvec < tarTim(3,2) & tvec > tarTim(3,1));
-W_index     = find(tvec < tarTim(4,2) & tvec > tarTim(4,1)); 
-SW_index    = find(tvec < tarTim(5,2) & tvec > tarTim(5,1));
-S_index     = find(tvec < tarTim(6,2) & tvec > tarTim(6,1));
-SE_index    = find(tvec < tarTim(7,2) & tvec > tarTim(7,1));
-E_index     = find(tvec < tarTim(8,2) & tvec > tarTim(8,1));
-NE_index    = find(tvec < tarTim(9,2) & tvec > tarTim(9,1));
+% Get index fingerdisp(['Mean Sample Rate was ' sprintf(mean(diff(tvec)))])
 
-fix_indexcal = fix_index(61:length(fix_index));
-N_indexcal = N_index(61:length(N_index));
-NW_indexcal = NW_index(61:length(NW_index));
-W_indexcal = W_index(61:length(W_index));
-SW_indexcal = SW_index(61:length(SW_index));
-S_indexcal = S_index(61:length(S_index));
-SE_indexcal = SE_index(61:length(SE_index));
-E_indexcal = E_index(61:length(E_index));
-NE_indexcal = NE_index(61:length(NE_index));
-
-% These are the X, Y, and Z-coordinates of the hand in the Leap Motion
-% coordinate system. This means that the values for fix_hand correspond to
-% [0 0 z?] on the plot, and N_hand to [0 0.75 z?], etc.. 
-fix_hand = mean([X(fix_indexcal), Y(fix_indexcal), Z(fix_indexcal)],1); 
-N_hand = mean([X(N_indexcal), Y(N_indexcal), Z(N_indexcal)],1);
-NW_hand = mean([X(NW_indexcal), Y(NW_indexcal), Z(NW_indexcal)],1);
-W_hand = mean([X(W_indexcal), Y(W_indexcal), Z(W_indexcal)],1);
-SW_hand = mean([X(SW_indexcal), Y(SW_indexcal), Z(SW_indexcal)],1);
-S_hand = mean([X(S_indexcal), Y(S_indexcal), Z(S_indexcal)],1);
-SE_hand = mean([X(SE_indexcal), Y(SE_indexcal), Z(SE_indexcal)],1);
-E_hand = mean([X(E_indexcal), Y(E_indexcal), Z(E_indexcal)],1);
-NE_hand = mean([X(NE_indexcal), Y(NE_indexcal), Z(NE_indexcal)],1);
-handLoc = [fix_hand; N_hand; NW_hand; W_hand; SW_hand; S_hand; SE_hand; E_hand; NE_hand];
+i = 2;
+X = squeeze(handpos(i,1,:));
+Y = squeeze(handpos(i,2,:));
+Z = squeeze(handpos(i,3,:));
     
-% for j = 1:length(Z)
-%     Z_nul(j) = abs(Z(j))- abs(Z(j));
+% subplot(2,1,1)
+% plot(tvec,X,tvec,Y)
+% subplot(2,1,2)
+% plot(tvec,coder)
+% % W = 4; E = 8
+% ind = NaN(250,9);
+% for i = 1:size(ind,2)
+%     ind(1:length(find(coder==i)),i) = find(coder==i);
 % end
-% Z_nul = Z_nul';
 
-% Creating rotation and translation matrices for the coordinate systems.
+FIX_ind = find(coder==1);
+N_ind   = find(coder==2);
+NW_ind  = find(coder==3);
+W_ind   = find(coder==4);
+SW_ind  = find(coder==5);
+S_ind   = find(coder==6);
+SE_ind  = find(coder==7);
+E_ind   = find(coder==8);
+NE_ind  = find(coder==9);
+
+XWestLeap = mean([      mean(rmmissing(X(W_ind(1)+60:max(W_ind))))          % + 60 indices because transfer time from point to point
+                        mean(rmmissing(X(NW_ind(1)+60:max(NW_ind))))        % rmmissing to correct for when hand is out of camera sight
+                        mean(rmmissing(X(SW_ind(1)+60:max(SW_ind)))) ]);
+XEastLeap = mean([      mean(rmmissing(X(E_ind(1)+60:max(E_ind))))
+                        mean(rmmissing(X(NE_ind(1)+60:max(NE_ind))))
+                        mean(rmmissing(X(SE_ind(1)+60:max(SE_ind)))) ]);
+YSouthLeap = mean([     mean(rmmissing(Y(S_ind(1)+60:max(S_ind))))
+                        mean(rmmissing(Y(SW_ind(1)+60:max(SW_ind))))
+                        mean(rmmissing(Y(SE_ind(1)+60:max(SE_ind)))) ]);
+YNorthLeap = mean([     mean(rmmissing(Y(N_ind(1)+60:max(N_ind))))
+                        mean(rmmissing(Y(NW_ind(1)+60:max(NW_ind))))
+                        mean(rmmissing(Y(NE_ind(1)+60:max(NE_ind)))) ]);
+[XKey,YKey] = getTransform_ms([W E S N],[XWestLeap XEastLeap YSouthLeap YNorthLeap]);
+
+% Maybe we could implement the [0,0] (= fix) coordinate in the getTransform as well?
+% I have the feeling we're missing out on the calibration points that we
+% don't use. 
+
+
+[XFix, YFix]        	= applyTransform_ms(mean(rmmissing(X(FIX_ind(1)+60:max(FIX_ind)))), mean(rmmissing(Y(FIX_ind(1)+60:max(FIX_ind)))), XKey, YKey);
+[XNorth,YNorth]         = applyTransform_ms(mean(rmmissing(X(N_ind(1)+60:max(N_ind)))), mean(rmmissing(Y(N_ind(1)+60:max(N_ind)))), XKey, YKey);
+[XNorthWest,YNorthWest] = applyTransform_ms(mean(rmmissing(X(NW_ind(1)+60:max(NW_ind)))), mean(rmmissing(Y(NW_ind(1)+60:max(NW_ind)))) ,XKey, YKey);
+[XWest,YWest]           = applyTransform_ms(mean(rmmissing(X(W_ind(1)+60:max(W_ind)))), mean(rmmissing(Y(W_ind(1)+60:max(W_ind)))), XKey, YKey);
+[XSouthWest,YSouthWest] = applyTransform_ms(mean(rmmissing(X(SW_ind(1)+60:max(SW_ind)))), mean(rmmissing(Y(SW_ind(1)+60:max(SW_ind)))),XKey,YKey);
+[XSouth,YSouth]         = applyTransform_ms(mean(rmmissing(X(S_ind(1)+60:max(S_ind)))), mean(rmmissing(Y(S_ind(1)+60:max(S_ind)))),XKey,YKey);
+[XSouthEast,YSouthEast] = applyTransform_ms(mean(rmmissing(X(SE_ind(1)+60:max(SE_ind)))), mean(rmmissing(Y(SE_ind(1)+60:max(SE_ind)))),XKey,YKey);
+[XEast,YEast]           = applyTransform_ms(mean(rmmissing(X(E_ind(1)+60:max(E_ind)))), mean(rmmissing(Y(E_ind(1)+60:max(E_ind)))),XKey,YKey);
+[XNorthEast,YNorthEast] = applyTransform_ms(mean(rmmissing(X(NE_ind(1)+60:max(NE_ind)))), mean(rmmissing(Y(NE_ind(1)+60:max(NE_ind)))),XKey,YKey);
+
+% Next work out the degree of error for prediction
+X_error_7 = mean([abs(XFix) abs(XNorth) abs(XSouth) abs(XWest-W) abs(XNorthWest-W) abs(XSouthWest-W) abs(XEast-E) abs(XNorthEast-E) abs(XSouthEast-E)]); 
+Y_error_7 = mean([abs(YFix) abs(YWest) abs(YEast) abs(YNorth-N) abs(YNorthEast-N) abs(YNorthWest-N) abs(YSouth-S) abs(YSouthEast-S) abs(YSouthWest-S)]);
+
+
+%% OLD 
+
+% fix_index   = find(tvec < tarTim(1,2));
+% N_index     = find(tvec < tarTim(2,2) & tvec > tarTim(2,1));
+% NW_index    = find(tvec < tarTim(3,2) & tvec > tarTim(3,1));
+% W_index     = find(tvec < tarTim(4,2) & tvec > tarTim(4,1)); 
+% SW_index    = find(tvec < tarTim(5,2) & tvec > tarTim(5,1));
+% S_index     = find(tvec < tarTim(6,2) & tvec > tarTim(6,1));
+% SE_index    = find(tvec < tarTim(7,2) & tvec > tarTim(7,1));
+% E_index     = find(tvec < tarTim(8,2) & tvec > tarTim(8,1));
+% NE_index    = find(tvec < tarTim(9,2) & tvec > tarTim(9,1));
+% 
+% fix_indexcal = fix_index(61:length(fix_index));
+% N_indexcal = N_index(61:length(N_index));
+% NW_indexcal = NW_index(61:length(NW_index));
+% W_indexcal = W_index(61:length(W_index));
+% SW_indexcal = SW_index(61:length(SW_index));
+% S_indexcal = S_index(61:length(S_index));
+% SE_indexcal = SE_index(61:length(SE_index));
+% E_indexcal = E_index(61:length(E_index));
+% NE_indexcal = NE_index(61:length(NE_index));
+% 
+% % These are the X, Y, and Z-coordinates of the hand in the Leap Motion
+% % coordinate system. This means that the values for fix_hand correspond to
+% % [0 0 z?] on the plot, and N_hand to [0 0.75 z?], etc.. 
+% fix_hand = mean([X(fix_indexcal), Y(fix_indexcal), Z(fix_indexcal)],1); 
+% N_hand = mean([X(N_indexcal), Y(N_indexcal), Z(N_indexcal)],1);
+% NW_hand = mean([X(NW_indexcal), Y(NW_indexcal), Z(NW_indexcal)],1);
+% W_hand = mean([X(W_indexcal), Y(W_indexcal), Z(W_indexcal)],1);
+% SW_hand = mean([X(SW_indexcal), Y(SW_indexcal), Z(SW_indexcal)],1);
+% S_hand = mean([X(S_indexcal), Y(S_indexcal), Z(S_indexcal)],1);
+% SE_hand = mean([X(SE_indexcal), Y(SE_indexcal), Z(SE_indexcal)],1);
+% E_hand = mean([X(E_indexcal), Y(E_indexcal), Z(E_indexcal)],1);
+% NE_hand = mean([X(NE_indexcal), Y(NE_indexcal), Z(NE_indexcal)],1);
+% handLoc = [fix_hand; N_hand; NW_hand; W_hand; SW_hand; S_hand; SE_hand; E_hand; NE_hand];
+%     
+% [XKey_ms,YKey_ms] = getTransform_ms([W E S N],[W_hand(1) E_hand(1) S_hand(2) N_hand(2)]);
+% 
+% [XFix_ms, YFix_ms]        	  = applyTransform_ms(fix_hand(1), fix_hand(2), XKey, YKey);
+% [XNorth_ms,YNorth_ms]         = applyTransform_ms(N_hand(1),N_hand(2), XKey, YKey);
+% [XNorthWest_ms,YNorthWest_ms] = applyTransform_ms(NW_hand(1),NW_hand(2),XKey, YKey);
+% [XWest_ms,YWest_ms]           = applyTransform_ms(W_hand(1),W_hand(2),XKey, YKey);
+% [XSouthWest_ms,YSouthWest_ms] = applyTransform_ms(SW_hand(1),SW_hand(2),XKey, YKey);
+% [XSouth_ms,YSouth_ms]         = applyTransform_ms(S_hand(1),S_hand(2),XKey, YKey);
+% [XSouthEast_ms,YSouthEast_ms] = applyTransform_ms(SE_hand(1),SE_hand(2),XKey, YKey);
+% [XEast_ms,YEast_ms]           = applyTransform_ms(E_hand(1),E_hand(2),XKey, YKey);
+% [XNorthEast_ms,YNorthEast_ms] = applyTransform_ms(NE_hand(1),NE_hand(2),XKey, YKey);
+% 
+% % for j = 1:length(Z)
+% %     Z_nul(j) = abs(Z(j))- abs(Z(j));
+% % end
+% % Z_nul = Z_nul';
+
+%% Creating rotation and translation matrices for the coordinate systems.
+
 handLoc = handLoc';
 tarLoc = tarLoc';
 N = length(tarLoc);
@@ -203,40 +281,3 @@ tz = M(3,4)*prow;
 ty = (M(2,4)*prow - v0*tz)*sind(theta)/beta;
 tx = (M(1,4)*prow-u0*tz+alpha*cotd(theta)*ty)/alpha;
 
-%% 
-
-figure(1);
-xlim([-1 1]); ylim([-1 1])
-set(gcf,'color','w');
-set(gcf, 'MenuBar', 'none');
-set(gcf, 'ToolBar', 'none');
-set(gcf, 'Units', 'normalized');
-set(gcf, 'outerposition', [0 0 1 1]);
-set(gca, 'visible', 'off');
-scatter(0,0,1000,'Marker','x','LineWidth',2); hold on;
-tic
-tc = toc;
-i = 1;
-gca; shg
-while toc<15
-    tvec(i) = toc;
-    % get a frame
-    try
-        f=matleap_frame_ms;
-        handpos(:,:,i) = vertcat(f.pointables.position);
-    catch
-            handpos(:,:,i) = nan(5,3);
-    end
-    if (rem(round(toc,2),0.1)) && i>25
-        disp(toc)
-        scatter(squeeze(handpos([1],1,i-25:i)),squeeze(handpos([1],2,i-25:i)),linspace(10,150,26),'filled')
-        xlim([-1 1]); ylim([-1 1])
-        set(gca,'xcolor','none'); set(gca,'ycolor','none');
-        drawnow
-    end
-    
-    i = i+1;
-    pause(0.01)
-    disp(toc)
-   
-end

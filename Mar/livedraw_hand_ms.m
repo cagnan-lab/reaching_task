@@ -1,4 +1,6 @@
-%clear; 
+% Function to live draw the hand position (stabilized palm position used as
+% input). 
+function handpos = livedraw_hand_ms
 close all
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
@@ -14,25 +16,15 @@ while toc<8
     tvec(i) = toc;
     % get a frame
     try
-        f=matleap_frame_ms;
-        handpos(:,:,i) = vertcat(f.pointables.position);
-%         handpos(:,1,i) = (handpos(:,1,i)+tx)*R;
-%         handpos(:,2,i) = (handpos(:,2,i)+ty)*R;
-%         handpos(:,3,i) = (handpos(:,3,i)+tz)*R;
+        f = matleap_frame_ms;
+        handpos(i,:) = f.hands.stabilized_palm_position;
     catch
-            handpos(:,:,i) = nan(5,3);
+            handpos(i,:) = nan(1,3);
     end
     if (rem(round(toc,2),0.1)) && i>25
         disp(toc)  
-%         X = (squeeze(handpos(1,1,:))+tx); 
-%         Y = (squeeze(handpos(1,2,:))+ty);
-%         Z = (squeeze(handpos(1,3,:))+tz);
-%         HAND = [X Y Z]*R;
-        scatter(squeeze(handpos([1],1,i-25:i)),squeeze(handpos([1],2,i-25:i)),[],'filled')
-%         scatter(HAND(1),HAND(2),[],'filled')
-%         xlim([-1 1]); ylim([-1 1])
-        xlim([-300 300]);ylim([-300 300]); zlim([-300 300]);
-    
+        scatter(squeeze(handpos(i-25:i,1)),squeeze(handpos(i-25:i,2)),[],'filled')
+        xlim([-300 300]);ylim([-300 300]);
             drawnow
     end
     
@@ -41,6 +33,7 @@ while toc<8
     disp(toc)
    
 end
+
 
 % 
 % for i = 1:5

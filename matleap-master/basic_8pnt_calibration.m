@@ -10,9 +10,9 @@ tarTim = ...
     15 20;% W
     20 25;% SW
     25 30;% S
-    35 40;% SE
-    45 50;% E
-    50 55;% NE
+    30 35;% SE
+    35 40;% E
+    40 45;% NE
     ];
 C = 0;
 N = 0.75; S = -0.75;
@@ -61,7 +61,7 @@ try
     gca; shg
     p = 2;
     v = 0;
-    while toc<55
+    while toc<45
         tvec(i) = toc;
         % get a frame
         handpos(:,:,i) = getHandPos();
@@ -71,9 +71,11 @@ try
             
             if toc<tarTim(1,2)
                 scatter(tarLoc(1,1),tarLoc(1,2),1000,'Marker','x','LineWidth',2)
+                set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
                 v = 1;
             elseif toc>=tarTim(p,1) && toc<tarTim(p,2)
                 scatter(tarLoc(p,1),tarLoc(p,2),1000,'filled');
+                set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
                 v = p;
             elseif toc>=tarTim(p+1,1)
                 p = p+1;
@@ -101,6 +103,7 @@ for i = 1:5
     hold on
 end
 
+%%
 % Get index fingerdisp(['Mean Sample Rate was ' sprintf(mean(diff(tvec)))])
 
 i = 2;
