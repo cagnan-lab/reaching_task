@@ -1,4 +1,4 @@
-%clear; 
+clear; 
 close all
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
@@ -152,8 +152,8 @@ YNorthLeap = mean([     mean(rmmissing(Y(N_ind(1)+60:max(N_ind))))
 [XNorthEast,YNorthEast] = applyTransform_ms(mean(rmmissing(X(NE_ind(1)+60:max(NE_ind)))), mean(rmmissing(Y(NE_ind(1)+60:max(NE_ind)))),XKey,YKey);
 
 % Next work out the degree of error for prediction
-X_error_7 = mean([abs(XFix) abs(XNorth) abs(XSouth) abs(XWest-W) abs(XNorthWest-W) abs(XSouthWest-W) abs(XEast-E) abs(XNorthEast-E) abs(XSouthEast-E)]); 
-Y_error_7 = mean([abs(YFix) abs(YWest) abs(YEast) abs(YNorth-N) abs(YNorthEast-N) abs(YNorthWest-N) abs(YSouth-S) abs(YSouthEast-S) abs(YSouthWest-S)]);
+X_error = mean([abs(XFix) abs(XNorth) abs(XSouth) abs(XWest-W) abs(XNorthWest-W) abs(XSouthWest-W) abs(XEast-E) abs(XNorthEast-E) abs(XSouthEast-E)]); 
+Y_error = mean([abs(YFix) abs(YWest) abs(YEast) abs(YNorth-N) abs(YNorthEast-N) abs(YNorthWest-N) abs(YSouth-S) abs(YSouthEast-S) abs(YSouthWest-S)]);
 
 
 %% OLD 
