@@ -1,5 +1,6 @@
-%clear; 
-function LiveDraw = handpos
+% Function to live draw the hand position (stabilized palm position used as
+% input). 
+
 close all
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
@@ -15,16 +16,18 @@ while toc<8
     tvec(i) = toc;
     % get a frame
     try
-        f=matleap_frame_ms;
-        handpos(:,:,i) = vertcat(f.hands.stabilized_palm_position);
+        f = matleap_frame_ms;
+        handposition(i,:) = f.hands.stabilized_palm_position;
     catch
-            handpos(:,:,i) = nan(5,3);
+            handposition(i,:) = nan;
     end
     if (rem(round(toc,2),0.1)) && i>25
         disp(toc)  
-        scatter(squeeze(handpos([1],1,i-25:i)),squeeze(handpos([1],2,i-25:i)),[],'filled')
-        xlim([-300 300]);ylim([-300 300]);
-            drawnow
+        Xleap = squeeze(handposition(i-25:i,1));
+        Yleap = squeeze(handposition(i-25:i,2));
+        scatter(applyTransform_ms(Xleap, X, XKey, YKey),[],'filled')
+        xlim([-1 1]); ylim([-1 1]);
+            drawnow;
     end
     
     i = i+1;
@@ -32,7 +35,7 @@ while toc<8
     disp(toc)
    
 end
-end
+
 
 % 
 % for i = 1:5

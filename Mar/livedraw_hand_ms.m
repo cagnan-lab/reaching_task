@@ -1,6 +1,6 @@
 % Function to live draw the hand position (stabilized palm position used as
 % input). 
-function handpos = livedraw_hand_ms
+
 close all
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
@@ -12,20 +12,32 @@ tic
 tc = toc;
 i = 1;
 gca; shg
+
+% Set up screen
+        FigH   = figure('Color', ones(1, 3), 'Renderer', 'Painters');
+        FigPos = get(FigH, 'Position');
+        axes('Visible', 'off', 'Units', 'normalized', 'Position', [0, 0, 1, 1]);
+        WindowAPI(FigH, 'Position', 'full'); 
+        
 while toc<8
     tvec(i) = toc;
     % get a frame
     try
         f = matleap_frame_ms;
-        handpos(i,:) = f.hands.stabilized_palm_position;
+        handposition(i,:) = f.hands.stabilized_palm_position;
     catch
-            handpos(i,:) = nan(1,3);
+            handposition(i,:) = nan;
     end
     if (rem(round(toc,2),0.1)) && i>25
         disp(toc)  
-        scatter(squeeze(handpos(i-25:i,1)),squeeze(handpos(i-25:i,2)),[],'filled')
-        xlim([-300 300]);ylim([-300 300]);
-            drawnow
+        Xleap(i) = squeeze(handposition(i,1));
+        Yleap(i) = squeeze(handposition(i,2));
+        [Xscreen(i), Yscreen(i)] = applyTransform_ms(Xleap(i), Yleap(i), XKey, YKey);
+        % Live draw plot on full screen with screen coordinates:
+        scatter(Xscreen(i-20:i), Yscreen(i-20:i),[],'filled')
+        set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
+        xlim([-1 1]); ylim([-1 1]);
+            drawnow;
     end
     
     i = i+1;
