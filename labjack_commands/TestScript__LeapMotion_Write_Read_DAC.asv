@@ -30,17 +30,17 @@ i =1;tic;
 while i<inf
     t(i)= toc;
     
-    handpos(:,:,i) = getHandPos();
-        X = squeeze(handpos(2,1,i));
-        Y = squeeze(handpos(2,2,i));
-        Z = squeeze(handpos(2,3,i));
+    handpos = getHandPos();
+        X = squeeze(handpos(2,1,:));
+        Y = squeeze(handpos(2,2,:));
+        Z = squeeze(handpos(2,3,:));
     
     % Rescale
     minmax = [-120 120];
     V(1) = 0;
-    V(2) = rescaleLeap(X,minmax);
-    V(3) = rescaleLeap(Y,minmax);
-    V(4) = rescaleLeap(Z,minmax);
+    V(2) = rescaleLeap(X,minmax)
+    V(3) = rescaleLeap(Y,minmax)
+    V(4) = rescaleLeap(Z,minmax)
     
     % Now send to LabJack; V(1) = coder; V(2-4) = XYZ leap
     ljudObj = sendLJ4DACOut(ljudObj,ljhandle,V);
@@ -52,5 +52,3 @@ while i<inf
     drawnow
     i = i+1;
 end
-
-save('Hand', 'handpos');
