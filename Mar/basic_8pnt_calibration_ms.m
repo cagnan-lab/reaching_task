@@ -127,18 +127,18 @@ SE_ind  = find(coder==7);
 E_ind   = find(coder==8);
 NE_ind  = find(coder==9);
 
-XWestLeap = mean([      mean(rmmissing(X(W_ind(1)+60:max(W_ind))))          % + 60 indices because transfer time from point to point
-                        mean(rmmissing(X(NW_ind(1)+60:max(NW_ind))))        % rmmissing to correct for when hand is out of camera sight
-                        mean(rmmissing(X(SW_ind(1)+60:max(SW_ind)))) ]);
-XEastLeap = mean([      mean(rmmissing(X(E_ind(1)+60:max(E_ind))))
-                        mean(rmmissing(X(NE_ind(1)+60:max(NE_ind))))
-                        mean(rmmissing(X(SE_ind(1)+60:max(SE_ind)))) ]);
-YSouthLeap = mean([     mean(rmmissing(Y(S_ind(1)+60:max(S_ind))))
-                        mean(rmmissing(Y(SW_ind(1)+60:max(SW_ind))))
-                        mean(rmmissing(Y(SE_ind(1)+60:max(SE_ind)))) ]);
-YNorthLeap = mean([     mean(rmmissing(Y(N_ind(1)+60:max(N_ind))))
-                        mean(rmmissing(Y(NW_ind(1)+60:max(NW_ind))))
-                        mean(rmmissing(Y(NE_ind(1)+60:max(NE_ind)))) ]);
+XWestLeap = mean([      nanmean(X(W_ind(1)+60:max(W_ind)))          % + 60 indices because transfer time from point to point
+                        nanmean(X(NW_ind(1)+60:max(NW_ind)))        % rmmissing to correct for when hand is out of camera sight
+                        nanmean(X(SW_ind(1)+60:max(SW_ind))) ]);
+XEastLeap = mean([      nanmean(X(E_ind(1)+60:max(E_ind)))
+                        nanmean(X(NE_ind(1)+60:max(NE_ind)))
+                        nanmean(X(SE_ind(1)+60:max(SE_ind))) ]);
+YSouthLeap = mean([     nanmean(Y(S_ind(1)+60:max(S_ind)))
+                        nanmean(Y(SW_ind(1)+60:max(SW_ind)))
+                        nanmean(Y(SE_ind(1)+60:max(SE_ind))) ]);
+YNorthLeap = mean([     nanmean(Y(N_ind(1)+60:max(N_ind)))
+                        nanmean(Y(NW_ind(1)+60:max(NW_ind)))
+                        nanmean(Y(NE_ind(1)+60:max(NE_ind))) ]);
 [XKey,YKey] = getTransform_ms([W E S N],[XWestLeap XEastLeap YSouthLeap YNorthLeap]);
 save('Keys','XKey','YKey');
 
@@ -147,15 +147,15 @@ save('Keys','XKey','YKey');
 % don't use. 
 
 
-[XFix, YFix]        	= applyTransform_ms(mean(rmmissing(X(FIX_ind(1)+60:max(FIX_ind)))), mean(rmmissing(Y(FIX_ind(1)+60:max(FIX_ind)))), XKey, YKey);
-[XNorth,YNorth]         = applyTransform_ms(mean(rmmissing(X(N_ind(1)+60:max(N_ind)))), mean(rmmissing(Y(N_ind(1)+60:max(N_ind)))), XKey, YKey);
-[XNorthWest,YNorthWest] = applyTransform_ms(mean(rmmissing(X(NW_ind(1)+60:max(NW_ind)))), mean(rmmissing(Y(NW_ind(1)+60:max(NW_ind)))) ,XKey, YKey);
-[XWest,YWest]           = applyTransform_ms(mean(rmmissing(X(W_ind(1)+60:max(W_ind)))), mean(rmmissing(Y(W_ind(1)+60:max(W_ind)))), XKey, YKey);
-[XSouthWest,YSouthWest] = applyTransform_ms(mean(rmmissing(X(SW_ind(1)+60:max(SW_ind)))), mean(rmmissing(Y(SW_ind(1)+60:max(SW_ind)))),XKey,YKey);
-[XSouth,YSouth]         = applyTransform_ms(mean(rmmissing(X(S_ind(1)+60:max(S_ind)))), mean(rmmissing(Y(S_ind(1)+60:max(S_ind)))),XKey,YKey);
-[XSouthEast,YSouthEast] = applyTransform_ms(mean(rmmissing(X(SE_ind(1)+60:max(SE_ind)))), mean(rmmissing(Y(SE_ind(1)+60:max(SE_ind)))),XKey,YKey);
-[XEast,YEast]           = applyTransform_ms(mean(rmmissing(X(E_ind(1)+60:max(E_ind)))), mean(rmmissing(Y(E_ind(1)+60:max(E_ind)))),XKey,YKey);
-[XNorthEast,YNorthEast] = applyTransform_ms(mean(rmmissing(X(NE_ind(1)+60:max(NE_ind)))), mean(rmmissing(Y(NE_ind(1)+60:max(NE_ind)))),XKey,YKey);
+[XFix, YFix]        	= applyTransform_ms(nanmean(X(FIX_ind(1)+60:max(FIX_ind))), nanmean(Y(FIX_ind(1)+60:max(FIX_ind))), XKey, YKey);
+[XNorth,YNorth]         = applyTransform_ms(nanmean(X(N_ind(1)+60:max(N_ind))), nanmean(Y(N_ind(1)+60:max(N_ind))), XKey, YKey);
+[XNorthWest,YNorthWest] = applyTransform_ms(nanmean(X(NW_ind(1)+60:max(NW_ind))), nanmean(Y(NW_ind(1)+60:max(NW_ind))) ,XKey, YKey);
+[XWest,YWest]           = applyTransform_ms(nanmean(X(W_ind(1)+60:max(W_ind))), nanmean(Y(W_ind(1)+60:max(W_ind))), XKey, YKey);
+[XSouthWest,YSouthWest] = applyTransform_ms(nanmean(X(SW_ind(1)+60:max(SW_ind))), nanmean(Y(SW_ind(1)+60:max(SW_ind))),XKey,YKey);
+[XSouth,YSouth]         = applyTransform_ms(nanmean(X(S_ind(1)+60:max(S_ind))), nanmean(Y(S_ind(1)+60:max(S_ind))),XKey,YKey);
+[XSouthEast,YSouthEast] = applyTransform_ms(nanmean(X(SE_ind(1)+60:max(SE_ind))), nanmean(Y(SE_ind(1)+60:max(SE_ind))),XKey,YKey);
+[XEast,YEast]           = applyTransform_ms(nanmean(X(E_ind(1)+60:max(E_ind))), nanmean(Y(E_ind(1)+60:max(E_ind))),XKey,YKey);
+[XNorthEast,YNorthEast] = applyTransform_ms(nanmean(X(NE_ind(1)+60:max(NE_ind))), nanmean(Y(NE_ind(1)+60:max(NE_ind))),XKey,YKey);
 
 % Next work out the degree of error for prediction
 X_error = mean([abs(XFix) abs(XNorth) abs(XSouth) abs(XWest-W) abs(XNorthWest-W) abs(XSouthWest-W) abs(XEast-E) abs(XNorthEast-E) abs(XSouthEast-E)]); 
