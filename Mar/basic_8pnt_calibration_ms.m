@@ -2,6 +2,8 @@ clear;
 close all
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
+[ljasm,ljudObj,ljhandle] = setup_LabJack();
+voltageCoder = linspace(1,3,9);
 
 % Callibration timings
 tarTim = ...
@@ -56,7 +58,7 @@ while toc<45
     % get a frame
     handpos(:,:,i) = getHandPos_ms();
     coder(i) = v;
-    
+
     % This is where things are going to be drawn
     if (rem(round(toc,2),0.1)) && i>25
         
@@ -64,15 +66,18 @@ while toc<45
             scatter(tarLoc(1,1),tarLoc(1,2),1000,'Marker','x','LineWidth',2)
             set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
             v = 1;
+            
         elseif toc>=tarTim(p,1) && toc<tarTim(p,2)
             scatter(tarLoc(p,1),tarLoc(p,2),1000,'filled');
             set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[]);
             v = p;
+            
         elseif toc>=tarTim(p+1,1)
             p = p+1;
             v = p;
+            
         end
-        
+            ljudObj = sendLJTrigger(ljudObj,ljhandle,voltageCoder(v),1);
         xlim([-1 1]); ylim([-1 1]); drawnow;
         
     end
@@ -135,6 +140,7 @@ YNorthLeap = mean([     mean(rmmissing(Y(N_ind(1)+60:max(N_ind))))
                         mean(rmmissing(Y(NW_ind(1)+60:max(NW_ind))))
                         mean(rmmissing(Y(NE_ind(1)+60:max(NE_ind)))) ]);
 [XKey,YKey] = getTransform_ms([W E S N],[XWestLeap XEastLeap YSouthLeap YNorthLeap]);
+save('Keys','XKey','YKey');
 
 % Maybe we could implement the [0,0] (= fix) coordinate in the getTransform as well?
 % I have the feeling we're missing out on the calibration points that we
@@ -154,6 +160,7 @@ YNorthLeap = mean([     mean(rmmissing(Y(N_ind(1)+60:max(N_ind))))
 % Next work out the degree of error for prediction
 X_error = mean([abs(XFix) abs(XNorth) abs(XSouth) abs(XWest-W) abs(XNorthWest-W) abs(XSouthWest-W) abs(XEast-E) abs(XNorthEast-E) abs(XSouthEast-E)]); 
 Y_error = mean([abs(YFix) abs(YWest) abs(YEast) abs(YNorth-N) abs(YNorthEast-N) abs(YNorthWest-N) abs(YSouth-S) abs(YSouthEast-S) abs(YSouthWest-S)]);
+
 
 
 %% OLD 
