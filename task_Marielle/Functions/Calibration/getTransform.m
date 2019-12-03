@@ -1,4 +1,7 @@
 function [XKey,YKey] = getTransform(WESN_app,WESN_leap)
+% Function to generate the keys for transforming LeapMotion coordination to
+% screen coordination.
+
 % WESN is [XWest XEast YSouth YNorth]
 Xrange_app = WESN_app(2)-WESN_app(1);
 Xrange_leap = WESN_leap(2)-WESN_leap(1);
