@@ -1,8 +1,8 @@
-function voltage = getLJMeasurement(ljudObj,ljhandle,p)  
+function voltage = getLJMeasurement(ljudObj,ljhandle,P)  
 
 % Take a single-ended measurement from AIN3.
-    channelP = 3;
-    channelN = 31;
+    channelP = P;
+    channelN = 31; % This is the default for single ended recordings
     voltage = 0.0;
     range = 0;  % Not applicable for the the U3
     resolution = 0;
