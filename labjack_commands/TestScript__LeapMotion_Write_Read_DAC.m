@@ -22,35 +22,37 @@ ljudObj = sendLJ4DACOut(ljudObj,ljhandle,V);
 % Read from AIN3 (labelled FIO3)- you should wire from your output DAC to
 % this channel.
 
-load Tmp_keys
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 
 i =1;tic;
-while i<inf
+t = 0;
+while t<30
     t(i)= toc;
     
-    handpos(:,:,i) = getHandPos();
-        X = squeeze(handpos(2,1,i));
-        Y = squeeze(handpos(2,2,i));
-        Z = squeeze(handpos(2,3,i));
+    allPos(:,:,i) = getHandPos();
+    X = squeeze(allPos(2,1,i));
+    Y = squeeze(allPos(2,2,i));
+    Z = squeeze(allPos(2,3,i));
     
     % Rescale
     minmax = [-120 120];
     V(1) = 0;
-    V(2) = rescaleLeap(X,minmax);
-    V(3) = rescaleLeap(Y,minmax);
-    V(4) = rescaleLeap(Z,minmax);
+    V(2) = rescaleLeap(X,[-250 250]);
+    V(3) = rescaleLeap(Y,[-150 350]);
+    V(4) = rescaleLeap(Z,[-250 250]);
     
     % Now send to LabJack; V(1) = coder; V(2-4) = XYZ leap
     ljudObj = sendLJ4DACOut(ljudObj,ljhandle,V);
     
     v(i) = readLJ4DACIn(ljudObj,ljhandle,3);
     
-    plot(t,v)
-    xlim([t(i)-10 t(i)])
-    drawnow
+    if rem(i,20) == 0
+        plot(t,v)
+        xlim([t(i)-10 t(i)])
+        drawnow
+    end
     i = i+1;
 end
-
-save('Hand', 'handpos');
+fsamp = 1./mean(diff(t));
+save([cd '/testData/Hand'], 'allPos');
