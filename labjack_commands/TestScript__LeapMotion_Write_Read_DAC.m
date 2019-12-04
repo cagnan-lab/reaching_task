@@ -22,9 +22,6 @@ ljudObj = sendLJ4DACOut(ljudObj,ljhandle,V);
 % Read from AIN3 (labelled FIO3)- you should wire from your output DAC to
 % this channel.
 
-[version]=matleap_version;
-fprintf('matleap version %d.%d\n',version(1),version(2));
-
 i =1;tic;
 t = 0;
 while t<30
@@ -36,7 +33,7 @@ while t<30
     Z = squeeze(allPos(2,3,i));
     
     % Rescale
-    minmax = [-120 120];
+    minmax = [-120 120];                % Set a min and max for leapmotion coordinate system.
     V(1) = 0;
     V(2) = rescaleLeap(X,[-250 250]);
     V(3) = rescaleLeap(Y,[-150 350]);
