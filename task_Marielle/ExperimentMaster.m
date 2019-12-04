@@ -13,6 +13,7 @@ id = 'MS';
 
 % Determine random order of conditions:
 condition = randperm(2);                % Make 4 if go before you know is included
+% % condition = [3 4];
 
 for block = 1:4
     runBlock(condition(block),id)
