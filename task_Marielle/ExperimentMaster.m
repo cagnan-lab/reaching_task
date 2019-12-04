@@ -16,4 +16,8 @@ condition = randperm(2);                % Make 4 if go before you know is includ
 
 for block = 1:4
     runBlock(condition(block),id)
+    % REST
+% %     Rest()
+% %     pause()
+    % sendLJTrigger(ljudObj, ljhandle, v(3,1), channel);
 end

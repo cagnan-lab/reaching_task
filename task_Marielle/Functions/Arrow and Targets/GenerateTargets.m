@@ -17,8 +17,8 @@ location = [E; NE; N; NW; W; SW; S; SE];
 % Target size
 size = randi(2);
 if size == 1
-    radius = 0.15;
+    radius = 8000;
 else
-    radius = 0.25;
+    radius = 12000;
 end
-radius = [0.15];          % Delete this to include variation in target size
+radius = 10000;          % Delete this to include variation in target size

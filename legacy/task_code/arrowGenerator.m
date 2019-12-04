@@ -24,7 +24,7 @@ std = 0.1;
 
 % Setup the distribution of lengths
 % Choose direction
-% dirL = abs(vecScl + sigma.*randn(1,8));
+dirL = abs(vecScl + sigma.*randn(1,8));
 % dirL = circshift(dirL,dirC-4);
 
 %% Generate targets

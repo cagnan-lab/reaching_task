@@ -11,21 +11,21 @@ load([cd '/testData/Keys_' id],'XKey','YKey');
 %% DEFINE BLOCK CONDITION
 % Sigma and STD determine which condition (1, 2, 3 or 4) it will be:
 sigma   = [1.5 1.5];
-std     = [0.01 0.01];
+std     = [0.1 0.1];
 
 % Determine which uncertainty to use:
 if condition == 1                % high precision
-    sigma = sigma(1);
     std = std(1);
-elseif condition == 2            % low precision
     sigma = sigma(2);
+elseif condition == 2            % low precision
     std = std(1);
+    sigma = sigma(1);
     %     elseif condition(block) == 3            % high precision, go before you know
-    %         sigma = sigma(2);    
     %         std = std(2);
+    %         sigma = sigma(2);
     %     elseif condition(block) == 4            % low precision, go before you know
-    %         sigma = sigma(1);
     %         std = std(2);
+    %         sigma = sigma(1);
 end
 
 %% TRIAL DEFINITIONS
@@ -49,7 +49,7 @@ trial = 1;
 flag_reach = 0;
 flag_trial = 1; % This is 1 only if moving to next trial
 flag_post = 1;
-while trial < 5
+while trial < 3
     if flag_trial == 1
         TrialStart = toc;
         flag_trial = 0;
@@ -67,7 +67,7 @@ while trial < 5
             % --- REACH
         elseif toc >= (TrialStart+timing(1)) && toc < (TrialStart+timing(2))    % Timing 2 is period of holding reach
             if flag_reach == 0
-                [cmp,cir,dirC] = Reach(sigma, std);
+                [cmp,cir,dirC] = Reach_Return(sigma, std);
                 
                 % %             sendLJ4DACOut(ljudObj,ljhandle,v(2));
                 flag_reach = 1;
@@ -89,7 +89,12 @@ while trial < 5
             
             % --- RETURN
         elseif toc >= (TrialStart+timing(5)) && toc < (TrialStart+timing(6))
-            Return(cmp, cir, dirC)
+            set(cir(i), 'MarkerEdgeColor','k', 'MarkerFaceAlpha',0, 'linewidth', 2)
+            set(cmp(i),'LineStyle','none')
+
+
+            
+            drawnow
             
             % --- UPDATE FLAGS
          elseif toc >= (TrialStart+timing(6))
