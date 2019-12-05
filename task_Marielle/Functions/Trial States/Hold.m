@@ -1,4 +1,4 @@
-function Hold(cir, dirC)
+function Hold(cir, dirC, accumulator)
 
-set(cir(dirC),'MarkerFaceColor','g', 'MarkerFaceAlpha',0.2);
+set(cir(dirC),'MarkerFaceColor','g', 'MarkerFaceAlpha',accumulator);
 drawnow

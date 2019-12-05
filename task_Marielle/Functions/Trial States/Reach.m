@@ -1,4 +1,4 @@
-function [cmp,cir,dirC] = Reach(sigma, std)
+function [cmp,cir,dirC,location] = Reach(sigma, std)
 
 % Plotting compass
 [cmp,dirC] = CompassGenerator(sigma, std);
@@ -9,7 +9,7 @@ set(cmp(i),'LineStyle','none')
 end 
 
 % Plotting Circles
-cir = CirclePlot();
+[cir, location] = CirclePlot();
 
 % Set BLACK colour and line width of circles:
 for i=1:length(cir)

@@ -6,19 +6,19 @@ addpath('C:\Users\marie\OneDrive\Documenten\Oxford\WindowsAPI')
 addpath(genpath([cd '/task_Marielle']))
 addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 %% Specify Subject Specific ID
-id = 'MS';
+id = 'TW';
 
 %% Calibrate the LeapMotion to Screen Space
 %basic_8pnt_calibration(id)
 
 % Determine random order of conditions:
-condition = randperm(2);                % Make 4 if go before you know is included
+condition = 1:4; %randperm(2);                % Make 4 if go before you know is included
 % % condition = [3 4];
+ntrials = 3; % Number of reaching trials
 
 for block = 1:4
-    runBlock(condition(block),id)
+    runBlock_FillingVariant(condition(block),id,ntrials)
     % REST
-% %     Rest()
-% %     pause()
-    % sendLJTrigger(ljudObj, ljhandle, v(3,1), channel);
+    % pause()
+    % POSTURE
 end

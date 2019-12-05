@@ -1,4 +1,4 @@
-function cir = CirclePlot()
+function [cir, location] = CirclePlot()
 % Plots 8 circle targets.
 
 % Generating possible targets on plot
