@@ -31,7 +31,7 @@ while toc < 70
     V(4) = rescaleLeap(Z,minmax(:,3));
     sendLJ4DACOut(ljudObj,ljhandle,V);
     
-    th = text(0.5,0.5,'Please rest your arm on your lap', 'FontSize', 25);
+    th = text(0.5,0.5,'Please place your arms on your chairrests', 'FontSize', 25);
     set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[])
     set(th,'visible','on','HorizontalAlignment','center','VerticalAlignment','middle');
     drawnow
@@ -41,3 +41,8 @@ while toc < 70
     v(i)  = getLJMeasurement(ljudObj,ljhandle,3);
     coderSave(i) = coder;
 end
+
+save([cd '\testData/TimeVector_' id '_rest'],'tvec');
+save([cd '\testData/coderSave_' id '_rest'],'coderSave');
+save([cd '\testData/Hand_' id '_rest'],'handposition');
+save([cd '\testData/TargetDirection_' id '_rest'],'TargetDirection');

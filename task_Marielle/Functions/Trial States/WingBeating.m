@@ -41,3 +41,8 @@ while toc < 70
     v(i)  = getLJMeasurement(ljudObj,ljhandle,3);
     coderSave(i) = coder;
 end
+
+save([cd '\testData/TimeVector_' id '_posture'],'tvec');
+save([cd '\testData/coderSave_' id '_posture'],'coderSave');
+save([cd '\testData/Hand_' id '_posture'],'handposition');
+save([cd '\testData/TargetDirection_' id '_posture'],'TargetDirection');
