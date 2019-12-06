@@ -1,4 +1,4 @@
-function Rest(id)
+function WingBeating(id)
 
 % Screen Setup:
 ScreenSetup()
@@ -31,7 +31,7 @@ while toc < 70
     V(4) = rescaleLeap(Z,minmax(:,3));
     sendLJ4DACOut(ljudObj,ljhandle,V);
     
-    th = text(0.5,0.5,'Please rest your arm on your lap', 'FontSize', 25);
+    th = text(0.5,0.5,'Please hold the Wing Beating Posture', 'FontSize', 25);
     set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[])
     set(th,'visible','on','HorizontalAlignment','center','VerticalAlignment','middle');
     drawnow

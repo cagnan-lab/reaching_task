@@ -16,9 +16,10 @@ condition = 1:4; %randperm(2);                % Make 4 if go before you know is 
 % % condition = [3 4];
 ntrials = 3; % Number of reaching trials
 
+
 for block = 1:4
     runBlock_FillingVariant(condition(block),id,ntrials)
-    % REST
-    % pause()
-    % POSTURE
+    Rest(id)
+    pause()
+    WingBeating(id)
 end
