@@ -11,8 +11,10 @@ V = dirL.*sin(vecAng);
 
 % Plotting compass in existing figure
 cross = compass(U,V);
-    delete(findall(gcf,'type','text'));
-    delete(findall(gcf,'type','a.GridAlpha'));
-    xlim([-1 1]); ylim([-1 1])
-    set(gca,'Units','normalized')
-    set(gca,'Position',[0 0 1 1])
+delete(findall(gcf,'type','text'));
+delete(findall(gcf,'type','a.GridAlpha'));
+xlim([-1 1]); ylim([-1 1])
+set(gca,'Units','normalized')
+set(gca,'Position',[0 0 1 1])
+ph = allchild(gca);
+set(ph(end),'FaceColor','none')

@@ -34,6 +34,8 @@ cmp = compass(U,V); hold on
     xlim([-1 1]); ylim([-1 1])
     set(gca,'Units','normalized')
     set(gca,'Position',[0 0 1 1])
+    ph = allchild(gca);
+    set(ph(end),'FaceColor','none')
 
     
     
