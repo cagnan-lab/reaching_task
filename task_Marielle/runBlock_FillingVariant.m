@@ -5,7 +5,8 @@ ScreenSetup()
 % Labjack Setup
 [ljasm,ljudObj,ljhandle] = setup_LabJack();
 % Leapmotion setup
-load([cd '/testData/Keys_' id],'XKey','YKey');
+% % load([cd '/testData/Keys_' id],'XKey','YKey');
+load([cd '/testData/Keys_MS'],'XKey','YKey');
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 % LeapMotion minmaxs (effective range of tracking- for voltage scaling)
@@ -15,8 +16,8 @@ minmax(:,3) = [-250 250];
 
 %% DEFINE BLOCK CONDITION
 % Sigma and STD determine which condition (1, 2, 3 or 4) it will be:
-sigma   = [1.5 1];
-std     = [0.01 0.15];
+sigma   = [1.3 1];
+std     = [0.1 0.15];
 
 % Determine which uncertainty to use:
 if condition == 1                % high precision, go after you know
@@ -34,16 +35,16 @@ elseif condition == 4            % low precision, go before you know
 end
 
 %% TRIAL DEFINITIONS
-% Timings of 1) posture; 2) reach; 3) prep; 4) exec; 5) hold; 6) return
+% Timings of 1) posture = 15; 2) reach; 3) prep; 4) exec; 5) hold; 6) return
 % timing = [15 20 23 25 30 35];
-timing = cumsum([2 3 2.5 1 4 2]);
+timing = cumsum([2 2 2 1 4 0.2]);   % Include randomness in appearance?
 
 % Setup triggers for labjack (voltages)
 v = reshape(linspace(0.5,3,7),7,1);        % Change 1 to 2 if go before you know is included
 
 %% BEGIN EXPERIMENT!
 % Experiment explanation before every condition. Show strings until pressing any key.
-% % txt_instructions = TaskInstructions();
+txt_instructions = TaskInstructions(condition);
 clf;
 tic
 i = 1; % Initialize whole loop counter (THIS COUNTS THE TIME STEP)
@@ -51,6 +52,7 @@ trial = 1;
 accumulator = 0;
 score = 0;
 TargetDirection = zeros(ntrials,1);
+TrialCorrect = zeros(ntrials,1);
 
 %% SET FLAGS
 coder = v(1);
@@ -87,7 +89,7 @@ while trial <= ntrials
             % --- REACH
         elseif toc >= (TrialStart+timing(1)) && toc < (TrialStart+timing(2))    % Timing 2 is period of holding reach
             if flag_reach == 0
-                [cmp,cir,dirC,location] = Reach(sigma, std);
+                [cross,cmp,cir,dirC,location] = Reach(sigma, std);
                 flag_reach = 1;
                 flag_post = 0;
             end
@@ -95,7 +97,7 @@ while trial <= ntrials
             TargetDirection(trial) = location(dirC);
             % --- MOTOR PREPARATION
         elseif toc >= (TrialStart+timing(2)) && toc < (TrialStart+timing(3))    % Timing 2 to 3 is period of preparing movement
-            MotorPrep(cmp,cir)
+            MotorPrep(cross,cmp,cir)
             coder = v(3);
             
             % --- MOTOR EXECUTION - changing the color of one arrow with according circle to green.
@@ -107,7 +109,7 @@ while trial <= ntrials
                 if flag_exec_delay == 0
                     MotorExec(cmp, cir, dirC, 0)
                     flag_exec_delay = 1;
-                    tshow = toc + 0.5;
+                    tshow = toc + 0.9;              % If + 1: target edges stay black..? 
                 end
                 
                 if (flag_exec_delay == 1) && (toc>tshow)
@@ -129,6 +131,7 @@ while trial <= ntrials
                 end
             end
             if (accumulator > 0.75) && (flag_beep == 0)
+                TrialCorrect(trial) = 1;
                 score = score + 1;
                 beep
                 flag_beep = 1;
@@ -162,13 +165,12 @@ end % Master loop
 a = 1;
 disp(score)
 
-% --- REST
-% Rest()
-% sendLJTrigger(ljudObj, ljhandle, v(3,1), channel);
-
-save([cd '\testData/TimeVector_' id '_' condition],'tvec');
-save([cd '\testData/coderSave_' id '_' condition],'coderSave');
-save([cd '\testData/Hand_' id '_' condition],'handposition');
-save([cd '\testData/TargetDirection_' id '_' condition],'TargetDirection');
-% SAVE ANY DATA - SAVE log of the correct ARROW LOCATIONS + LEAPMOTION
-% use the input id to label the saves!
+mkdir([cd '\testData\' id])
+trialData.tvec = tvec;
+trialData.coderSave = coderSave;
+trialData.handposition = handposition;
+trialData.TargetDirection = TargetDirection;
+trialData.TrialCorrect = TrialCorrect;
+trialData.id = id;
+trialData.condition = condition;
+save([cd '\testData\' id '\TrialData' id '_' num2str(condition)],'trialData');

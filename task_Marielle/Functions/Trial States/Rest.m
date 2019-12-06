@@ -1,11 +1,11 @@
-function Rest(id)
-
-% Screen Setup:
+function Rest(id,duration)
 ScreenSetup()
+
 % Labjack Setup
 [ljasm,ljudObj,ljhandle] = setup_LabJack();
 % Leapmotion setup
-load([cd '/testData/Keys_' id],'XKey','YKey');
+% % load([cd '/testData/Keys_' id],'XKey','YKey');
+load([cd '/testData/Keys_MS'],'XKey','YKey');
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 % LeapMotion minmaxs (effective range of tracking- for voltage scaling)
@@ -18,7 +18,7 @@ v = 1.5;
 i = 1;
 coder = 1.5;
 tic
-while toc < 70
+while toc <= duration
     % Keep track of time
     handposition(:,:,i) = AcquireLeap();           % Acquires stabilized palm position data
     tvec(i) = toc;
@@ -42,7 +42,11 @@ while toc < 70
     coderSave(i) = coder;
 end
 
-save([cd '\testData/TimeVector_' id '_rest'],'tvec');
-save([cd '\testData/coderSave_' id '_rest'],'coderSave');
-save([cd '\testData/Hand_' id '_rest'],'handposition');
-save([cd '\testData/TargetDirection_' id '_rest'],'TargetDirection');
+clf;
+
+mkdir([cd '\testData\' id])
+restData.tvec = tvec;
+restData.coderSave = coderSave;
+restData.handposition = handposition;
+restData.id = id;
+save([cd '\testData\' id '\RestData' id '_' num2str(condition)],'restData');

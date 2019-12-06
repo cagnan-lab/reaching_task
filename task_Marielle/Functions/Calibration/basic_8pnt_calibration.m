@@ -137,7 +137,7 @@ YNorthLeap = mean([     nanmean(Y(N_ind(1)+60:max(N_ind)))
                         nanmean(Y(NW_ind(1)+60:max(NW_ind)))
                         nanmean(Y(NE_ind(1)+60:max(NE_ind))) ]);
 [XKey,YKey] = getTransform([W E S N],[XWestLeap XEastLeap YSouthLeap YNorthLeap]);
-save([cd 'testData/Keys_' id],'XKey','YKey');
+save([cd '/testData/Keys_' id],'XKey','YKey');
 
 % Maybe we could implement the [0,0] (= fix) coordinate in the getTransform as well?
 % I have the feeling we're missing out on the calibration points that we

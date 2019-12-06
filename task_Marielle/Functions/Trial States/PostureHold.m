@@ -1,11 +1,11 @@
-function WingBeating(id)
-
-% Screen Setup:
+function PostureHold(id,duration)
 ScreenSetup()
+
 % Labjack Setup
 [ljasm,ljudObj,ljhandle] = setup_LabJack();
 % Leapmotion setup
-load([cd '/testData/Keys_' id],'XKey','YKey');
+% % load([cd '/testData/Keys_' id],'XKey','YKey');
+load([cd '/testData/Keys_MS'],'XKey','YKey');
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 % LeapMotion minmaxs (effective range of tracking- for voltage scaling)
@@ -18,7 +18,7 @@ v = 1.5;
 i = 1;
 coder = 1.5;
 tic
-while toc < 70
+while toc <= duration
     % Keep track of time
     handposition(:,:,i) = AcquireLeap();           % Acquires stabilized palm position data
     tvec(i) = toc;
@@ -31,7 +31,7 @@ while toc < 70
     V(4) = rescaleLeap(Z,minmax(:,3));
     sendLJ4DACOut(ljudObj,ljhandle,V);
     
-    th = text(0.5,0.5,'Please hold the Wing Beating Posture', 'FontSize', 25);
+    th = text(0.5,0.5,'Please HOLD your hand at the height of your nose, fingers pointing towards each other', 'FontSize', 25);
     set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[])
     set(th,'visible','on','HorizontalAlignment','center','VerticalAlignment','middle');
     drawnow
@@ -42,7 +42,12 @@ while toc < 70
     coderSave(i) = coder;
 end
 
-save([cd '\testData/TimeVector_' id '_posture'],'tvec');
-save([cd '\testData/coderSave_' id '_posture'],'coderSave');
-save([cd '\testData/Hand_' id '_posture'],'handposition');
-save([cd '\testData/TargetDirection_' id '_posture'],'TargetDirection');
+clf;
+
+mkdir([cd '\testData\' id])
+postureData.tvec = tvec;
+postureData.coderSave = coderSave;
+postureData.handposition = handposition;
+postureData.id = id;
+save([cd '\testData\' id '\PostureData' id '_' num2str(condition)],'postureData');
+

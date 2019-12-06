@@ -4,8 +4,12 @@ function Return(cmp, cir, dirC)
 set(cir(dirC),'MarkerEdgeColor','k','MarkerFaceAlpha',0);
 
 % Remove arrows from middle:
-for i=1:length(cmp)
-    set(cmp(i),'LineStyle','none');
-end
+delete(cmp)
+
+% Plotting cross
+cross = CrossGenerator();
+for i=1:length(cross)
+set(cross(i),'LineStyle','-','Color',[0 0 0],'linewidth',1)
+end 
 
 drawnow;

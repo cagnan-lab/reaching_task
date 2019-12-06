@@ -1,6 +1,7 @@
-function MotorPrep(cmp,cir)
+function MotorPrep(cross,cmp,cir)
 % function to plot the Motor Preparation part of the task. 
 % Set black colour and line width of compass:
+delete(cross)
 for i=1:length(cmp)
 set(cmp(i),'LineStyle','-','Color',[0 0 0],'linewidth',2)
 end 
