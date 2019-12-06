@@ -1,4 +1,4 @@
-function Rest(id,duration)
+function Rest(id,block,duration)
 ScreenSetup()
 
 % Labjack Setup
@@ -49,4 +49,4 @@ restData.tvec = tvec;
 restData.coderSave = coderSave;
 restData.handposition = handposition;
 restData.id = id;
-save([cd '\testData\' id '\RestData' id '_' num2str(condition)],'restData');
+save([cd '\testData\' id '\TrialData' id '_block' num2str(block) '_rest'],'restData');

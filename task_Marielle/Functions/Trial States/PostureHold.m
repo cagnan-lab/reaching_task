@@ -1,4 +1,4 @@
-function PostureHold(id,duration)
+function PostureHold(id,block,duration)
 ScreenSetup()
 
 % Labjack Setup
@@ -49,5 +49,4 @@ postureData.tvec = tvec;
 postureData.coderSave = coderSave;
 postureData.handposition = handposition;
 postureData.id = id;
-save([cd '\testData\' id '\PostureData' id '_' num2str(condition)],'postureData');
-
+save([cd '\testData\' id '\TrialData' id '_block' num2str(block) '_posture'],'postureData');

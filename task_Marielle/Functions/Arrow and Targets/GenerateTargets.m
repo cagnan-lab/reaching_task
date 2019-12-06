@@ -21,4 +21,4 @@ if size == 1
 else
     radius = 4000;
 end
-radius = 2000;          % Delete this to include variation in target size
+radius = 1200;          % Delete this to include variation in target size

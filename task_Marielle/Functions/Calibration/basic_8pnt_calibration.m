@@ -1,8 +1,6 @@
 function basic_8pnt_calibration(id)
-
-clear; close all;
-
-
+% Setup the frame
+ScreenSetup()
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 
@@ -34,8 +32,6 @@ tarLoc = [...
     E N;% NE
     ];
 
-% Setup the frame
-ScreenSetup()
 
 disp('Make sure sensor can see all targets... hit any button to start calibration')
 pause

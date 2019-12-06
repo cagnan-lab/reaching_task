@@ -10,3 +10,7 @@ try
 catch
     Allpos = nan(9,3);
 end
+
+if size(Allpos>9)
+    Allpos = Allpos(1:9,:);
+end
