@@ -9,7 +9,7 @@ addpath([cd '\testData'])
 addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 
 %% Specify Subject Specific ID
-id = 'TIMSCOMPUTER';
+id = 'MS';
 
 %% Calibrate the LeapMotion to Screen Space
 % basic_8pnt_calibration(id)
@@ -27,7 +27,7 @@ for block = 1:4
 %     Rest(id,block,15)
 %     close all;
 %     pause
-    runBlock_FillingVariant(condition(block),id,block,ntrials)
+    runBlock_BarFillingVariant(condition(block),id,block,ntrials)
     close all;
     pause
 
