@@ -1,6 +1,7 @@
 function basic_8pnt_calibration(id)
 % Setup the frame
 ScreenSetup()
+
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 

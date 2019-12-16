@@ -8,3 +8,5 @@ try
 catch
     Allpos = nan(9,3);
 end
+
+Allpos = Allpos(1:9,:);

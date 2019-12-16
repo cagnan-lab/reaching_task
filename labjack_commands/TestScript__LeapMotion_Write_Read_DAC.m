@@ -24,7 +24,7 @@ ljudObj = sendLJ4DACOut(ljudObj,ljhandle,V);
 
 i =1;tic;
 t = 0;
-while t<30
+while t<inf
     t(i)= toc;
     
     allPos(:,:,i) = getHandPos();
@@ -34,7 +34,13 @@ while t<30
     
     % Rescale
     minmax = [-120 120];                % Set a min and max for leapmotion coordinate system.
-    V(1) = 0;
+    
+    if rem(round(toc),2) == 0
+        coder = 1;
+    else
+        coder = 2;
+    end
+    V(1) = coder;
     V(2) = rescaleLeap(X,[-250 250]);
     V(3) = rescaleLeap(Y,[-150 350]);
     V(4) = rescaleLeap(Z,[-250 250]);
@@ -43,9 +49,10 @@ while t<30
     ljudObj = sendLJ4DACOut(ljudObj,ljhandle,V);
     
     v(i) = readLJ4DACIn(ljudObj,ljhandle,3);
-    
+    v_test(:,i) = V(1:4);
     if rem(i,20) == 0
-        plot(t,v)
+%         plot(t,v)
+        plot(t,v_test)
         xlim([t(i)-10 t(i)])
         drawnow
     end
