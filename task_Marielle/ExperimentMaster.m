@@ -13,10 +13,10 @@ id = 'MS';
 
 %% Calibrate the LeapMotion to Screen Space
 % basic_8pnt_calibration(id)
-
+ 
 % Determine random order of conditions:
 condition = randperm(4);
-condition = 4; %[3 4];
+condition = 1; %[3 4]; 
 ntrials = 5; % Number of reaching trials
 
 

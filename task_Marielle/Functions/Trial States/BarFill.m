@@ -1,5 +1,5 @@
 function BarFill(bar, accumulator)
 
-set(bar(accumulator),'FaceColor','g');
+set(bar(1:accumulator),'FaceColor','g');
 
 drawnow

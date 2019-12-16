@@ -128,6 +128,7 @@ while trial <= ntrials
         elseif toc >= (TrialStart+timing(4)) && toc < (TrialStart+timing(5))
             start = TrialStart+timing(4);
             txy = location(dirC,:);
+            [Xscreen, Yscreen] = applyTransform(X, Y, XKey, YKey);
             dist = sqrt((txy(1)-Xscreen).^2+(txy(2)-Yscreen).^2);
             if dist < 0.4
                 if (start < start + 3) && (accumulator < 8)
