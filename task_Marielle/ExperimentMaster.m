@@ -9,24 +9,25 @@ addpath([cd '\testData'])
 % addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 
 %% Specify Subject Specific ID
-id = 'ms_pilot_test_firstHalf';
+id = 'MS';
 
 %% Calibrate the LeapMotion to Screen Space
 % basic_8pnt_calibration(id)
-
+ 
 % Determine random order of conditions:
 condition = randperm(4);
+condition = 1; %[3 4]; 
 ntrials = 5; % Number of reaching trials
 
 
-for block = 1:8
-    PostureHold(id,block,60)
-    close all;
-    pause
-    Rest(id,block,60)
-    close all;
-    pause
-    runBlock_FillingVariant(condition(block),id,block,ntrials)
+for block = 1:4
+%     PostureHold(id,block,15)
+%     close all;
+%     pause
+%     Rest(id,block,15)
+%     close all;
+%     pause
+    runBlock_BarFillingVariant(condition(block),id,block,ntrials)
     close all;
     pause
 
