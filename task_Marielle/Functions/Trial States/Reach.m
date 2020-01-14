@@ -1,4 +1,4 @@
-function [cross,cmp,cir,dirC,location] = Reach(sigma, std)
+function [cross,bar,cmp,cir,dirC,location] = Reach(sigma, std, holdScore,ntrials)
 
 % Plotting compass
 [cmp,dirC] = CompassGenerator(sigma, std);
@@ -13,6 +13,12 @@ cross = CrossGenerator();
 for i=1:length(cross)
 set(cross(i),'LineStyle','-','Color',[0 0 0],'linewidth',1)
 end 
+
+% Plotting bar
+[bar] = GenerateBar();
+
+% Plotting score
+%th = Score(holdScore,ntrials);
 
 % Plotting Circles
 [cir, location] = CirclePlot();

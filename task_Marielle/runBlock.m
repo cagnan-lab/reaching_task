@@ -1,13 +1,13 @@
-function runBlock(condition,id,ntrials)
+function runBlock(condition,id,block,ntrials)
 %% HARDWARE SETUP
 % Screen Setup:
 ScreenSetup()
 % Labjack Setup
-[ljasm,ljudObj,ljhandle] = setup_LabJack();
-% Leapmotion setup
-load([cd '/testData/Keys_' id],'XKey','YKey');
-[version]=matleap_version;
-fprintf('matleap version %d.%d\n',version(1),version(2));
+% [ljasm,ljudObj,ljhandle] = setup_LabJack();
+% % Leapmotion setup
+% load([cd '/testData/Keys_' id],'XKey','YKey');
+% [version]=matleap_version;
+% fprintf('matleap version %d.%d\n',version(1),version(2));
 % LeapMotion minmaxs (effective range of tracking- for voltage scaling)
 minmax(:,1) = [-250 250];
 minmax(:,2) = [-150 350];
@@ -64,15 +64,15 @@ while trial <= ntrials
         flag_trial = 0;
     end
     % Keep track of time
-    handposition(i,:) = AcquireLeap();           % Acquires stabilized palm position data
-    X = squeeze(handposition(i,1));
-    Y = squeeze(handposition(i,2));
-    Z = squeeze(handposition(i,3));
-    V(1) = coder;
-    V(2) = rescaleLeap(X,minmax(:,1));
-    V(3) = rescaleLeap(Y,minmax(:,2));
-    V(4) = rescaleLeap(Z,minmax(:,3));
-    sendLJ4DACOut(ljudObj,ljhandle,V);
+%     handposition(i,:) = AcquireLeap();           % Acquires stabilized palm position data
+%     X = squeeze(handposition(i,1));
+%     Y = squeeze(handposition(i,2));
+%     Z = squeeze(handposition(i,3));
+%     V(1) = coder;
+%     V(2) = rescaleLeap(X,minmax(:,1));
+%     V(3) = rescaleLeap(Y,minmax(:,2));
+%     V(4) = rescaleLeap(Z,minmax(:,3));
+%     sendLJ4DACOut(ljudObj,ljhandle,V);
     
     if (rem(round(toc,2),0.1) == 0) %&& i>25 % This sets the frequency at which plots will be refreshed
         
@@ -139,7 +139,7 @@ while trial <= ntrials
     
     i = i + 1;
     % Test LabJack recorder
-    v(i)  = getLJMeasurement(ljudObj,ljhandle,3);
+%     v(i)  = getLJMeasurement(ljudObj,ljhandle,3);
     coderSave(i) = coder;
     tvec(i) = toc;
 end % Master loop
