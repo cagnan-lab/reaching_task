@@ -31,10 +31,12 @@ while toc <= duration
     V(4) = rescaleLeap(Z,minmax(:,3));
     sendLJ4DACOut(ljudObj,ljhandle,V);
     
-    th = text(0.5,0.5,'Please place your arms on your chairrests', 'FontSize', 25);
-    set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[])
-    set(th,'visible','on','HorizontalAlignment','center','VerticalAlignment','middle');
-    drawnow
+    if (rem(round(toc,2),0.1) == 0)         % Included this 14/01 MAR
+        th = text(0.5,0.5,'Please place your arms on your chairrests', 'FontSize', 25);
+        set(gca,'xcolor','w','ycolor','w','xtick',[],'ytick',[])
+        set(th,'visible','on','HorizontalAlignment','center','VerticalAlignment','middle');
+        drawnow
+    end
     
     i = i + 1;
     % Test LabJack recorder

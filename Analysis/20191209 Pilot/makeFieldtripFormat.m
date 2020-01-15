@@ -1,3 +1,4 @@
+% This script is to analyse EEG data.
 
 clear; close all; clc;
 
@@ -24,7 +25,7 @@ SMR_data = struct2cell(SMR_data);
 names = {'Fz','Cz','Ox','O1','O2','C3','C4','F3','F4'};
 % ,'EMG1','EMG2','Z','Y','Coder','X','AcX','AcY','AcZ','Mark'};
 for i = 1:9
-    MS_8(:,i) = SMR_data{5}(i).imp.adc;        % MS_8 = holding posture with fake tremor
+    MS_8(:,i) = SMR_data{5}(i).imp.adc;        % SMR_data{5} = MS_8 = holding posture with fake tremor
 end
 
 fsample = 2048;
