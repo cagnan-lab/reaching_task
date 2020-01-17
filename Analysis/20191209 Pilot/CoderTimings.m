@@ -1,16 +1,74 @@
+clear; close all
+
+calicoder = coder15;
+posture = mean(calicoder(18760:23565));
+reach = mean(calicoder(23950:26750));
+motorprep = mean(calicoder(27200:30630));
+motorexec = mean(calicoder(30970:33740));
+other = 128000;
+CVM = [posture reach motorprep motorexec other];  % Confirmation table
+
+[decoder,trialdef] = codetimings(CVM,ampCoder)
 
 
-% Table of coder mean voltages:
-timing = cumsum([2 2 2 1.5 4 0.2]);
-first = timeVec13(30786);
-table = [first (first+2) (first+4) (first+6) (first+7.5) (first+11.5) (first+11.7)];
+% Switcher
+ampCoder = CVM(coder); % This simulates the amplifier readout
+ampCoder = circshift(ampCoder,fix(fsamp*0.005)); % Shift to simulate the predepolarization
+ampCoder = lowpass(ampCoder,100,fsamp);
+ampCoder = ampCoder + (0.01.*randn(1,size(coder,2))); % add some noise
+plot(tvec,ampCoder)
+
+% Now try to decode using simple absolute differences
+ampDeCoder = abs(ampCoder-CVM'); % absolute Difference
+[a,decoder] = min(ampDeCoder,[],1);
+plot(tvec,decoder)
+
+% Now make a trialdef variable that you can use to segment the data in
+% fieldtrip
+for cond = 1:numel(CVM) % loop through number of conditions
+    X = find(decoder==cond); % find timings at which condition exists
+    blocks = SplitVec(X,'consecutive');
+        % Now loop through number of instances
+        nmx = [];
+        for bl = 1:numel(blocks)
+            nmx(bl) = numel(blocks{bl});
+            trialdef{cond}(:,bl) = [blocks{bl}(1) blocks{bl}(end)]; % i.e. take first and last samples of each block
+        end
+        trialdef{cond}(:,nmx<32) = []; % Remove very small blocks
+end
+
+% You can now use trialdef{cond} to construct your fieldtrip format data files.
+
+
+
+%% The above method will suffice for simply blocking the data. The waverform of the switch confounds
+% the exact timing of the decoded signal such that there is a delay from
+% the actual start point. This wont matter if were not super keen on
+% measuring something like reaction times. However, if the delay is fairly
+% constant, then again we can just compensate for this in the calculations.
+% I would stick with the above method for now
+
+% % Find switching points
+% dampCoder = diff(ampCoder);
+% plot(tvec(2:end),dampCoder)
+% dzampCoder = abs((dampCoder-mean(dampCoder))./std(dampCoder)); % absolute because we dont care about direction
+% 
+% switchPoints = find(dzampCoder>3.5);
+% switchPoints = SplitVec(switchPoints,'consecutive');
+% 
+% % Ignore the first and last (artefacts of the filtering we did to simulate)
+% list = 1:size(switchPoints,2);
+% for i = list
+%     trialdef(1,i) = switchPoints{i}(1);
+% end
+
+%%
 
 
 % ---- When Z-score is > 2.5, a peak is recognized for trial MS_15
 X15 = diff(coder15);
 Z15 = abs((X15-mean(X15))./std(X15));       % These are the z-scores of coder13
 peaks = find((Z15) > 2.5);
-
 
 
 diffpeaks = diff(peaks);
@@ -51,7 +109,7 @@ plot(timeVec15,timecoder)
 
 timercode = timecoder(posture:end);         % Get time CODER starting from posture hold
 timervec15 = timeVec15(posture:end);        % Get time VECTOR starting from posture hold
-timervec15 = timervec15 - timervec15(1);
+timervec15 = timervec15 - timervec15(1);    % This to shift the graph so that it starts with posture
 figure
 subplot(2,1,1)
 plot(MS_15_ML{1, 1}.tvec,MS_15_ML{1, 1}.coderSave(2:end))
@@ -97,9 +155,9 @@ motorexec15_5 = mean(coder15(127800:130600));
 
 reach15 = mean([reach15_1 reach15_2 reach15_3 reach15_4 reach15_5]);
 motorprep15 = mean([motorprep15_1 motorprep15_2 motorprep15_3 motorprep15_4 motorprep15_5]);
-motorexec15 = mean([motorexec15_1 motorexec15_2 motorexec15_3 motorexec15_4 motorexec15_5]);
+motorexec = mean([motorexec15_1 motorexec15_2 motorexec15_3 motorexec15_4 motorexec15_5]);
 other = 128000;
-table = [posture15 reach15 motorprep15 motorexec15 other];  % Confirmation table
+table = [posture15 reach15 motorprep15 motorexec other];  % Confirmation table
 
 a = zeros(length(coder15),1);
 b = zeros(length(coder15),1);

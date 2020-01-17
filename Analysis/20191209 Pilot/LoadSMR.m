@@ -1,4 +1,4 @@
-function data = LoadSMR();
+function data = LoadSMR()
 % To load the SMR data into Matlab. 
 % Definition channels:      EEG:    EMG:                LeapMotion:     Accelerometer:  Mark:             
 %                           1. Fz   10. EMG1 (flexor)   12. Z           16. AcY         19. Mark
@@ -29,6 +29,6 @@ data_MS17 = ImportSMR(['C:\Users\marie\OneDrive\Documenten\Oxford\Data\SMR Data\
 
 SMR = {data_MS2 data_MS4 data_MS5 data_MS7 data_MS8 data_MS9 data_MS10 data_MS11 data_MS12 data_MS13 data_MS14 data_MS15 data_MS16 data_MS17};
 naming = {'MS_2' 'MS_4' 'MS_5' 'MS_7' 'MS_8' 'MS_9' 'MS_10' 'MS_11' 'MS_12' 'MS_13' 'MS_14' 'MS_15' 'MS_16' 'MS_17'};
-data = cell2struct(SMR, naming, 2);
+data = [naming; SMR]';
 
 
