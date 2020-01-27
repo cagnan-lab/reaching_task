@@ -29,7 +29,7 @@ for cond = 1:numel(CVM) % loop through number of conditions
         nmx = [];
         for bl = 1:numel(blocks)
             nmx(bl) = numel(blocks{bl});
-            trialdef{cond}(:,bl) = [blocks{bl}(1) blocks{bl}(end)]; % i.e. take first and last samples of each block
+            trialdef{cond}(:,bl) = [blocks{bl}(1) blocks{bl}(end)]; % i.e. take first and last samples of each block. You could add buffer periods here
         end
         trialdef{cond}(:,nmx<32) = []; % Remove very small blocks
 end
@@ -43,7 +43,7 @@ end
 % the actual start point. This wont matter if were not super keen on
 % measuring something like reaction times. However, if the delay is fairly
 % constant, then again we can just compensate for this in the calculations.
-% I would stick with the above method for now
+% ALTERNATIVE METHOD (incomplete)
 
 % Find switching points
 dampCoder = diff(ampCoder);
