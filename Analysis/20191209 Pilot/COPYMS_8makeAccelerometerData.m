@@ -9,7 +9,7 @@ addpath('C:\Users\marie\OneDrive\Documenten\Oxford\fieldtrip-20191208');
 addpath('C:\Users\marie\OneDrive\Documenten\Oxford\Data\Leapmotion Data\ms_pilot_test_firstHalf');  % LeapMotion Matlab
 
 SMR_data = LoadSMR();
-SMR_data = struct2cell(SMR_data);
+
 % LeapMotion Matlab:
 MS_8_ML = load('TrialDatams_pilot_test_firstHalf_block2_posture.mat');  % MS_8_ML = Posture With Tremor LeapMotion Data of Matlab
 MS_8_ML = struct2cell(MS_8_ML);
@@ -42,7 +42,11 @@ MS_13_ML = struct2cell(MS_13_ML);
 % Accelerometer & LeapMotion Amplifier:
 names = {'Z','Y','Coder','X','AcY','AcX','AcZ'};
 for i = 1:7
-    MS_8_AC(:,i) = SMR_data{5}(11+i).imp.adc;        % SMR_data{5} = MS_8 = holding posture with fake tremor
+    MS_8_AC(:,i) = SMR_data{5,2}(11+i).imp.adc;        % SMR_data{5} = MS_8 = holding posture with fake tremor
+end
+
+for i = 1:7
+    MS_4_AC(:,i) = SMR_data{2,2}(11+i).imp.adc;        % SMR_data{2} = MS_4 = holding posture tremor ??
 end
 
 for i = 1:7

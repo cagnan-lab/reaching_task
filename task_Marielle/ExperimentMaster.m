@@ -1,12 +1,12 @@
-clear; clc; close all;
+% clear; clc; close all;
 %% Main experiment
 %% Setup Paths for experiment
-addpath([cd '\labjack_commands'])
-% addpath('C:\Users\marie\OneDrive\Documenten\Oxford\WindowsAPI')
-addpath('C:\Users\Tim\Documents\MATLAB_ADDONS\WindowAPI')
+% addpath([cd '\labjack_commands'])
+addpath('C:\Users\marie\OneDrive\Documenten\Oxford\WindowsAPI')
+% addpath('C:\Users\Tim\Documents\MATLAB_ADDONS\WindowAPI')
 addpath(genpath([cd '/task_Marielle']))
 addpath([cd '\testData'])
-% addpath([cd '\leapmotion\worksforMar\LeapSDK'])
+addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 
 %% Specify Subject Specific ID
 id = 'MS';
@@ -15,22 +15,19 @@ id = 'MS';
 % basic_8pnt_calibration(id)
  
 % Determine random order of conditions:
-condition = randperm(4);
+condition = randperm(4); 
 condition = 1; %[3 4]; 
-ntrials = 5; % Number of reaching trials
+stagerepetitions = 5; % Number of reaching trials
 
 
 for block = 1:4
-%     PostureHold(id,block,15)
-%     close all;
-%     pause
-%     Rest(id,block,15)
-%     close all;
-%     pause
-    runBlock_BarFillingVariant(condition(block),id,block,ntrials)
+    PostureHold(id,block,15)
     close all;
     pause
-
-%     pause()
-    
+    Rest(id,block,15)
+    close all;
+    pause
+    runBlock_BarFillingVariant(condition(block),id,block,stagerepetitions)
+    close all;
+    pause    
 end

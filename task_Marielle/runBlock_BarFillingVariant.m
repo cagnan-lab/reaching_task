@@ -1,4 +1,4 @@
-function runBlock_BarFillingVariant(condition,id,block,ntrials)
+function runBlock_BarFillingVariant(condition,id,block,stagerepetitions)
 %% HARDWARE SETUP
 % Screen Setup:
 ScreenSetup()
@@ -37,7 +37,7 @@ end
 %% TRIAL DEFINITIONS
 % Timings of 1) posture = 15; 2) reach; 3) prep; 4) exec; 5) hold; 6) return
 % timing = [15 20 23 25 30 35];
-timing = cumsum([2 2 2 1.5 4 0.2]);   % Include randomness in appearance?
+timing = cumsum([30 2.5 2.5 1.8 5 0.2]);   % Include randomness in appearance?
 
 % Setup triggers for labjack (voltages)
 v = reshape(linspace(0.5,3,7),7,1);        % Change 1 to 2 if go before you know is included
@@ -48,12 +48,12 @@ txt_instructions = TaskInstructions(condition);
 clf;
 tic
 i = 1; % Initialize whole loop counter (THIS COUNTS THE TIME STEP)
-trial = 1;
+repetition = 1;
 accumulator = 0;
 holdScore = 0;
-TargetDirection = zeros(ntrials,1);
-TrialCorrect = zeros(ntrials,1);
-TrialMove = zeros(ntrials,1);
+TargetDirection = zeros(stagerepetitions,1);
+TrialCorrect = zeros(stagerepetitions,1);
+TrialMove = zeros(stagerepetitions,1);
 %% SET FLAGS
 coder = v(1);
 flag_reach = 0;
@@ -62,7 +62,7 @@ flag_post = 1;
 flag_exec_delay = 0; % This is only used for GBYN - 0 means only arrow goes green
 flag_beep = 0; % This flag loads the beep gun!
 
-while trial <= ntrials
+while repetition <= stagerepetitions
     if flag_trial == 1
         TrialStart = toc;
         flag_trial = 0;
@@ -89,14 +89,14 @@ while trial <= ntrials
             % --- REACH
         elseif toc >= (TrialStart+timing(1)) && toc < (TrialStart+timing(2))    % Timing 2 is period of holding reach
             if flag_reach == 0
-                [cross,bar,cmp,cir,dirC,location] = Reach(sigma, std, holdScore,ntrials);
-                th = Score(holdScore,ntrials);
+                [cross,bar,cmp,cir,dirC,location] = Reach(sigma, std, holdScore,stagerepetitions);
+                th = Score(holdScore,stagerepetitions);
                 flag_reach = 1;
                 flag_post = 0;
             end
             
             coder = v(2);
-            TargetDirection(trial) = dirC;
+            TargetDirection(repetition) = dirC;
             
             % --- MOTOR PREPARATION
         elseif toc >= (TrialStart+timing(2)) && toc < (TrialStart+timing(3))    % Timing 2 to 3 is period of preparing movement
@@ -120,7 +120,7 @@ while trial <= ntrials
                 
                 if (flag_exec_delay == 1) && (dist>0.35)
                     MotorExec(cmp, cir, dirC, 1)
-                    TrialMove(trial) = 1;
+                    TrialMove(repetition) = 1;
                     coder = v(5);
                 end
             end
@@ -137,10 +137,10 @@ while trial <= ntrials
                 end
             end
             if (accumulator > 6) && (flag_beep == 0)
-                TrialCorrect(trial) = 1;
+                TrialCorrect(repetition) = 1;
                 holdScore = holdScore + 1;
                 delete(th);
-                th = Score(holdScore,ntrials);
+                th = Score(holdScore,stagerepetitions);
                 beep
                 flag_beep = 1;
             end
@@ -149,7 +149,7 @@ while trial <= ntrials
             % --- RETURN
         elseif toc >= (TrialStart+timing(5)) && toc < (TrialStart+timing(6))
             Return(cmp, bar, cir, dirC)
-            th = Score(holdScore,ntrials);
+            th = Score(holdScore,stagerepetitions);
             coder = v(7);
             
             % --- UPDATE FLAGS
@@ -160,7 +160,7 @@ while trial <= ntrials
             flag_beep = 0; % Ready for the next beep
             
             accumulator = 0;
-            trial = trial + 1;
+            repetition = repetition + 1;
             clf
         end
         

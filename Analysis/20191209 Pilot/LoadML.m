@@ -1,4 +1,32 @@
-function data = LoadML();
+function data = LoadML(R)
+
+% function data = LoadML(R,ML2FT_flag,FTSave_flag)
+
+% Channel Defs
+names = {'Fz','Cz','Ox','O1','O2','C3','C4','F3','F4','EMG1','EMG2','LMZ','LMY','CODER','LMX','ACCY','ACCX','ACCZ'};
+% Flattten Seshnums
+seshnums = [R.expSet.seshnums{:}];
+
+p = 0;
+for i = seshnums
+    p = p+1;
+    LM_data = load([R.paths.datapath '\Leapmotion Data\PilotTrialData_ms_' num2str(i) '.mat']);
+    LM_name = ['MS_' num2str(i)];
+    
+    if SMR2FT_flag == 1
+        fsample = 2048;
+        ft_data = FT2SMR(LM_data,names,fsample);
+        if FTSave_flag == 1
+            mkdir([R.paths.datapath '\FTData\raw'])
+            save([R.paths.datapath '\FTData\raw\ms_' num2str(i) '_raw.mat'],'ft_data');
+        end
+        data{p} = ft_data;
+        
+    else % if not then save MS style
+        data{p,2} = LM_data;      % #1
+        data{p,1} = LM_name;
+    end
+end
 
 MS_4_ML = load('TrialDatams_pilot_test_firstHalf_block1_posture.mat');  % MS_4_ML = Posture Tremor ?? LeapMotion Data of Matlab
 MS_4_ML = struct2cell(MS_4_ML);  

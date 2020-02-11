@@ -4,10 +4,9 @@ function runBlock_FillingVariant(condition,id,block,ntrials)
 ScreenSetup()
 % figure;
 % Labjack Setup
-[ljasm,ljudObj,ljhandle] = setup_LabJack();
+% [ljasm,ljudObj,ljhandle] = setup_LabJack();
 % Leapmotion setup
-% % load([cd '/testData/Keys_' id],'XKey','YKey');
-load([cd '/testData/Keys_MS'],'XKey','YKey');
+load(['C:\Users\marie\OneDrive\Documenten\Oxford\reaching_task\testData\Keys_' id], 'XKey','YKey');
 [version]=matleap_version;
 fprintf('matleap version %d.%d\n',version(1),version(2));
 % LeapMotion minmaxs (effective range of tracking- for voltage scaling)
