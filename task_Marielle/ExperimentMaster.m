@@ -29,5 +29,6 @@ for block = 1:4
     pause
     runBlock_BarFillingVariant(condition(block),id,block,stagerepetitions)
     close all;
-    pause    
+str = input('blah','s');
+pause    
 end
