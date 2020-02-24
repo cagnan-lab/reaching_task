@@ -7,28 +7,53 @@ addpath('C:\Users\marie\OneDrive\Documenten\Oxford\WindowsAPI')
 addpath(genpath([cd '/task_Marielle']))
 addpath([cd '\testData'])
 addpath([cd '\leapmotion\worksforMar\LeapSDK'])
-
+desktoppath =winqueryreg('HKEY_CURRENT_USER', 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', 'Desktop');
 %% Specify Subject Specific ID
-id = 'MS';
+subcode = 'MS';
+    mkdir([desktoppath '\OPM\Calibration_' subcode])
+
+for i = 1:4
+    mkdir([desktoppath '\OPM\Condition_' num2str(i) '_' subcode])
+end
 
 %% Calibrate the LeapMotion to Screen Space
-% basic_8pnt_calibration(id)
- 
-% Determine random order of conditions:
-condition = randperm(4); 
-condition = 1; %[3 4]; 
-stagerepetitions = 5; % Number of reaching trials
+% uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
 
-
-for block = 1:4
-    PostureHold(id,block,15)
-    close all;
-    pause
-    Rest(id,block,15)
-    close all;
-    pause
-    runBlock_BarFillingVariant(condition(block),id,block,stagerepetitions)
-    close all;
-str = input('blah','s');
-pause    
+for rep = 1:2
+    % Determine random order of conditions:
+    condition = randperm(4);
+    
+    for block = 1:4
+        cond = condition(block);
+        % Made ID file
+        ID = [subcode '_cond' num2str(cond) '_rep' num2str(rep)];
+        fileID = fopen([desktoppath '\OPM\CURRID.txt'],'w');
+        fprintf(fileID,ID);
+        fclose(fileID);
+        
+        %     PostureHold(id,block,15)
+        close all;
+        pause
+        %     Rest(id,block,15)
+        close all;
+        pause
+        
+        %             if cond == 1
+        %             uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
+        %             elseif cond == 2
+        %                 uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
+        %             elseif cond == 3
+        %                 uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
+        %             elseif cond == 4
+        %                 uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
+        %             end
+        
+        close all;
+        blockComments = input('Any comments?:    ','s');
+        fileID = fopen([desktoppath '\OPM\Condition_' num2str(i) '_' subcode '\blockComments_' ID '.txt'],'w');
+        fprintf(fileID,ID);
+        fclose(fileID);
+        pause
+        clear ID
+    end
 end
