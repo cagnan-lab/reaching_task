@@ -21,9 +21,9 @@ end
 
 for rep = 1:2
     % Determine random order of conditions:
-    condition = randperm(4);
+    condition = [1 2 3 4]; %randperm(4);
     
-    for block = 1:4
+    for block = 1; %:4
         cond = condition(block);
         % Made ID file
         ID = [subcode '_cond' num2str(cond) '_rep' num2str(rep)];
@@ -38,17 +38,17 @@ for rep = 1:2
         close all;
         pause
         
-        %             if cond == 1
-        %             uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
-        %             elseif cond == 2
-        %                 uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
-        %             elseif cond == 3
-        %                 uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
-        %             elseif cond == 4
-        %                 uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
-        %             end
+        if cond == 1
+            uiopen([cd '\Unity Builds\Condition 1\Condition 1.exe'],1)
+        elseif cond == 2
+            uiopen([cd '\Unity Builds\Condition 2\Condition 2.exe'],1)
+        elseif cond == 3
+            uiopen([cd '\Unity Builds\Condition 3\Condition 3.exe'],1)
+        elseif cond == 4
+            uiopen([cd '\Unity Builds\Condition 4\Condition 4.exe'],1)
+        end
         
-        close all;
+        pause
         blockComments = input('Any comments?:    ','s');
         fileID = fopen([desktoppath '\OPM\Condition_' num2str(i) '_' subcode '\blockComments_' ID '.txt'],'w');
         fprintf(fileID,ID);
