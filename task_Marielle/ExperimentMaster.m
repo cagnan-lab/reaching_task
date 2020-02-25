@@ -1,4 +1,4 @@
-% clear; clc; close all;
+clear; clc; close all;
 %% Main experiment
 %% Setup Paths for experiment
 % addpath([cd '\labjack_commands'])
@@ -8,33 +8,56 @@ addpath(genpath([cd '/task_Marielle']))
 addpath([cd '\testData'])
 addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 desktoppath =winqueryreg('HKEY_CURRENT_USER', 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', 'Desktop');
+
 %% Specify Subject Specific ID
 subcode = 'MS';
-    mkdir([desktoppath '\OPM\Calibration_' subcode])
 
-for i = 1:4
-    mkdir([desktoppath '\OPM\Condition_' num2str(i) '_' subcode])
-end
+subjectpath = ([desktoppath '\OPM\' subcode]);
+mkdir([subjectpath '\' subcode '_Calibration'])
+
+fileSUBCODE = fopen([desktoppath '\OPM\SUBCODE.txt'],'w');
+fprintf(fileSUBCODE,subcode);
+fclose(fileSUBCODE);
+
+%% Configuration file
+reaches         = '5';
+posturalhold    = '10';
+rest            = '10';
+posturestart    = '10';
+reachwait       = '2.5';
+prepwait        = '2.5';
+delaywait       = '3.5';
+holdwait        = '4';
+colorduration   = '3';
+% balloonsize     = '20';
+
+configuration(subjectpath, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 
 %% Calibrate the LeapMotion to Screen Space
-% uiopen([cd '\Unity Builds\New folder\Point and Shoot.exe'],1)
+uiopen([cd '\Unity Builds\Calibration\Calibration.exe'],1)
+close all;
+pause
+
+%% Run Conditions
 
 for rep = 1:2
     % Determine random order of conditions:
-    condition = [1 2 3 4]; %randperm(4);
+    condition = randperm(4);
     
-    for block = 1; %:4
+    for block = 1:4
         cond = condition(block);
-        % Made ID file
-        ID = [subcode '_cond' num2str(cond) '_rep' num2str(rep)];
-        fileID = fopen([desktoppath '\OPM\CURRID.txt'],'w');
-        fprintf(fileID,ID);
+        % Made ConditionID path
+        CURRID = [subcode '_Condition_' num2str(cond) '_Rep_' num2str(rep)];
+        fileID = fopen([subjectpath '\CURRID.txt'],'w');
+        fprintf(fileID,CURRID);
         fclose(fileID);
         
-        %     PostureHold(id,block,15)
+%         %     PostureHold(id,block,15)
+        uiopen([cd '\Unity Builds\PosturalHold\PosturalHold.exe'],1)
         close all;
         pause
-        %     Rest(id,block,15)
+%         %     Rest(id,block,15) 
+        uiopen([cd '\Unity Builds\Rest\Rest.exe'],1)
         close all;
         pause
         
@@ -48,12 +71,12 @@ for rep = 1:2
             uiopen([cd '\Unity Builds\Condition 4\Condition 4.exe'],1)
         end
         
+        trialComments = input('Any comments?:    ','s');
+        fileCOMMENTS = fopen([subjectpath '\' CURRID '\' subcode '_TrialComments.txt'],'w');
+        fprintf(fileCOMMENTS,trialComments);
+        fclose(fileCOMMENTS);
+                
         pause
-        blockComments = input('Any comments?:    ','s');
-        fileID = fopen([desktoppath '\OPM\Condition_' num2str(i) '_' subcode '\blockComments_' ID '.txt'],'w');
-        fprintf(fileID,ID);
-        fclose(fileID);
-        pause
-        clear ID
+        clear CURRID
     end
 end
