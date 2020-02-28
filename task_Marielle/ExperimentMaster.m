@@ -20,18 +20,23 @@ fprintf(fileSUBCODE,subcode);
 fclose(fileSUBCODE);
 
 %% Configuration file
-reaches         = '5';
-posturalhold    = '10';
-rest            = '10';
-posturestart    = '10';
-reachwait       = '2.5';
+labjack         = '0';          % 1 = Connected, 0 = Not Connected              bool
+pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                  bool 
+reaches         = '5';          % Amount of Reaches per Trial                   int
+condinfo        = '2';          % Seconds of showing Condition Information      float
+posturalhold    = '10';         % Seconds of PosturalHold Task                  float
+rest            = '10';         % Seconds of Rest Task                          float 
+posturestart    = '2';          % Seconds of Postural Hold before Trials        float
+reachwait       = '2.5';        % Seconds etc... 
 prepwait        = '2.5';
 delaywait       = '3.5';
 holdwait        = '4';
-colorduration   = '3';
+colorduration   = '3';          % Seconds of
 % balloonsize     = '20';
 
-configuration(subjectpath, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+confpath = ([subjectpath '\Configuration']);
+mkdir(confpath)
+configuration(confpath, labjack, pointervisible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 
 %% Calibrate the LeapMotion to Screen Space
 uiopen([cd '\Unity Builds\Calibration\Calibration.exe'],1)
@@ -48,7 +53,7 @@ for rep = 1:2
         cond = condition(block);
         % Made ConditionID path
         CURRID = [subcode '_Condition_' num2str(cond) '_Rep_' num2str(rep)];
-        fileID = fopen([subjectpath '\CURRID.txt'],'w');
+        fileID = fopen([confpath '\CURRID.txt'],'w');
         fprintf(fileID,CURRID);
         fclose(fileID);
         

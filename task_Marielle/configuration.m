@@ -1,33 +1,42 @@
-function configuration(subjectpath, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
-% function configuration(subjectpath, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, balloonsize)
+function configuration(path, labjack, visible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+% function configuration(path, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, balloonsize)
 
-fileREACHES = fopen([subjectpath '\REACHES.txt'],'w');
+fileLABJACK = fopen([path '\LABJACK.txt'],'w');
+fprintf(fileLABJACK,labjack);
+fclose(fileLABJACK);
+fileVISIBLE = fopen([path '\VISIBLE.txt'],'w');
+fprintf(fileVISIBLE,visible);
+fclose(fileVISIBLE);
+fileREACHES = fopen([path '\REACHES.txt'],'w');
 fprintf(fileREACHES,reaches);
 fclose(fileREACHES);
-filePOSTHOLD = fopen([subjectpath '\POSTHOLD.txt'],'w');
+fileCONDINFO = fopen([path '\CONDINFO.txt'],'w');
+fprintf(fileCONDINFO,condinfo);
+fclose(fileCONDINFO);
+filePOSTHOLD = fopen([path '\POSTHOLD.txt'],'w');
 fprintf(filePOSTHOLD,posturalhold);
 fclose(filePOSTHOLD);
-fileREST = fopen([subjectpath '\REST.txt'],'w');
+fileREST = fopen([path '\REST.txt'],'w');
 fprintf(fileREST,rest);
 fclose(fileREST);
-filePOSTSTART = fopen([subjectpath '\POSTSTART.txt'],'w');
+filePOSTSTART = fopen([path '\POSTSTART.txt'],'w');
 fprintf(filePOSTSTART,posturestart);
 fclose(filePOSTSTART);
-fileREACHWAIT = fopen([subjectpath '\REACHWAIT.txt'],'w');
+fileREACHWAIT = fopen([path '\REACHWAIT.txt'],'w');
 fprintf(fileREACHWAIT,reachwait);
 fclose(fileREACHWAIT);
-filePREPWAIT = fopen([subjectpath '\PREPWAIT.txt'],'w');
+filePREPWAIT = fopen([path '\PREPWAIT.txt'],'w');
 fprintf(filePREPWAIT,prepwait);
 fclose(filePREPWAIT);
-fileDELAYWAIT = fopen([subjectpath '\DELAYWAIT.txt'],'w');
+fileDELAYWAIT = fopen([path '\DELAYWAIT.txt'],'w');
 fprintf(fileDELAYWAIT,delaywait);
 fclose(fileDELAYWAIT);
-fileHOLDWAIT = fopen([subjectpath '\HOLDWAIT.txt'],'w');
+fileHOLDWAIT = fopen([path '\HOLDWAIT.txt'],'w');
 fprintf(fileHOLDWAIT,holdwait);
 fclose(fileHOLDWAIT);
-fileCOLORDUR = fopen([subjectpath '\COLORDURATION.txt'],'w');
+fileCOLORDUR = fopen([path '\COLORDURATION.txt'],'w');
 fprintf(fileCOLORDUR,colorduration);
 fclose(fileCOLORDUR);
-% fileBALLOONSIZE = fopen([subjectpath '\BALLOONSIZE.txt'],'w');
+% fileBALLOONSIZE = fopen([path '\BALLOONSIZE.txt'],'w');
 % fprintf(fileBALLOONSIZE,balloonsize);
 % fclose(fileBALLOONSIZE);
