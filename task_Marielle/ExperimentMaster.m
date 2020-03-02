@@ -10,7 +10,7 @@ addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 desktoppath =winqueryreg('HKEY_CURRENT_USER', 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', 'Desktop');
 
 %% Specify Subject Specific ID
-subcode = 'MS';
+subcode = 'TW';
 
 subjectpath = ([desktoppath '\OPM\' subcode]);
 mkdir([subjectpath '\' subcode '_Calibration'])
@@ -21,7 +21,7 @@ fclose(fileSUBCODE);
 
 %% Configuration file
 labjack         = '0';          % 1 = Connected, 0 = Not Connected              bool
-pointervisible  = '0';          % 1 = Visible, 0 = Not Visible                  bool 
+pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                  bool 
 reaches         = '5';          % Amount of Reaches per Trial                   int
 condinfo        = '2';          % Seconds of showing Condition Information      float
 posturalhold    = '10';         % Seconds of PosturalHold Task                  float
