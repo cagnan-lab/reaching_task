@@ -1,6 +1,9 @@
-function configuration(path, labjack, visible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+function configuration(path, labjack, tick, visible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 % function configuration(path, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, balloonsize)
 
+fileTICK = fopen([path '\TICK.txt'],'w');
+fprintf(fileTICK,tick);
+fclose(fileTICK);
 fileLABJACK = fopen([path '\LABJACK.txt'],'w');
 fprintf(fileLABJACK,labjack);
 fclose(fileLABJACK);

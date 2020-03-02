@@ -10,7 +10,7 @@ addpath([cd '\leapmotion\worksforMar\LeapSDK'])
 desktoppath =winqueryreg('HKEY_CURRENT_USER', 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', 'Desktop');
 
 %% Specify Subject Specific ID
-subcode = 'TW';
+subcode = 'MS';
 
 subjectpath = ([desktoppath '\OPM\' subcode]);
 mkdir([subjectpath '\' subcode '_Calibration'])
@@ -21,6 +21,7 @@ fclose(fileSUBCODE);
 
 %% Configuration file
 labjack         = '0';          % 1 = Connected, 0 = Not Connected              bool
+tick            = '0';          % 1 = Connected, 0 = Not Connected              bool
 pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                  bool 
 reaches         = '5';          % Amount of Reaches per Trial                   int
 condinfo        = '2';          % Seconds of showing Condition Information      float
@@ -36,7 +37,7 @@ colorduration   = '3';          % Seconds of
 
 confpath = ([subjectpath '\Configuration']);
 mkdir(confpath)
-configuration(confpath, labjack, pointervisible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+configuration(confpath, labjack, tick, pointervisible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 
 %% Calibrate the LeapMotion to Screen Space
 uiopen([cd '\Unity Builds\Calibration\Calibration.exe'],1)
