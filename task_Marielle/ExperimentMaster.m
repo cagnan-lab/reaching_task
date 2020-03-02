@@ -42,7 +42,6 @@ configuration(confpath, labjack, tick, pointervisible, reaches, condinfo, postur
 %% Calibrate the LeapMotion to Screen Space
 uiopen([cd '\Unity Builds\Calibration\Calibration.exe'],1)
 close all;
-pause
 
 %% Run Conditions
 
@@ -52,21 +51,28 @@ for rep = 1:2
     
     for block = 1:4
         cond = condition(block);
+        disp('Press to create CURRID')
+        pause
         % Made ConditionID path
         CURRID = [subcode '_Condition_' num2str(cond) '_Rep_' num2str(rep)];
         fileID = fopen([confpath '\CURRID.txt'],'w');
         fprintf(fileID,CURRID);
         fclose(fileID);
-        pause 
+         
 %         %     PostureHold(id,block,15)
+        disp('Press to start PosturalHold')
+        pause
         uiopen([cd '\Unity Builds\PosturalHold\PosturalHold.exe'],1)
         close all;
-        pause
+
 %         %     Rest(id,block,15) 
+        disp('Press to start Rest')
+        pause
         uiopen([cd '\Unity Builds\Rest\Rest.exe'],1)
         close all;
-        pause
         
+        disp(['Press to start Condition ', num2str(cond)])
+        pause
         if cond == 1
             uiopen([cd '\Unity Builds\Condition 1\Condition 1.exe'],1)
         elseif cond == 2
