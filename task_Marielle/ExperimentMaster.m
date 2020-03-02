@@ -21,7 +21,7 @@ fclose(fileSUBCODE);
 
 %% Configuration file
 labjack         = '0';          % 1 = Connected, 0 = Not Connected              bool
-pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                  bool 
+pointervisible  = '0';          % 1 = Visible, 0 = Not Visible                  bool 
 reaches         = '5';          % Amount of Reaches per Trial                   int
 condinfo        = '2';          % Seconds of showing Condition Information      float
 posturalhold    = '10';         % Seconds of PosturalHold Task                  float
@@ -56,7 +56,7 @@ for rep = 1:2
         fileID = fopen([confpath '\CURRID.txt'],'w');
         fprintf(fileID,CURRID);
         fclose(fileID);
-        
+        pause 
 %         %     PostureHold(id,block,15)
         uiopen([cd '\Unity Builds\PosturalHold\PosturalHold.exe'],1)
         close all;
