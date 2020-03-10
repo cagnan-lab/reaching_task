@@ -1,18 +1,24 @@
-function configuration(path, labjack, tick, visible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
-% function configuration(path, reaches, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, balloonsize)
+function configuration(path, tracking, labjack, tick, pointervisible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+% function configuration(confpath, labjack, tick, pointervisible, reaches, arrows, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration, balloonsize)
 
-fileTICK = fopen([path '\TICK.txt'],'w');
-fprintf(fileTICK,tick);
-fclose(fileTICK);
+fileTRACKING = fopen([path '\TRACKING.txt'],'w');
+fprintf(fileTRACKING,tracking);
+fclose(fileTRACKING);
 fileLABJACK = fopen([path '\LABJACK.txt'],'w');
 fprintf(fileLABJACK,labjack);
 fclose(fileLABJACK);
+fileTICK = fopen([path '\TICK.txt'],'w');
+fprintf(fileTICK,tick);
+fclose(fileTICK);
 fileVISIBLE = fopen([path '\VISIBLE.txt'],'w');
-fprintf(fileVISIBLE,visible);
+fprintf(fileVISIBLE,pointervisible);
 fclose(fileVISIBLE);
 fileREACHES = fopen([path '\REACHES.txt'],'w');
 fprintf(fileREACHES,reaches);
 fclose(fileREACHES);
+% fileUNCERTAINTY = fopen([path '\UNCERTAINTY.txt'],'w');
+% fprintf(fileUNCERTAINTY,uncertainty);
+% fclose(fileUNCERTAINTY);
 fileCONDINFO = fopen([path '\CONDINFO.txt'],'w');
 fprintf(fileCONDINFO,condinfo);
 fclose(fileCONDINFO);
