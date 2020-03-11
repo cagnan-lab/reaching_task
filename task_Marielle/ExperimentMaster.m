@@ -24,9 +24,11 @@ tracking        = '0';          % 0 = Index Finger Tip, 1 = Palm Pos, (2 = Stab 
 labjack         = '0';          % 1 = Connected, 0 = Not Connected                          bool
 tick            = '0';          % 1 = Connected, 0 = Not Connected                          bool
 pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                              bool
-reaches         = '5';          % Amount of Reaches per Trial                               int
+reaches         = '10';          % Amount of Reaches per Trial                               int
 % uncertainty     = '2';          % 0 = one Arrow, 1 = four Arrows, 2 = eight Arrows          bool
 condinfo        = '2';          % Seconds of showing Condition Information                  float
+breakreaches    = '3';         % Amount of Continuous Reaches before break                 int
+breakwait       = '3';         % Seconds of break after 10 reaches                         float
 posturalhold    = '10';         % Seconds of PosturalHold Task                              float
 rest            = '10';         % Seconds of Rest Task                                      float
 posturestart    = '2';          % Seconds of Postural Hold before Trials                    float
@@ -39,7 +41,7 @@ colorduration   = '1.5';        % Time in which balloon turns green if right pos
 
 confpath = ([subjectpath '\Configuration']);
 mkdir(confpath)
-configuration(confpath, tracking, labjack, tick, pointervisible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+configuration(confpath, tracking, labjack, tick, pointervisible, reaches, condinfo, breakreaches, breakwait, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 
 %% Calibrate the LeapMotion to Screen Space
 uiopen([cd '\Unity Builds\Calibration\Calibration.exe'],1)

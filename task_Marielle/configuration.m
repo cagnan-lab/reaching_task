@@ -1,4 +1,4 @@
-function configuration(path, tracking, labjack, tick, pointervisible, reaches, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+function configuration(path, tracking, labjack, tick, pointervisible, reaches, condinfo, breakreaches, breakwait, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 % function configuration(confpath, labjack, tick, pointervisible, reaches, arrows, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration, balloonsize)
 
 fileTRACKING = fopen([path '\TRACKING.txt'],'w');
@@ -22,6 +22,12 @@ fclose(fileREACHES);
 fileCONDINFO = fopen([path '\CONDINFO.txt'],'w');
 fprintf(fileCONDINFO,condinfo);
 fclose(fileCONDINFO);
+fileBREAKREACHES = fopen([path '\BREAKREACHES.txt'],'w');
+fprintf(fileBREAKREACHES,breakreaches);
+fclose(fileBREAKREACHES);
+fileBREAKWAIT = fopen([path '\BREAKWAIT.txt'],'w');
+fprintf(fileBREAKWAIT,breakwait);
+fclose(fileBREAKWAIT);
 filePOSTHOLD = fopen([path '\POSTHOLD.txt'],'w');
 fprintf(filePOSTHOLD,posturalhold);
 fclose(filePOSTHOLD);
