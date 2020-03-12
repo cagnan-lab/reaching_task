@@ -773,6 +773,10 @@ public class PointAndShoot : MonoBehaviour
 
             Hand hand = frame.Hands[h];             // Get hand model from LeapMotion
 
+            // both      = added to both data as well as extradata text files
+            // data      = added to data text file
+            // extradata = added to extradata text files
+
             // ARM DATA:
             Arm arm = hand.Arm;
             String armdescription = arm.ToString();
@@ -1060,11 +1064,13 @@ public class PointAndShoot : MonoBehaviour
             }
         }
 
+        // Make sure reptition is set to 0 after all reaches are finished:
         if (repetition == Reaches)
         {
             repetition = 0;
         }
 
+        // Pause button, when SpaceBar is pressed, game is paused and CODER PAUSE = 0.0
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Time.timeScale == 1)
@@ -1092,6 +1098,7 @@ public class PointAndShoot : MonoBehaviour
             }
         }
 
+        // NOT USED:
         //if (repetition == 0)
         //{
         //    _rendererScore = balloonTOP1.GetComponent<Renderer>();
