@@ -1,4 +1,4 @@
-function configuration(path, tracking, labjack, tick, pointervisible, reaches, condinfo, breakreaches, breakwait, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
+function configuration(path, tracking, labjack, tick, pointervisible, distance, reaches, condinfo, breakreaches, breakwait, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration)
 % function configuration(confpath, labjack, tick, pointervisible, reaches, arrows, condinfo, posturalhold, rest, posturestart, reachwait, prepwait, delaywait, holdwait, colorduration, balloonsize)
 
 fileTRACKING = fopen([path '\TRACKING.txt'],'w');
@@ -13,6 +13,9 @@ fclose(fileTICK);
 fileVISIBLE = fopen([path '\VISIBLE.txt'],'w');
 fprintf(fileVISIBLE,pointervisible);
 fclose(fileVISIBLE);
+fileDISTANCE = fopen([path '\DISTANCE.txt'],'w');
+fprintf(fileDISTANCE,distance);
+fclose(fileDISTANCE);
 fileREACHES = fopen([path '\REACHES.txt'],'w');
 fprintf(fileREACHES,reaches);
 fclose(fileREACHES);
