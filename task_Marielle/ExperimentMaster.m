@@ -7,7 +7,7 @@ addpath('C:\Users\marie\OneDrive\Documenten\Oxford\WindowsAPI')
 addpath(genpath([cd '/task_Marielle']))
 addpath([cd '\testData'])
 addpath([cd '\leapmotion\worksforMar\LeapSDK'])
-desktoppath =winqueryreg('HKEY_CURRENT_USER', 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', 'Desktop');
+desktoppath = winqueryreg('HKEY_CURRENT_USER', 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', 'Desktop');
 
 %% Specify Subject Specific ID
 subcode = 'MS';
