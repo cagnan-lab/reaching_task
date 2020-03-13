@@ -22,7 +22,7 @@ tracking        = '0';          % 0 = Index Finger Tip, 1 = Palm Pos, (2 = Stab 
 labjack         = '0';          % 1 = Connected, 0 = Not Connected                          bool
 tick            = '0';          % 1 = Connected, 0 = Not Connected                          bool
 pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                              bool
-distance        = '-5';         % Distance from camera before balloon shows GBYK            float
+distance        = '-5';         % Z-Distance from camera before balloon shows GBYK            float
 reaches         = '20';         % Total amount of Reaches per Trial                         int
 % uncertainty     = '2';          % 0 = one Arrow, 1 = four Arrows, 2 = eight Arrows          bool
 condinfo        = '5';          % Seconds of showing Condition Information                  float
