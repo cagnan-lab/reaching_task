@@ -1,9 +1,7 @@
 clear; clc; close all;
 %% Main experiment
 %% Setup Paths for experiment
-% addpath([cd '\labjack_commands'])
-addpath('C:\Users\marie\OneDrive\Documenten\Oxford\WindowsAPI')
-% addpath('C:\Users\Tim\Documents\MATLAB_ADDONS\WindowAPI')
+
 addpath(genpath([cd '/task_Marielle']))
 addpath([cd '\testData'])
 addpath([cd '\leapmotion\worksforMar\LeapSDK'])
