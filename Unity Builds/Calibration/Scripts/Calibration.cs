@@ -70,12 +70,13 @@ public class Calibration : MonoBehaviour
     // Create textfile for data:
     public static TextWriter data = null;
 
+    // Everything located in Start void will be executed right at the start of the game
     void Start()
     {
         data = new StreamWriter(folder + @"\Data.txt");         // Open textfile for data
 
         Cilinder.SetActive(true);                               // Set cilinder gameobject to visible
-         
+
         data.WriteLine("{0,-7},{1,-13},{2,-17},{3,-17},{4,-17},{5,-17}", "Coder", "Timer", "FrameRate", "xFinger[1]Pos", "yFingerTip[1]Pos", "zFingerTip[1]Pos");       // Write first line of data textfile (indicating column titles)
 
         QualitySettings.vSyncCount = 0; // Disabling vertical synchronization to update the frames faster (for mouse drag)
@@ -141,12 +142,11 @@ public class Calibration : MonoBehaviour
 
         yield return StartCoroutine(MatrixFormation());         // Start the next coroutine = MatrixFormation
     }
-
-
+    
     IEnumerator MatrixFormation()               // This is the next coroutine
     {
         // Create new arrays of type 'float' to save the mean of the x, y, and z-coordinates per location of calibration point (= 9 locations)
-        float[] xLOCMean = new float[9]; 
+        float[] xLOCMean = new float[9];
         float[] yLOCMean = new float[9];
         float[] zLOCMean = new float[9];
 

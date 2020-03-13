@@ -66,8 +66,8 @@ public class PointAndShoot : MonoBehaviour
 
     // GameObjects to show in the game:
     public GameObject player;               // This is the red small pointer
-    public GameObject Canvas;               // This is the canvas in which all text is shown 
-    public GameObject countText;            // This is the counter at top left                                                              --> set in collision script    
+    public GameObject Canvas;               // This is the canvas in which all text is shown
+    public GameObject countText;            // This is the counter at top left                                                              --> set in collision script            
     public GameObject countspark;           // This is the spark when counter changes value
     public GameObject conditionText;        // This is the text shown at the beginning which provides information about the condition       --> set in this script below
     public GameObject postureText;          // This is the text shown when 60 seconds postural hold has to be performed                     --> set in unity interface
@@ -98,8 +98,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject balloonTOP2;
     public GameObject balloonTOP3;
     public GameObject balloonTOP4;
-    public GameObject balloonTOP5;
-    public static Renderer _rendererScore;      // Was used to adjust the colour of the topballoon as much as the balloon changed colour during the reach 
+    public GameObject balloonTOP5; public static Renderer _rendererScore;      // Was used to adjust the colour of the topballoon as much as the balloon changed colour during the reach 
 
     // IF OFFSET IS STILL NEEDED FOR MOUSE DRAG:
     //private Vector3 mOffset;
@@ -112,8 +111,8 @@ public class PointAndShoot : MonoBehaviour
     // LABJACK:
     private U3 u3;      // Create an LabJack instance
     double pinNum = 4;  // 4 means the LJTick-DAC is connected to FIO4/FIO5.
-    
-    public static int[] condition = { cond, cond, cond, cond};  // This integer array used to store the conditions that were randomly determined (4 conditions over 4 blocks). Now it stores the same condition (as allocated in configuration file) 4 times. It was easier to do it like this, than to change the variable to a normal int in stead of an array int. WEAK SPOT
+
+    public static int[] condition = { cond, cond, cond, cond };  // This integer array used to store the conditions that were randomly determined (4 conditions over 4 blocks). Now it stores the same condition (as allocated in configuration file) 4 times. It was easier to do it like this, than to change the variable to a normal int in stead of an array int. WEAK SPOT
     public static int[] direction = new int[Reaches];           // Create array that will store at which (random) direction the balloon will appear and is therefore of equal size as the total amount of reaches 
     public static int numBlocks = 3;                            // Like I said at 'condition', I used to have 4 blocks, and inumerate through them. Now I set number of blocks to 3, so that only 1 block is performed until task finishes
     public static int repetition;                               // Variable that will store at which repetition (which reach number) the subject is
@@ -141,7 +140,7 @@ public class PointAndShoot : MonoBehaviour
     static float newpositionz = 0f;         // Initiate value of Screen z-coordinate at 0
 
     // Table for documentation of information about the reaches. Six information things, and length of amount of reaches + 1 for the titles of the columns:
-    public static string[,] InfoTable = new string[Reaches+1, 6];
+    public static string[,] InfoTable = new string[Reaches + 1, 6];
 
     // Create textfile for data:
     public static TextWriter infotable = null;
@@ -184,7 +183,7 @@ public class PointAndShoot : MonoBehaviour
         }
 
         // For when the conditions still had to be shuffled in this script (and was not already done in Matlab):
-        ShuffleArray(condition);        
+        ShuffleArray(condition);
 
         // Give the first row of the information table the titles of the columns:
         InfoTable[0, 0] = "Condition";
@@ -206,7 +205,7 @@ public class PointAndShoot : MonoBehaviour
 
         // Write the first line to the text files (titles of the columns):
         data.WriteLine("{0,-7},{1,-12},{2,-17},{3,-17},{4,-17},{5,-17},{6,-17},{7,-17},{8,-17},{9,-17},{10,-17},{11,-17},{12,-17},{13,-17},{14,-17},{15,-17},{16,-17},{17,-17},{18,-17},{19,-17},{20,-17},{21,-17},{22,-17},{23,-17},{24,-17},{25,-17},{26,-17},{26,-17},{27,-17},{28,-17},{29,-17},{30,-17},{31,-17},{32,-17},{33,-17},{34,-17},{35,-17}", "Coder", "Timer", "FrameRate", "FrameID", "HandID", "xScreenPosition", "yScreenPosition", "xElbowPos", "yElbowPos", "zElbowPos", "xArmCenter", "yArmCenter", "zArmCenter", "xWristArmPos", "yWristArmPos", "zWristArmPos", "xWristHandPos", "yWristHandPos", "zWristHandPos", "PalmWidth", "xPalmPos", "yPalmPos", "zPalmPos", "xPalmVelo", "yPalmVelo", "zPalmVelo", "xHandDir", "yHandDir", "zHandDir", "xStabilizedPalmPos", "yStabilizedPalmPos", "zStabilizedPalmPos", "IndexID", "xIndexTipPos", "yIndexTipPos", "zIndexTipPos");
-        extradata.WriteLine("{0,-7},{1,-12},{2,-17},{3,-17},{4,-17},{5,-17},{6,-17},{7,-17},{8,-17},{9,-17},{10,-17},{11,-17},{12,-17},{13,-17},{14,-17},{15,-17},{16,-17},{17,-17},{18,-17},{19,-17},{20,-17},{21,-17},{22,-17},{23,-17},{24,-17},{25,-17},{26,-17},{26,-17},{27,-17},{28,-17},{29,-17},{30,-17},{31,-17},{32,-17},{33,-17},{34,-17},{35,-17},{36,-17},{37,-17},{38,-17},{39,-17},{40,-17},{41,-17},{42,-17},{43,-17},{44,-17},{45,-17},{46,-17},{47,-17},{48,-17},{49,-17},{50,-17},{51,-17},{52,-17},{53,-17},{54,-17},{55,-17},{56,-17},{57,-17},{58,-17},{59,-17},{60,-17},{61,-17},{62,-17},{63,-17},{64,-17},{65,-17},{66,-17},{67,-17},{68,-17},{69,-17},{70,-17},{71,-17},{72,-17},{73,-17}","Coder", "Timer", "FrameRate", "FrameID", "HandID", "HandConfidence", "LeftHand", "HandVisible", "xArmDirection", "yArmDirection", "zArmDirection", "xArmOrientation", "yArmOrientation", "zArmOrientation", "ArmLength", "ArmWidth", "xPalmNormal", "yPalmNormal", "zPalmNormal", "xPalmOrientation", " yPalmOrientation ", " zPalmOrientation ", "ThumbID", "ThumbVisible", "ThumbExtended", "ThumbLength", "ThumbWidth", "xThumbTipPos", "yThumbTipPos", "zThumbTipPos", "xThumbDir", "yThumbDir", "zThumbDir", "IndexID", "IndexVisible", "IndexExtended", "IndexLength", "IndexWidth", "xIndexDir", "yIndexDir", "zIndexDir", "MiddleID", "MiddleVisible", "MiddleExtended", "MiddleLength", "MiddleWidth", "xMiddleTipPos", "yMiddleTipPos", "zMiddleTipPos", "xMiddleDir", "yMiddleDir", "zMiddleDir", "RingID", "RingVisible", "RingExtended", "RingLength", "RingWidth", "xRingTipPos", "yRingTipPos", "zRingTipPos", "xRingDir", "yRingDir", "zRingDir", "PinkyID", "PinkyVisible", "PinkyExtended", "PinkyLength", "PinkyWidth", "xPinkyTipPos", "yPinkyTipPos", "zPinkyTipPos", "xPinkyDir", "yPinkyDir", "zPinkyDir");
+        extradata.WriteLine("{0,-7},{1,-12},{2,-17},{3,-17},{4,-17},{5,-17},{6,-17},{7,-17},{8,-17},{9,-17},{10,-17},{11,-17},{12,-17},{13,-17},{14,-17},{15,-17},{16,-17},{17,-17},{18,-17},{19,-17},{20,-17},{21,-17},{22,-17},{23,-17},{24,-17},{25,-17},{26,-17},{26,-17},{27,-17},{28,-17},{29,-17},{30,-17},{31,-17},{32,-17},{33,-17},{34,-17},{35,-17},{36,-17},{37,-17},{38,-17},{39,-17},{40,-17},{41,-17},{42,-17},{43,-17},{44,-17},{45,-17},{46,-17},{47,-17},{48,-17},{49,-17},{50,-17},{51,-17},{52,-17},{53,-17},{54,-17},{55,-17},{56,-17},{57,-17},{58,-17},{59,-17},{60,-17},{61,-17},{62,-17},{63,-17},{64,-17},{65,-17},{66,-17},{67,-17},{68,-17},{69,-17},{70,-17},{71,-17},{72,-17},{73,-17}", "Coder", "Timer", "FrameRate", "FrameID", "HandID", "HandConfidence", "LeftHand", "HandVisible", "xArmDirection", "yArmDirection", "zArmDirection", "xArmOrientation", "yArmOrientation", "zArmOrientation", "ArmLength", "ArmWidth", "xPalmNormal", "yPalmNormal", "zPalmNormal", "xPalmOrientation", " yPalmOrientation ", " zPalmOrientation ", "ThumbID", "ThumbVisible", "ThumbExtended", "ThumbLength", "ThumbWidth", "xThumbTipPos", "yThumbTipPos", "zThumbTipPos", "xThumbDir", "yThumbDir", "zThumbDir", "IndexID", "IndexVisible", "IndexExtended", "IndexLength", "IndexWidth", "xIndexDir", "yIndexDir", "zIndexDir", "MiddleID", "MiddleVisible", "MiddleExtended", "MiddleLength", "MiddleWidth", "xMiddleTipPos", "yMiddleTipPos", "zMiddleTipPos", "xMiddleDir", "yMiddleDir", "zMiddleDir", "RingID", "RingVisible", "RingExtended", "RingLength", "RingWidth", "xRingTipPos", "yRingTipPos", "zRingTipPos", "xRingDir", "yRingDir", "zRingDir", "PinkyID", "PinkyVisible", "PinkyExtended", "PinkyLength", "PinkyWidth", "xPinkyTipPos", "yPinkyTipPos", "zPinkyTipPos", "xPinkyDir", "yPinkyDir", "zPinkyDir");
 
         QualitySettings.vSyncCount = 0; // Disabling vertical synchronization to update the frames faster (for mouse drag)
 
@@ -244,10 +243,10 @@ public class PointAndShoot : MonoBehaviour
         {
             precision = "HIGH PRECISION";
         }
-            
+
         conditionText.SetActive(true);                      // Set conditionText gameobject active
         LabJack(LJ, 1, 0.0);                                // CODER CONDINFO: 0.0                                                                                                                     
-        location = 0.0; 
+        location = 0.0;
         conditionText.GetComponent<UnityEngine.UI.Text>().text = "This is a " + gosign + " trial \n that contains " + certainty + " \n and requires " + precision;      // Set text of conditionText gameobject
         yield return StartCoroutine(Wait(CondInfo));        // Wait for 'CondInfo' amount of seconds determined in configuration
         conditionText.SetActive(false);                     // Set conditionText gameobject inactive
@@ -260,7 +259,7 @@ public class PointAndShoot : MonoBehaviour
         player.SetActive(false);                            // Make sure pointer is still inactive
         postureText.SetActive(true);                        // Set postureText gameobject active
         LabJack(LJ, 1, 0.5);                                // CODER POSTURE: 0.5                                                                                                                     
-        location = 0.5;                                                                                                                 
+        location = 0.5;
         yield return StartCoroutine(Wait(PostHold));        // Wait for 'PostHold' amount of seconds determined in configuration                 
         postureText.SetActive(false);                       // Set postureText gameobject inactive
         yield return StartCoroutine(RestHold());            // Start next coroutine = RestHold
@@ -271,7 +270,7 @@ public class PointAndShoot : MonoBehaviour
         player.SetActive(false);                            // Make sure pointer is still inactive
         restText.SetActive(true);                           // Set restText gameobject active
         LabJack(LJ, 1, 0.2);                                // CODER REST: 0.2                                                                                                                   
-        location = 0.2;                                                                                                                 
+        location = 0.2;
         yield return StartCoroutine(Wait(Rest));            // Wait for 'Rest' amount of seconds determined in configuration                          
         restText.SetActive(false);                          // Set restText gameobject inactive
         yield return StartCoroutine(Posture(numBlocks, flagpost, repetition, condition, direction, arraylist, arrowlist));      // Start next coroutine = Posture
@@ -298,7 +297,7 @@ public class PointAndShoot : MonoBehaviour
         }
         else if (numBlocks == 4)                            // If numblocks is reaches, that means this is the end of this trial, therefore:
         {
-            for (int j = 0; j < Reaches+1; j++)
+            for (int j = 0; j < Reaches + 1; j++)
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -313,7 +312,7 @@ public class PointAndShoot : MonoBehaviour
 
             countText.SetActive(false);                     // CountText gameobject inactive
             endText.SetActive(true);                        // Show end of trial text for 3 seconds.
-            yield return StartCoroutine(Wait(3));   
+            yield return StartCoroutine(Wait(3));
             endText.SetActive(false);                       // Set endText gameobject to inactive
 
             StopAllCoroutines();                            // This is the end of all coroutines
@@ -342,7 +341,7 @@ public class PointAndShoot : MonoBehaviour
             firstpost.SetActive(false);                     // Set firstpost gameobject to inactive
             yield return StartCoroutine(MotorPrep(condition, direction, arraylist, arrowlist));     // Start the next coroutine = MotorPrep
         }
-        else if (repetition == ( part * BreakReaches) && repetition != Reaches)      // Have a small break of *breakwait* seconds after every *breakreaches* number of reaches, as determined in configuration
+        else if (repetition == (part * BreakReaches) && repetition != Reaches)      // Have a small break of *breakwait* seconds after every *breakreaches* number of reaches, as determined in configuration
         { // I know this is ugly coding, but it works.
             part++;                                         // If a multiply of BreakReaches is reached, define this by adding 1 value to 'part'
             flagpost = false;                               // To make sure the next round of coroutine skips the first 15 seconds of postural hold (in if-statement of Posture coroutine) 
@@ -351,7 +350,7 @@ public class PointAndShoot : MonoBehaviour
             LabJack(LJ, 1, 0.0);                            // CODER BREAK: 0.0        
             location = 0.0;
             yield return StartCoroutine(Wait(BreakWait));   // Wait for 'BreakWait' amount of seconds determined in configuration 
-            breaktext.SetActive(false);                     
+            breaktext.SetActive(false);
             postureText.SetActive(true);                    // Do another posturestart to make sure tremor really occurs before reaches resume!
             LabJack(LJ, 1, 0.5);                            // CODER POSTURE: 0.5
             location = 0.5;
@@ -467,7 +466,7 @@ public class PointAndShoot : MonoBehaviour
         player.SetActive(true);                         // In this stage of the task, the pointer can be visible
         if (Visible == 0)                               // However, if 'Visible' is set to 0 in matlab configuration, the pointer becomes invisible again (only SpriteRenderer disabled, because we still need the collision feature of the pointer to change the balloon color when it's hit)
         {
-            player.GetComponent<SpriteRenderer>().enabled = false;              
+            player.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         // The following is all a repetition of the same, exept for the location where the balloon is appearing - that depends on the chosen direction for this reach
@@ -610,7 +609,7 @@ public class PointAndShoot : MonoBehaviour
             yield return StartCoroutine(Reach(repetition, condition, direction, arraylist, arrowlist));
         }
 
-        // Here start the same, but then for small balloons (high presision)
+        // Here starts the same, but then for small balloons (high precision)
 
         // SMALL BALLOONS: condition 3/4/7/8 = HIGH PRECISION required
         if ((condition[numBlocks] == 3 || condition[numBlocks] == 4 || condition[numBlocks] == 7 || condition[numBlocks] == 8) && (direction[repetition] == 1))
@@ -624,9 +623,9 @@ public class PointAndShoot : MonoBehaviour
             Collision.t = 0;
             balloonSMALL.GetComponent<Renderer>().material.color = Color.red;
             balloonSMALL.transform.position = new Vector2(2f, -0.15f);
-            yield return StartCoroutine(Wait(HoldWait));                                
+            yield return StartCoroutine(Wait(HoldWait));
             balloonSMALL.SetActive(false);
-            ArrowColor(2);                                                         
+            ArrowColor(2);
             repetition++;
             yield return StartCoroutine(Reach(repetition, condition, direction, arraylist, arrowlist));
         }
@@ -751,7 +750,7 @@ public class PointAndShoot : MonoBehaviour
         }
     }
 
-    // This is a function that allows us to set the configurations of the timings in matlab!
+    // This is a function that allows us to set the configurations of the timings in Matlab!
     IEnumerator Wait(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -760,22 +759,23 @@ public class PointAndShoot : MonoBehaviour
     // Everything that in located in the Update void, updates every Unity sample
     void Update()
     {
-        code.WriteLine(location);                   // Adds coder to file every frame (corresponds the input of LabJack)
+        // These two files are to determine what the delay of LeapMotion frame rate is:
+        code.WriteLine(location);                   // Adds coder (= location) to file every frame (corresponds the input of LabJack)
         time.WriteLine(Time.time);                  // Adds current time to file every frame
 
         Controller controller = new Controller();   // An instance of LeapMotion controller must exist
 
-        Frame frame = controller.Frame();
+        Frame frame = controller.Frame();           // Create a frame from the LeapMotion controller
 
-        for (int h = 0; h < frame.Hands.Count; h++) // Create a frame from the LeapMotion controller
+        for (int h = 0; h < frame.Hands.Count; h++) // For infinite amount of LeapMotion frames
         {
-            float instantaneousFrameRate = frame.CurrentFramesPerSecond;    // both
-
-            Hand hand = frame.Hands[h];             // Get hand model from LeapMotion
-
             // both      = added to both data as well as extradata text files
             // data      = added to data text file
             // extradata = added to extradata text files
+
+            float instantaneousFrameRate = frame.CurrentFramesPerSecond;    // both
+
+            Hand hand = frame.Hands[h];             // Get hand model from LeapMotion
 
             // ARM DATA:
             Arm arm = hand.Arm;
@@ -1016,7 +1016,7 @@ public class PointAndShoot : MonoBehaviour
             }
             else if (Tracking == 2)
             {
-                // Tracking stabilizedpalmposition for task:
+                // Tracking stabilizedpalmposition for task, is NOT working..:
                 trackingx = stabilizedpalmposition.x;
                 trackingy = stabilizedpalmposition.y;
                 trackingz = stabilizedpalmposition.z;
@@ -1026,7 +1026,7 @@ public class PointAndShoot : MonoBehaviour
             newpositionx = ((trackingx - XKey[0]) * XKey[1]) + XKey[2];
             newpositiony = ((trackingy - YKey[0]) * YKey[1]) + YKey[2];
 
-            // Set the position of the player according to the position of the tracked LeapMotion item              WEAK SPOT 
+            // Set the position of the player (= red pointer) according to the position of the tracked LeapMotion data              WEAK SPOT 
             player.transform.position = new Vector2(newpositionx, newpositiony);
 
             // IF OFFSET IS STILL NEEDED FOR MOUSE DRAG:
@@ -1058,47 +1058,47 @@ public class PointAndShoot : MonoBehaviour
             Vector tracking = new Vector(trackingx, trackingy, trackingz);
             if (tracking.IsValid())
             {
-                data.WriteLine("{0,-7},{1,-12},{2,-17},{3,-17},{4,-17},{5,-17},{6,-17},{7,-17},{8,-17},{9,-17},{10,-17},{11,-17},{12,-17},{13,-17},{14,-17},{15,-17},{16,-17},{17,-17},{18,-17},{19,-17},{20,-17},{21,-17},{22,-17},{23,-17},{24,-17},{25,-17},{26,-17},{26,-17},{27,-17},{28,-17},{29,-17},{30,-17},{31,-17},{32,-17},{33,-17},{34,-17},{35,-17}",location.ToString(), Time.time.ToString(), instantaneousFrameRate.ToString(), frameID.ToString(), handID.ToString(), newpositionx.ToString(), newpositiony.ToString(), elbow.x.ToString(), elbow.y.ToString(), elbow.z.ToString(), armcenter.x.ToString(), armcenter.y.ToString(), armcenter.z.ToString(), wrist.x.ToString(), wrist.y.ToString(), wrist.z.ToString(), wristposition.x.ToString(), wristposition.y.ToString(), wristposition.z.ToString(), palmwidth.ToString(), palmposition.x.ToString(), palmposition.y.ToString(), palmposition.z.ToString(), palmvelocity.x.ToString(), palmvelocity.y.ToString(), palmvelocity.z.ToString(), handdirection.x.ToString(), handdirection.y.ToString(), handdirection.z.ToString(), stabilizedpalmposition.x.ToString(), stabilizedpalmposition.y.ToString(), stabilizedpalmposition.z.ToString(), indexId.ToString(), indextipposition.x.ToString(), indextipposition.y.ToString(), indextipposition.z.ToString());
+                data.WriteLine("{0,-7},{1,-12},{2,-17},{3,-17},{4,-17},{5,-17},{6,-17},{7,-17},{8,-17},{9,-17},{10,-17},{11,-17},{12,-17},{13,-17},{14,-17},{15,-17},{16,-17},{17,-17},{18,-17},{19,-17},{20,-17},{21,-17},{22,-17},{23,-17},{24,-17},{25,-17},{26,-17},{26,-17},{27,-17},{28,-17},{29,-17},{30,-17},{31,-17},{32,-17},{33,-17},{34,-17},{35,-17}", location.ToString(), Time.time.ToString(), instantaneousFrameRate.ToString(), frameID.ToString(), handID.ToString(), newpositionx.ToString(), newpositiony.ToString(), elbow.x.ToString(), elbow.y.ToString(), elbow.z.ToString(), armcenter.x.ToString(), armcenter.y.ToString(), armcenter.z.ToString(), wrist.x.ToString(), wrist.y.ToString(), wrist.z.ToString(), wristposition.x.ToString(), wristposition.y.ToString(), wristposition.z.ToString(), palmwidth.ToString(), palmposition.x.ToString(), palmposition.y.ToString(), palmposition.z.ToString(), palmvelocity.x.ToString(), palmvelocity.y.ToString(), palmvelocity.z.ToString(), handdirection.x.ToString(), handdirection.y.ToString(), handdirection.z.ToString(), stabilizedpalmposition.x.ToString(), stabilizedpalmposition.y.ToString(), stabilizedpalmposition.z.ToString(), indexId.ToString(), indextipposition.x.ToString(), indextipposition.y.ToString(), indextipposition.z.ToString());
                 extradata.WriteLine("{0,-7},{1,-12},{2,-17},{3,-17},{4,-17},{5,-17},{6,-17},{7,-17},{8,-17},{9,-17},{10,-17},{11,-17},{12,-17},{13,-17},{14,-17},{15,-17},{16,-17},{17,-17},{18,-17},{19,-17},{20,-17},{21,-17},{22,-17},{23,-17},{24,-17},{25,-17},{26,-17},{26,-17},{27,-17},{28,-17},{29,-17},{30,-17},{31,-17},{32,-17},{33,-17},{34,-17},{35,-17},{36,-17},{37,-17},{38,-17},{39,-17},{40,-17},{41,-17},{42,-17},{43,-17},{44,-17},{45,-17},{46,-17},{47,-17},{48,-17},{49,-17},{50,-17},{51,-17},{52,-17},{53,-17},{54,-17},{55,-17},{56,-17},{57,-17},{58,-17},{59,-17},{60,-17},{61,-17},{62,-17},{63,-17},{64,-17},{65,-17},{66,-17},{67,-17},{68,-17},{69,-17},{70,-17},{71,-17},{72,-17},{73,-17}", location.ToString(), Time.time.ToString(), instantaneousFrameRate.ToString(), frameID.ToString(), handID.ToString(), handconfidence.ToString(), lefthand.ToString(), handvisible.ToString(), armdirection.x.ToString(), armdirection.y.ToString(), armdirection.z.ToString(), armorientation.x.ToString(), armorientation.y.ToString(), armorientation.z.ToString(), armlength.ToString(), armwidth.ToString(), palmnormal.x.ToString(), palmnormal.y.ToString(), palmnormal.z.ToString(), palmorientation.x.ToString(), palmorientation.y.ToString(), palmorientation.z.ToString(), thumbId.ToString(), thumbvisible.ToString(), thumbextended.ToString(), thumblength.ToString(), thumbwidth.ToString(), thumbtipposition.x.ToString(), thumbtipposition.y.ToString(), thumbtipposition.z.ToString(), thumbdirection.x.ToString(), thumbdirection.y.ToString(), thumbdirection.z.ToString(), indexId.ToString(), indexvisible.ToString(), indexextended.ToString(), indexlength.ToString(), indexwidth.ToString(), indexdirection.x.ToString(), indexdirection.y.ToString(), indexdirection.z.ToString(), middleId.ToString(), middlevisible.ToString(), middleextended.ToString(), middlelength.ToString(), middlewidth.ToString(), middletipposition.x.ToString(), middletipposition.y.ToString(), middletipposition.z.ToString(), middledirection.x.ToString(), middledirection.y.ToString(), middledirection.z.ToString(), ringId.ToString(), ringvisible.ToString(), ringextended.ToString(), ringlength.ToString(), ringwidth.ToString(), ringtipposition.x.ToString(), ringtipposition.y.ToString(), ringtipposition.z.ToString(), ringdirection.x.ToString(), ringdirection.y.ToString(), ringdirection.z.ToString(), pinkyId.ToString(), pinkyvisible.ToString(), pinkyextended.ToString(), pinkylength.ToString(), pinkywidth.ToString(), pinkytipposition.x.ToString(), pinkytipposition.y.ToString(), pinkytipposition.z.ToString(), pinkydirection.x.ToString(), pinkydirection.y.ToString(), pinkydirection.z.ToString());
 
             }
         }
 
-        // Make sure reptition is set to 0 after all reaches are finished:
+        // Make sure reptition is set to 0 after all reaches of this trial are finished:
         if (repetition == Reaches)
         {
             repetition = 0;
         }
 
         // Pause button, when SpaceBar is pressed, game is paused and CODER PAUSE = 0.0
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))                // Whenever SpaceBar is pressed..
         {
-            if (Time.timeScale == 1)
+            if (Time.timeScale == 1)                        // If game is running
             {
-                labjackvalue = location;
-                Time.timeScale = 0;
-                pauseText.SetActive(true);
+                labjackvalue = location;                    // Capture the current coder
+                Time.timeScale = 0;                         // Stop game from running
+                pauseText.SetActive(true);                  // Set pauseText gameobject active
                 if (pauseflag == 0)
                 {
-                    LabJack(LJ, 1, 0);
+                    LabJack(LJ, 1, 0);                      // CODER PAUSE = 0.0
                     location = 0.0;
                     pauseflag = 1;
                 }
             }
-            else if (Time.timeScale == 0)
+            else if (Time.timeScale == 0)                   // If game is not running
             {
-                Time.timeScale = 1;
-                pauseText.SetActive(false);
+                Time.timeScale = 1;                         // Resume game
+                pauseText.SetActive(false);                 // Set pauseText gameobject back to inactive
                 if (pauseflag == 1)
                 {
-                    LabJack(LJ, 1, labjackvalue);
+                    LabJack(LJ, 1, labjackvalue);          // CODER RESUME = value it was before pausing game
                     location = labjackvalue;
                     pauseflag = 0;
                 }
             }
         }
 
-        // NOT USED:
+        // Balloons at the top NOT USED:
         //if (repetition == 0)
         //{
         //    _rendererScore = balloonTOP1.GetComponent<Renderer>();
@@ -1122,7 +1122,9 @@ public class PointAndShoot : MonoBehaviour
 
     }
 
-    // FROM HERE VOIDS FOR THE COROUTINES:
+    // From here voids (= functions without output) to feed the coroutines:
+
+    // This function is used to control for when LabJack and/or Tick are not attached
     void LabJack(int LJ, int channel, double voltage)
     {
         if (LJ == 1)
@@ -1146,7 +1148,7 @@ public class PointAndShoot : MonoBehaviour
         }
     }
 
-    // Void for Randomizing Condition 
+    // Void for Randomizing Conditions
     void ShuffleArray(int[] a)
     {
         print("Order of Conditions: ");
@@ -1157,14 +1159,14 @@ public class PointAndShoot : MonoBehaviour
             print(" " + a[i]);
         }
     }
-    void Swap(int[] arr, int a, int b)
+    void Swap(int[] arr, int a, int b) // This void is part of ShuffleArray void
     {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
     }
 
-    // Void to Randomize direction 
+    // Void for picking a random number between 1 and 8 to determine direction of balloon 
     void Randomize(int[] direction, double[] arraylist)
     {
         print("Directions of Block " + numBlocks + ":");
@@ -1177,28 +1179,28 @@ public class PointAndShoot : MonoBehaviour
         }
     }
 
-    // NEW ONE:
-    void Arrowlist(int[] condition, double[] arraylist, double sigma)
+    // Function that determines the initial lengths of the arrow 
+    void Arrowlist(int[] condition, double[] arraylist, double sigma)           // WEAK SPOT
     {
-        double min = 0.40;
-        double max = 1.60;
-        double total = 9.0;
-        double currentsum = 0;
-        double low, high, calc;
+        double min = 0.40;              // Set minimum lenght of an arrow
+        double max = 1.60;              // Set maximum length of an arrow
+        double total = 9.0;             // Set the sum of all lengths of the arrows
+        double currentsum = 0;          // Empty variable for the sum of arrow lengths
+        double low, high, calc;         // Empty variables for calculations 
 
         if (condition[numBlocks] == 1 || condition[numBlocks] == 3 || condition[numBlocks] == 5 || condition[numBlocks] == 7)                     // LOW UNCERTAINTY in variance of arrow length
         {
-            sigma = 1;
+            sigma = 1;                  // Not used. I thought having bigger variance in lengths would make it more obvious where the balloon will show up (one big arrow, 7 smaller arrows), but this feature doesn't work like I want it to..
         }
         else if (condition[numBlocks] == 2 || condition[numBlocks] == 4 || condition[numBlocks] == 6 || condition[numBlocks] == 8)                // HIGH UNCERTAINTY in variance of arrow length
         {
-            sigma = 1;
+            sigma = 1;                  // Not used.
         }
 
         System.Random rand = new System.Random();
-        for (int index = 0; index < arraylist.Length; index++)
+        for (int index = 0; index < arraylist.Length; index++)                          // Loop through the arraylist variable
         {
-            calc = (total - currentsum) - (max * (arraylist.Length - 1 - index));
+            calc = (total - currentsum) - (max * (arraylist.Length - 1 - index));       // To be honest, I got this from the internet. Not sure what happens here when it comes to the maths. 
             low = calc < min ? min : calc;
             calc = (total - currentsum) - (min * (arraylist.Length - 1 - index));
             high = calc > max ? max : calc;
@@ -1210,10 +1212,10 @@ public class PointAndShoot : MonoBehaviour
 
             currentsum += arraylist[index];
         }
-        Array.Sort(arraylist);
+        Array.Sort(arraylist);                  // Sort list so that smallest value is at position [0] in the list and the highest value at position [7]
     }
 
-    // ORIGINAL ONE:
+    // This was the Arrowlist function used during the pilot on 03.03.2020:
     //void Arrowlist(int[] condition, double[] arraylist)
     //{
     //    System.Random rand = new System.Random();
@@ -1256,72 +1258,21 @@ public class PointAndShoot : MonoBehaviour
     //    print("arraylist saved");
     //}
 
-    // COMBINATION NOT WORKING:
-    //void Arrowlist(int[] condition, double[] arraylist, double sigma)
-    //{
-    //    double min = 0.35;
-    //    double max = 1.75;
-    //    double total = 8.5;
-    //    double currentsum = 0;
-    //    double low, high, calc;
-
-    //    if (condition[numBlocks] == 1 || condition[numBlocks] == 3 || condition[numBlocks] == 5 || condition[numBlocks] == 7)                     // LOW UNCERTAINTY in variance of arrow length
-    //    {
-    //        sigma = 0.5;
-    //    }
-    //    else if (condition[numBlocks] == 2 || condition[numBlocks] == 4 || condition[numBlocks] == 6 || condition[numBlocks] == 8)                // HIGH UNCERTAINTY in variance of arrow length
-    //    {
-    //        sigma = 0.3;
-    //    }
-
-    //    System.Random rand = new System.Random();
-
-    //    for (int i = 0; i < arraylist.Length; i++)
-    //    {
-    //        double u1 = 1.0 - rand.NextDouble(); //uniform(0,1] random doubles
-    //        double u2 = 1.0 - rand.NextDouble();
-    //        double randSigmaNormal = Math.Sqrt(-2.0 * Math.Log(u1)) *
-    //                     Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
-    //        double randSigNormal =
-    //                     1.1 + sigma * randSigmaNormal; //random normal(mean,stdDev^2)
-
-    //        calc = (total - currentsum) - (max * (arraylist.Length - 1 - i));
-    //        low = calc < min ? min : calc;
-    //        calc = (total - currentsum) - (min * (arraylist.Length - 1 - i));
-    //        high = calc > max ? max : calc;
-
-    //        //arraylist[i] = Math.Abs(randSigNormal * (1 + high - low) + low);
-    //        arraylist[i] = Math.Abs(randSigNormal * (high - low) + high);
-
-    //        currentsum += arraylist[i];
-    //    }
-
-    //    Array.Sort(arraylist);
-    //    print(currentsum);
-    //    using (StreamWriter array = new StreamWriter(conditionPath + @"\Arraylist.txt"))
-    //    {
-    //        foreach (var x in arraylist)
-    //        {
-    //            array.WriteLine(x);
-    //        }
-    //    }
-    //    print("arraylist saved");
-    //}
-
-    void ArrowAssigning(int[] direction, double[] arraylist, double[] arrowlist)
+    // Function that allocate the different lengths to different arrows, according to which direction is determined for this particular reach
+    void ArrowAssigning(int[] direction, double[] arraylist, double[] arrowlist)        // WEAK SPOT
     {
-        if (direction[repetition] == 1)
+        if (direction[repetition] == 1)         // If current direction is 1, make sure arrow
         {
-            arrowlist[0] = arraylist[7];
-            arrowlist[1] = arraylist[6];
+            arrowlist[0] = arraylist[7];        // Highest value of arraylist (at position [7]) is assigned to arrow [0]
+            arrowlist[1] = arraylist[6];        // Second highest value of arraylist (at position [6]) is assigned to arrow [1]
             arrowlist[2] = arraylist[4];
             arrowlist[3] = arraylist[2];
             arrowlist[4] = arraylist[0];
             arrowlist[5] = arraylist[1];
             arrowlist[6] = arraylist[3];
-            arrowlist[7] = arraylist[5];
+            arrowlist[7] = arraylist[5];        // Third highest value of arraylist (at position [5]) is assigned to arrow [7], because this arrow is next to position [0] at the other side (circular)
         }
-        if (direction[repetition] == 2)
+        if (direction[repetition] == 2)         // Etc...
         {
             arrowlist[1] = arraylist[7];
             arrowlist[2] = arraylist[6];
@@ -1345,7 +1296,7 @@ public class PointAndShoot : MonoBehaviour
         }
         if (direction[repetition] == 4)
         {
-            arrowlist[3] = arraylist[7];  // direction 4 = arraynumber 3
+            arrowlist[3] = arraylist[7];        // Direction 4 = Arraynumber 3
             arrowlist[4] = arraylist[6];
             arrowlist[5] = arraylist[4];
             arrowlist[6] = arraylist[2];
@@ -1400,12 +1351,13 @@ public class PointAndShoot : MonoBehaviour
         }
     }
 
-    void DirectionVariance(int[] condition, double[] arrowlist, double[] arraylist)
+    // Function that adds a bit of variance to the length of arrows so that the arrows change a little bit in length, so that the longest arrow not always points to the direction that is chosen
+    void DirectionVariance(int[] condition, double[] arrowlist, double[] arraylist)     // WEAK SPOT - because I'm uncertain about the maths behind it
     {
         System.Random rand = new System.Random();
         if (condition[numBlocks] == 1 || condition[numBlocks] == 3 || condition[numBlocks] == 5 || condition[numBlocks] == 7)                 // LOW UNCERTAINTY of variance in direction
         {
-            double std = 0.2;
+            double std = 0.2;                           // Change this value to control for the added variance
             for (int i = 0; i < arrowlist.Length; i++)
             {
                 double u1 = 1.0 - rand.NextDouble(); //uniform(0,1] random doubles
@@ -1418,7 +1370,7 @@ public class PointAndShoot : MonoBehaviour
         }
         if (condition[numBlocks] == 2 || condition[numBlocks] == 4 || condition[numBlocks] == 6 || condition[numBlocks] == 8)                 // HIGH UNCERTAINTY of variance in direction
         {
-            double std = 0.55;
+            double std = 0.55;                           // Change this value to control for the added variance
             for (int i = 0; i < arrowlist.Length; i++)
             {
                 double u1 = 1.0 - rand.NextDouble(); //uniform(0,1] random doubles
@@ -1431,8 +1383,10 @@ public class PointAndShoot : MonoBehaviour
         }
     }
 
+    // Function that sets arrow gameobjects active and rescales the lengths of the arrows according to the functions above
     void SetArrowLength(double[] arrowlist)
     {
+        // Set arrows gameobject active
         arrow1.SetActive(true);
         arrow2.SetActive(true);
         arrow3.SetActive(true);
@@ -1442,9 +1396,10 @@ public class PointAndShoot : MonoBehaviour
         arrow7.SetActive(true);
         arrow8.SetActive(true);
 
-        LabJack(LJ, 1, 1.5);                                        // CODER MOTORPREP, BLACK ARROW APPEARANCE: 1.5
+        LabJack(LJ, 1, 1.5);                                        // Black arrow appearance, CODER MOTORPREP: 1.5
         location = 1.5;
 
+        // Rescale the lengths of the arrows (y-scale) according to the arrow length functions
         float arrowlist0 = Convert.ToSingle(arrowlist[0]);
         arrow1.transform.localScale = new Vector3(1, arrowlist0, 1);
 
@@ -1470,6 +1425,7 @@ public class PointAndShoot : MonoBehaviour
         arrow8.transform.localScale = new Vector3(1, arrowlist7, 1);
     }
 
+    // Function that allows to control the color of the arrows
     void ArrowColor(int stage)      // Stage 1 = Go Signal // Stage 2 = Back to Black and disappear to Reach
     {
         if (stage == 1)
@@ -1481,7 +1437,7 @@ public class PointAndShoot : MonoBehaviour
             MeshRenderer arrow5Renderer = arrow5.GetComponentsInChildren<MeshRenderer>()[0];
             MeshRenderer arrow6Renderer = arrow6.GetComponentsInChildren<MeshRenderer>()[0];
             MeshRenderer arrow7Renderer = arrow7.GetComponentsInChildren<MeshRenderer>()[0];
-            MeshRenderer arrow8Renderer = arrow8.GetComponentsInChildren<MeshRenderer>()[0];
+            MeshRenderer arrow8Renderer = arrow8.GetComponentsInChildren<MeshRenderer>()[0];        // The arrows consist out of two parts, therefore needed to call the renderer of both parts for each arrow..
             MeshRenderer arrow1Renderer1 = arrow1.GetComponentsInChildren<MeshRenderer>()[1];
             MeshRenderer arrow2Renderer1 = arrow2.GetComponentsInChildren<MeshRenderer>()[1];
             MeshRenderer arrow3Renderer1 = arrow3.GetComponentsInChildren<MeshRenderer>()[1];
@@ -1490,7 +1446,7 @@ public class PointAndShoot : MonoBehaviour
             MeshRenderer arrow6Renderer1 = arrow6.GetComponentsInChildren<MeshRenderer>()[1];
             MeshRenderer arrow7Renderer1 = arrow7.GetComponentsInChildren<MeshRenderer>()[1];
             MeshRenderer arrow8Renderer1 = arrow8.GetComponentsInChildren<MeshRenderer>()[1];
-            arrow1Renderer.material.color = Color.green;
+            arrow1Renderer.material.color = Color.green;                                            // Set both parts of the arrow to green: Go sign!
             arrow2Renderer.material.color = Color.green;
             arrow3Renderer.material.color = Color.green;
             arrow4Renderer.material.color = Color.green;
@@ -1506,13 +1462,14 @@ public class PointAndShoot : MonoBehaviour
             arrow6Renderer1.material.color = Color.green;
             arrow7Renderer1.material.color = Color.green;
             arrow8Renderer1.material.color = Color.green;
-            player.SetActive(true);
+            player.SetActive(true);                             // Make sure player is still active
             LabJack(LJ, 1, 2.0);                                // CODER MOTOREXEC: 2.0
             location = 2;
         }
 
         if (stage == 2)
         {
+            // I probably could've assign this at the top to make it 'static' variables, but I found out too late so I'm just defining these variables twice.. Ugly coding I know
             MeshRenderer arrow1Renderer = arrow1.GetComponentsInChildren<MeshRenderer>()[0];
             MeshRenderer arrow2Renderer = arrow2.GetComponentsInChildren<MeshRenderer>()[0];
             MeshRenderer arrow3Renderer = arrow3.GetComponentsInChildren<MeshRenderer>()[0];
@@ -1529,8 +1486,8 @@ public class PointAndShoot : MonoBehaviour
             MeshRenderer arrow6Renderer1 = arrow6.GetComponentsInChildren<MeshRenderer>()[1];
             MeshRenderer arrow7Renderer1 = arrow7.GetComponentsInChildren<MeshRenderer>()[1];
             MeshRenderer arrow8Renderer1 = arrow8.GetComponentsInChildren<MeshRenderer>()[1];
-            arrow1Renderer.material.color = Color.black;
-            arrow2Renderer.material.color = Color.black;
+            arrow1Renderer.material.color = Color.black;                                            // Set both parts of the arrow to black: resetting gameobjects to prepare for next reach
+            arrow2Renderer.material.color = Color.black;                                            // It's only possible to manage gameobject when they're still active
             arrow3Renderer.material.color = Color.black;
             arrow4Renderer.material.color = Color.black;
             arrow5Renderer.material.color = Color.black;
@@ -1545,7 +1502,7 @@ public class PointAndShoot : MonoBehaviour
             arrow6Renderer1.material.color = Color.black;
             arrow7Renderer1.material.color = Color.black;
             arrow8Renderer1.material.color = Color.black;
-            arrow1.SetActive(false);
+            arrow1.SetActive(false);                                                                // Set arrow gameobjects inactive
             arrow2.SetActive(false);
             arrow3.SetActive(false);
             arrow4.SetActive(false);
@@ -1554,7 +1511,7 @@ public class PointAndShoot : MonoBehaviour
             arrow7.SetActive(false);
             arrow8.SetActive(false);
 
-            player.SetActive(false);
+            player.SetActive(false);                                                                // Set player inactive to prepare for next reach
         }
     }
 }
