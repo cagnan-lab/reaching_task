@@ -23,14 +23,14 @@ labjack         = '0';          % 1 = Connected, 0 = Not Connected              
 tick            = '0';          % 1 = Connected, 0 = Not Connected                          bool
 pointervisible  = '1';          % 1 = Visible, 0 = Not Visible                              bool
 distance        = '-5';         % Z-Distance from camera before balloon shows GBYK            float
-reaches         = '20';         % Total amount of Reaches per Trial                         int
+reaches         = '6';         % Total amount of Reaches per Trial                         int
 % uncertainty     = '2';          % 0 = one Arrow, 1 = four Arrows, 2 = eight Arrows          bool
 condinfo        = '5';          % Seconds of showing Condition Information                  float
-breakreaches    = '10';         % Amount of Continuous Reaches before break                 int
+breakreaches    = '3';         % Amount of Continuous Reaches before break                 int
 breakwait       = '5';          % Seconds of break after 10 reaches                         float
-posturalhold    = '60';         % Seconds of PosturalHold Task                              float
-rest            = '60';         % Seconds of Rest Task                                      float
-posturestart    = '15';         % Seconds of Postural Hold before Trials                    float
+posturalhold    = '5';         % Seconds of PosturalHold Task                              float
+rest            = '5';         % Seconds of Rest Task                                      float
+posturestart    = '5';         % Seconds of Postural Hold before Trials                    float
 reachwait       = '3.5';        % Seconds of Reach Wait                                     float
 prepwait        = '2.5';        % Seconds of Motor Preparation Wait                         float
 delaywait       = '3.5';        % Seconds of Motor Execution Wait GBYK                      float
